@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Canvas & Foundations */
+  --color-canvas-primary: #FBF9F5;      /* Warm Alabaster / Milk Cream */
+  --color-canvas-secondary: #F3EFE6;    /* Soft French Linen Tint */
+  --color-card-surface: #FFFFFF;        /* Pure Ivory Card Base */
+  --color-card-muted: #F8F6F0;          /* Secondary Container Layer */
+
+  /* Structural Borders & Micro-Lines */
+  --color-border-subtle: #EDE7DC;       /* Ultra-soft hairline borders */
+  --color-border-strong: #DDD5C7;       /* Interactive card borders */
+  --color-divider: #EAE3D5;
+
+  /* Typography & High Contrast */
+  --color-text-primary: #181615;        /* Deep Obsidian Espresso */
+  --color-text-secondary: #5E5952;      /* Warm Earth Slate */
+  --color-text-muted: #8C8479;          /* Architectural Annotation Gray */
+
+  /* Metallic Champagne Accents */
+  --color-champagne-base: #C8A97E;      /* Burnished Champagne Gold */
+  --color-champagne-hover: #B69566;     /* Darkened Warm Bronze */
+  --color-champagne-light: #F7F1E6;     /* Soft Gold Badge Fill */
+  --color-champagne-border: #E5D2BA;    /* Champagne Border Accent */
+
+  /* Status & Trust Tokens */
+  --color-google-star: #F59E0B;         /* Google Maps Verified Star Amber */
+  --color-success: #3A6B56;             /* Heritage Deep Sage Green */
+
+  /* Font Families */
+  --font-cormorant: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', 'Satoshi', system-ui, -apple-system, sans-serif;
+}
+
+/* Ensure no dark mode inversion overrides the warm residential-luxury palette */
+html {
+  background-color: var(--color-canvas-primary);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-canvas-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* High-End Selection Highlight */
+::selection {
+  background-color: #E5D2BA;
+  color: #181615;
+}
+
+/* Lenis Momentum Scroll Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD5C7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A97E;
+}
+
+/* Editorial Fluid Typography System */
+.font-editorial-h1 {
+  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  font-size: clamp(2.75rem, 5vw + 1rem, 4.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.font-editorial-h2 {
+  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.font-editorial-h3 {
+  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  font-size: clamp(1.25rem, 1.5vw + 0.25rem, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.text-body-large {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.text-body-base {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-editorial-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Micro hairline subtle borders */
+.border-subtle-line {
+  border-color: var(--color-border-subtle);
+}
+
+.border-strong-line {
+  border-color: var(--color-border-strong);
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(8px)) {
+  .backdrop-blur-md {
+    background-color: rgba(251, 249, 245, 0.96);
+  }
+}
