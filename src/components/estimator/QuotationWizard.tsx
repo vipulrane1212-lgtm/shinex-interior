@@ -147,21 +147,20 @@ export const QuotationWizard: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <SlidersHorizontal className="w-3.5 h-3.5 text-[#C8A97E]" />
-            <span>Interactive Cost Engine</span>
+            <span>Instant Cost Calculator</span>
           </div>
 
           <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
-            The 6-Step Turnkey{' '}
+            Turnkey Interior{' '}
             <span className="font-script font-normal text-gold-gradient text-[1.45em] inline-block transform -rotate-1 relative">
-              Quotation
+              Cost
               <span className="absolute -bottom-1 left-2 right-2 h-[2px] bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent" />
             </span>{' '}
-            Engine
+            Calculator
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
-            Configure your apartment or villa dimensions. Calculate transparent BOQ line items with German
-            factory milling tolerances and claim your exclusive 15% Sneha Enterprises digital grant voucher.
+            Select your apartment configuration and get an instant itemized estimate with 100% price lock and a 15% direct factory discount.
           </p>
 
           {/* Architectural Dimension Line */}

@@ -94,13 +94,12 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
           </div>
 
           <h3 className="font-editorial-h3 text-xl sm:text-2xl font-bold text-[#181615] leading-tight">
-            Your customized architectural BOQ and 15% digital savings voucher are ready.
+            Your Itemized Quote &amp; 15% Savings Voucher Are Ready
           </h3>
 
           <p className="text-xs text-[#5E5952] leading-relaxed max-w-md mx-auto">
-            Where should we send your itemized breakdown? You've unlocked an estimated{' '}
-            <strong className="text-[#3A6B56] font-semibold">{savingsEstimate}</strong> in Sneha Enterprises digital
-            savings grant.
+            Where should we send your quote breakdown? You save an estimated{' '}
+            <strong className="text-[#3A6B56] font-semibold">{savingsEstimate}</strong> with direct factory pricing.
           </p>
         </div>
 
@@ -171,7 +170,7 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
               className="w-full"
               subtitle="Zero hidden costs • 10-Year warranty certificate"
             >
-              {isSubmitting ? 'Decrypting BOQ Breakdown...' : 'Reveal Itemized BOQ & Claim 15% Voucher'}
+              {isSubmitting ? 'Preparing Your Quote...' : 'View Itemized Quote & Claim 15% OFF'}
             </RemotionQuoteButton>
           </div>
         </form>

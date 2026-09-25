@@ -119,17 +119,16 @@ export const DiscountSplitSection: React.FC = () => {
             <div className="relative z-10 space-y-4">
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[11px] font-bold text-[#181615] uppercase tracking-wider shadow-sm">
                 <Gift className="w-3.5 h-3.5 text-[#C8A97E]" />
-                <span>Exclusive Digital Booking Privilege</span>
+                <span>Limited-Time Factory Benefit</span>
               </span>
 
               <h2 className="font-editorial text-white font-bold leading-tight tracking-tight text-3xl sm:text-4xl">
                 Get Flat <span className="font-script text-gold-light text-[1.42em] font-normal inline-block transform -rotate-1">15% OFF</span> <br />
-                On Your Complete Turnkey Package
+                On Your Turnkey Interior
               </h2>
 
               <p className="text-xs sm:text-sm text-[#EDE7DC] leading-relaxed max-w-md">
-                Subsidized through the Sneha Enterprises 2026 Architectural Promotion Program.
-                Lock in your factory fabrication slot and receive complimentary high-spec upgrades.
+                Direct factory pricing backed by Sneha Enterprises. Lock in your slot to get free German hardware upgrades and free 3D design plans.
               </p>
             </div>
 
@@ -138,7 +137,7 @@ export const DiscountSplitSection: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold">Free 3D Color Floor Plan &amp; VR Walkthrough</span>{' '}
+                  <span className="font-semibold">Free 3D Design &amp; VR Walkthrough</span>{' '}
                   <span className="text-[#E5D2BA]">(Worth ₹15,000)</span>
                 </div>
               </div>
@@ -147,23 +146,23 @@ export const DiscountSplitSection: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-semibold">Free Chimney &amp; Hob Upgrade</span>{' '}
-                  <span className="text-[#E5D2BA]">(German Faber/Franke Specification)</span>
+                  <span className="text-[#E5D2BA]">(German Brand Faber/Franke)</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold">Complimentary German Hardware Upgrade</span>{' '}
-                  <span className="text-[#E5D2BA]">(Blum Soft-Close Drawer Runners)</span>
+                  <span className="font-semibold">Free German Soft-Close Hinges</span>{' '}
+                  <span className="text-[#E5D2BA]">(Blum / Hettich)</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold">Rigid 45-Day Handover Bond</span>{' '}
-                  <span className="text-[#E5D2BA]">(₹1,500/day penalty clause)</span>
+                  <span className="font-semibold">45-Day Handover Guarantee</span>{' '}
+                  <span className="text-[#E5D2BA]">(₹1,500/day penalty if late)</span>
                 </div>
               </div>
 
@@ -188,11 +187,10 @@ export const DiscountSplitSection: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-editorial text-2xl sm:text-3xl text-[#181615] font-bold tracking-tight">
-                    Schedule Site Laser Consultation
+                    Book Free Site Visit &amp; 15% OFF
                   </h3>
                   <p className="text-xs text-[#5E5952] mt-1 leading-relaxed">
-                    Our lead architectural project engineer will visit your apartment for millimeter laser measurements
-                    and present your customized 3D design boards.
+                    Our lead engineer visits for precise laser measurements and shares your 3D design + exact BOQ within 24 hours.
                   </p>
                 </div>
 
@@ -299,7 +297,7 @@ export const DiscountSplitSection: React.FC = () => {
                       className="w-full"
                       subtitle="Price lock guaranteed • Zero sales harassment"
                     >
-                      {isSubmitting ? 'Reserving Factory Slot...' : 'Claim 15% Voucher & Schedule Site Consultation'}
+                      {isSubmitting ? 'Reserving Factory Slot...' : 'Claim 15% OFF & Book Free Site Visit'}
                     </RemotionQuoteButton>
                   </div>
                 </form>
@@ -325,9 +323,8 @@ export const DiscountSplitSection: React.FC = () => {
                     Congratulations, {formData.fullName}!
                   </h3>
                   <p className="text-xs text-[#5E5952] max-w-sm mx-auto leading-relaxed">
-                    Your 15% Sneha Enterprises digital grant voucher is locked. Our senior interior architect
-                    will reach out on WhatsApp at <strong className="text-[#181615]">{formData.whatsappNumber}</strong> to
-                    coordinate your site laser scan.
+                    Your 15% discount voucher is locked. Our project manager will connect on WhatsApp at{' '}
+                    <strong className="text-[#181615]">{formData.whatsappNumber}</strong> within 2 hours to confirm your free site visit.
                   </p>
                 </div>
 

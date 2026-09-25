@@ -39,19 +39,16 @@ export const StorylinePrologue: React.FC = () => {
           {/* Central Editorial Narrative */}
           <div className="py-8 md:py-10 max-w-4xl">
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#181615] tracking-tight leading-[1.12]">
-              Two Decades of Architectural Trust.{' '}
+              Two Decades of Trust.{' '}
               <span className="font-script text-gold-gradient text-[1.28em] font-normal block sm:inline">
                 400+ Homes Handed Over.
               </span>{' '}
-              Countless Family Lives Transformed.
+              Zero Compromise.
             </h2>
 
-            <p className="mt-6 text-sm sm:text-base md:text-lg text-[#5E5952] leading-relaxed font-sans font-normal">
-              Before a single hinge is milled or stone slab is cut in our factory, we listen to how your family wakes,
-              cooks, and rests. Since 2004, under the legal custody of <strong>Sneha Enterprises</strong>, our studio has
-              rejected the industry norm of delayed handovers, uncurated materials, and hidden cost escalations.
-              We believe transforming raw concrete into a generational sanctuary should be an experience of profound joy,
-              clarity, and architectural pride.
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-[#5E5952] leading-relaxed font-sans font-normal max-w-3xl">
+              Since 2004, <strong>Sneha Enterprises</strong> has delivered 400+ turnkey residences across Bangalore &amp; Mumbai with
+              dust-free German factory finishes, guaranteed 45-day handovers, and complete 10-year warranty protection.
             </p>
           </div>
 
@@ -67,7 +64,7 @@ export const StorylinePrologue: React.FC = () => {
                 20+ <span className="text-sm font-sans font-medium text-[#8C8479]">Years</span>
               </div>
               <p className="text-xs text-[#5E5952] mt-1 font-medium">
-                Continuous architectural execution since 2004 under Sneha Enterprises.
+                Continuous execution since 2004 under Sneha Enterprises.
               </p>
             </div>
 
@@ -75,41 +72,41 @@ export const StorylinePrologue: React.FC = () => {
             <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#EDE7DC]/70 hover:border-[#C8A97E] transition-all">
               <div className="flex items-center gap-2 text-[#C8A97E] mb-2">
                 <Users className="w-5 h-5" />
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">Client Satisfaction</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">Delivered</span>
               </div>
               <div className="font-serif text-2xl sm:text-3xl font-extrabold text-[#181615]">
-                400+ <span className="text-sm font-sans font-medium text-[#8C8479]">Residences</span>
+                400+ <span className="text-sm font-sans font-medium text-[#8C8479]">Homes</span>
               </div>
               <p className="text-xs text-[#5E5952] mt-1 font-medium">
-                Verified luxury apartments, duplexes &amp; standalone villas completed.
+                Luxury apartments, duplexes &amp; villas handed over.
               </p>
             </div>
 
             {/* Pillar 3 */}
             <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#EDE7DC]/70 hover:border-[#C8A97E] transition-all">
-              <div className="flex items-center gap-2 text-[#3A6B56] mb-2">
-                <ShieldCheck className="w-5 h-5" />
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">Human Impact</span>
-              </div>
-              <div className="font-serif text-2xl sm:text-3xl font-extrabold text-[#181615]">
-                1,200+ <span className="text-sm font-sans font-medium text-[#8C8479]">Lives</span>
-              </div>
-              <p className="text-xs text-[#5E5952] mt-1 font-medium">
-                Family members thriving in bespoke, ergonomically tailored interiors.
-              </p>
-            </div>
-
-            {/* Pillar 4 */}
-            <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#EDE7DC]/70 hover:border-[#C8A97E] transition-all">
               <div className="flex items-center gap-2 text-[#C8A97E] mb-2">
                 <Clock className="w-5 h-5" />
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">Contractual Bond</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">On-Time Handover</span>
               </div>
               <div className="font-serif text-2xl sm:text-3xl font-extrabold text-[#181615]">
                 45 <span className="text-sm font-sans font-medium text-[#8C8479]">Days</span>
               </div>
               <p className="text-xs text-[#5E5952] mt-1 font-medium">
-                Contractual on-time delivery with ₹1,500/day penalty protection.
+                Contractual delivery with ₹1,500/day penalty protection.
+              </p>
+            </div>
+
+            {/* Pillar 4 */}
+            <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#EDE7DC]/70 hover:border-[#C8A97E] transition-all">
+              <div className="flex items-center gap-2 text-[#3A6B56] mb-2">
+                <ShieldCheck className="w-5 h-5" />
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C8479]">Warranty</span>
+              </div>
+              <div className="font-serif text-2xl sm:text-3xl font-extrabold text-[#181615]">
+                10 <span className="text-sm font-sans font-medium text-[#8C8479]">Years</span>
+              </div>
+              <p className="text-xs text-[#5E5952] mt-1 font-medium">
+                100% water &amp; termite-proof woodwork guarantee.
               </p>
             </div>
           </div>

@@ -35,81 +35,81 @@ export const MaterialAtelierSection: React.FC = () => {
     {
       id: 'travertine',
       name: 'Roman Alabaster Travertine',
-      category: 'Natural Architectural Stone',
-      tag: 'Atelier Signature',
+      category: 'Natural Italian Stone',
+      tag: 'Signature Stone',
       image: ASSET_LIBRARY.materialTravertine || getAssetUrl('/images/material_travertine.jpg'),
       thumbnail: ASSET_LIBRARY.materialTravertine || getAssetUrl('/images/material_travertine.jpg'),
       thickness: '20mm Solid Slab',
       origin: 'Tivoli Quarry, Central Italy',
-      finish: 'Honed Matte with Micro-Beveled Miter Edge',
+      finish: 'Honed Matte with Miter Edge',
       architectNote:
-        'Selected for its organic travertine pores and warm creamy alabaster tones. Creates a monolithic dining anchor that softly diffuses 2700K ambient evening light.',
-      durability: 'Class-1 Scratch & Fire Resistant (Zero Resin Fill)',
-      includedScope: 'Standard in Villa & 4BHK Monolithic Island Suites',
+        'Real Italian Roman travertine. Solid 20mm slab with luxury natural texture and zero synthetic resin fill.',
+      durability: 'Scratch & Heat Resistant',
+      includedScope: 'Dining Tables & Island Counters',
       badgeColor: '#C8A97E',
     },
     {
       id: 'smoked-oak',
       name: 'Smoked European White Oak',
-      category: 'Acoustic Timber Joinery',
-      tag: 'Japandi Warmth',
+      category: 'European Oak Woodwork',
+      tag: 'Warm Oak Accent',
       image: ASSET_LIBRARY.materialSmokedOak || getAssetUrl('/images/material_smoked_oak.jpg'),
       thumbnail: ASSET_LIBRARY.materialSmokedOak || getAssetUrl('/images/material_smoked_oak.jpg'),
-      thickness: '18mm Calibrated Core + 1.2mm Real Wood Flutes',
-      origin: 'Bavarian Sustainable Forests (FSC Certified)',
-      finish: 'Rubio Monocoat Natural Zero-VOC Matte Oil',
+      thickness: '18mm Core + Real Wood Flutes',
+      origin: 'Bavarian Sustainable Forests',
+      finish: 'Natural Matte Protective Oil',
       architectNote:
-        'Acoustically fluted slats engineered to absorb high-frequency flutter echoes in expansive open-plan living rooms while introducing tactile warmth.',
-      durability: 'Moisture Sealed with Natural Plant Wax',
-      includedScope: 'Standard in Master Bedroom Suite Feature Walls',
+        'Real European white oak flutes. Sound-absorbing, moisture-sealed, and brings warm hotel-grade luxury to suites.',
+      durability: 'Moisture Sealed & Termite Proof',
+      includedScope: 'Master Suites & Feature Walls',
       badgeColor: '#3A6B56',
     },
     {
       id: 'calacatta',
       name: 'Calacatta Gold Seamless Quartz',
-      category: 'Architectural Worktops',
-      tag: 'Zero-Porosity Surface',
+      category: 'Stain-Proof Quartz Countertop',
+      tag: '100% Stain-Proof',
       image: ASSET_LIBRARY.materialCalacatta || getAssetUrl('/images/material_calacatta.jpg'),
       thumbnail: ASSET_LIBRARY.materialCalacatta || getAssetUrl('/images/material_calacatta.jpg'),
-      thickness: '15mm / 40mm Built-Up Miter Profile',
+      thickness: '15mm / 40mm Miter Profile',
       origin: 'Engineered Quartz Crystal Slab',
-      finish: 'Velvet Satin Anti-Glare Polish',
+      finish: 'Velvet Satin Smooth Polish',
       architectNote:
-        'Engineered specifically for Indian culinary prep. Completely non-porous: zero turmeric or red wine stains, heat resistant up to 280°C, with continuous vein matching.',
-      durability: 'NSF Certified Food-Safe & Acid Resistant',
-      includedScope: 'Standard on All Turnkey Kitchen Counters',
+        '100% stain-proof quartz for Indian cooking. Resists turmeric, masala oils, and heat up to 280°C with zero staining.',
+      durability: '100% Acid & Turmeric Stain Proof',
+      includedScope: 'All Modular Kitchen Counters',
       badgeColor: '#C8A97E',
     },
     {
       id: 'pur-edge',
       name: 'German Homag PUR Edgebanding',
-      category: 'Factory Joint Technology',
+      category: 'German Joint Technology',
       tag: 'Zero-Joint Seam',
       image: ASSET_LIBRARY.materialPurEdge || getAssetUrl('/images/material_pur_edge.jpg'),
       thumbnail: ASSET_LIBRARY.materialPurEdge || getAssetUrl('/images/material_pur_edge.jpg'),
       thickness: '1.3mm Impact-Resistant Profile',
       origin: 'Homag LaserTech Plant, Germany',
-      finish: 'PUR Reactive Hot-Melt Waterproof Bond',
+      finish: 'Seamless Waterproof Hot-Melt Bond',
       architectNote:
-        'Eliminates the visible dark glue lines found in local carpenter work. Completely seals the board against boiling water and humid monsoons.',
-      durability: '100% Water-Immersion Barrier (10-Yr Bond)',
-      includedScope: 'Applied to 100% of ShineX Modular Woodwork',
+        'Seamless zero-joint edgebanding. 100% waterproof seal that stops edges from peeling during Indian monsoons.',
+      durability: '100% Waterproof (10-Yr Bond)',
+      includedScope: 'All ShineX Modular Woodwork',
       badgeColor: '#3A6B56',
     },
     {
       id: 'champagne-brass',
       name: 'Brushed Champagne PVD Brass',
-      category: 'Architectural Motion & Hardware',
-      tag: 'Haute Quincaillerie',
+      category: 'Solid Brass Hardware',
+      tag: 'Anti-Tarnish Brass',
       image: ASSET_LIBRARY.materialChampagneBrass || getAssetUrl('/images/material_champagne_brass.jpg'),
       thumbnail: ASSET_LIBRARY.materialChampagneBrass || getAssetUrl('/images/material_champagne_brass.jpg'),
       thickness: 'Solid Forged Brass Core',
-      origin: 'Bespoke European Precision Tooling',
-      finish: 'Micro-Knurled Texture with Anti-Oxidation PVD',
+      origin: 'European Precision Tooling',
+      finish: 'Brushed Champagne PVD Finish',
       architectNote:
-        'Custom tactile weight in the palm. Engineered with titanium pivot pins to ensure zero wobble across 100,000 smooth opening cycles.',
-      durability: 'Zero-Tarnish Lifetime Warranty',
-      includedScope: 'Integrated across Designer Wardrobes & Bar Niches',
+        'Solid forged brass with anti-tarnish PVD coating. Zero wobble and tested for 100,000 smooth cycles.',
+      durability: 'Anti-Tarnish Lifetime Warranty',
+      includedScope: 'Wardrobes, Drawers & Bar Units',
       badgeColor: '#C8A97E',
     },
   ];
@@ -150,22 +150,21 @@ export const MaterialAtelierSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
-            <span>Tactile Material Library</span>
+            <span>Factory-Grade Materials</span>
           </div>
 
           <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
-            The Master Atelier <span className="font-script font-normal text-gold-gradient text-[1.42em] inline-block transform -rotate-1">Finishes</span> Palette
+            Certified Luxury <span className="font-script font-normal text-gold-gradient text-[1.42em] inline-block transform -rotate-1">Materials</span>
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
-            From natural Roman travertine and acoustic Bavarian white oak to seamless German Homag PUR joints.
-            Inspect the certified physical material palette curated for discerning residences.
+            Italian marble, stain-free quartz for Indian cooking, and German waterproof wood. Built to look pristine for decades.
           </p>
 
           {/* Architectural Dimension Line */}
           <div className="max-w-xs mx-auto pt-2 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[#8C8479]/70">
             <span className="w-8 h-[1px] bg-[#DDD5C7]" />
-            <span>AUTHENTIC PHYSICAL SUBSTRATES</span>
+            <span>100% AUTHENTIC CERTIFIED MATERIALS</span>
             <span className="w-8 h-[1px] bg-[#DDD5C7]" />
           </div>
         </div>
@@ -286,7 +285,7 @@ export const MaterialAtelierSection: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-[#C8A97E]" />
                       <span className="text-[11px] font-semibold uppercase tracking-wider text-[#181615]">
-                        Architect's Specification Rationale
+                        Why Homeowners Love It
                       </span>
                     </div>
                     <p className="text-xs text-[#5E5952] leading-relaxed">
@@ -297,22 +296,22 @@ export const MaterialAtelierSection: React.FC = () => {
                   {/* 4-Cell Spec Matrix */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EDE7DC] space-y-1">
-                      <span className="text-[#8C8479] font-medium block text-[11px]">Caliper & Dimensions:</span>
+                      <span className="text-[#8C8479] font-medium block text-[11px]">Thickness:</span>
                       <p className="font-semibold text-[#181615]">{activeMaterial.thickness}</p>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EDE7DC] space-y-1">
-                      <span className="text-[#8C8479] font-medium block text-[11px]">Surface Tactility:</span>
+                      <span className="text-[#8C8479] font-medium block text-[11px]">Surface Finish:</span>
                       <p className="font-semibold text-[#181615]">{activeMaterial.finish}</p>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EDE7DC] space-y-1">
-                      <span className="text-[#8C8479] font-medium block text-[11px]">Engineering Standard:</span>
+                      <span className="text-[#8C8479] font-medium block text-[11px]">Durability:</span>
                       <p className="font-semibold text-[#3A6B56]">{activeMaterial.durability}</p>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EDE7DC] space-y-1">
-                      <span className="text-[#8C8479] font-medium block text-[11px]">Turnkey Integration:</span>
+                      <span className="text-[#8C8479] font-medium block text-[11px]">Where It's Used:</span>
                       <p className="font-semibold text-[#181615]">{activeMaterial.includedScope}</p>
                     </div>
                   </div>

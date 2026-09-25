@@ -105,22 +105,21 @@ export const HeroSection: React.FC = () => {
                 Precision.
               </h1>
               <p className="font-editorial italic text-base sm:text-lg text-[#B69566] tracking-wide pt-1">
-                "Where European architectural philosophy converges with zero-defect German engineering."
+                "German factory-precision interiors. Delivered in 45 days flat."
               </p>
             </div>
 
             <p className="text-body-large text-[#5E5952] max-w-xl leading-relaxed">
-              Turnkey interior architecture for discerning 2BHK–4BHK &amp; villa owners. Backed by our rigid{' '}
-              <strong className="text-[#181615] font-semibold">45-day guaranteed handover</strong> with a ₹1,500/day
-              delay penalty clause, <strong className="text-[#181615] font-semibold">100% price-lock BOQ</strong>, and
-              dust-free off-site Homag CNC fabrication.
+              Turnkey luxury interiors for 2BHK–4BHK apartments &amp; villas. 100% factory-finished with{' '}
+              <strong className="text-[#181615] font-semibold">zero midway cost surprises</strong> and a{' '}
+              <strong className="text-[#181615] font-semibold">₹1,500/day on-time penalty guarantee</strong>.
             </p>
 
             {/* Architectural Spec Checkmarks */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-[#5E5952]">
               <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-[#EDE7DC] shadow-sm">
                 <CheckCircle2 className="w-4 h-4 text-[#3A6B56] shrink-0" />
-                <span className="font-medium text-[#181615]">Zero midway cost escalations</span>
+                <span className="font-medium text-[#181615]">100% Price Lock (Zero Midway Hikes)</span>
               </div>
               <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-[#EDE7DC] shadow-sm">
                 <CheckCircle2 className="w-4 h-4 text-[#3A6B56] shrink-0" />
@@ -132,7 +131,7 @@ export const HeroSection: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-[#EDE7DC] shadow-sm">
                 <CheckCircle2 className="w-4 h-4 text-[#3A6B56] shrink-0" />
-                <span className="font-medium text-[#181615]">Dust-free off-site Homag milling</span>
+                <span className="font-medium text-[#181615]">100% Factory Built (Zero Dust at Home)</span>
               </div>
             </div>
 
