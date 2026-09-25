@@ -3,6 +3,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Sparkles, MoveHorizontal } from 'lucide-react';
 import { ASSET_LIBRARY } from '@/lib/mockData';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 interface BeforeAfterSliderProps {
   beforeImage?: string;
@@ -104,7 +105,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     >
       {/* Background (After: Finished Turnkey Living Room) */}
       <img
-        src={afterImage}
+        src={getAssetUrl(afterImage)}
         alt="Finished Luxury Turnkey Interior by ShineX Infra"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none cinematic-video-sync"
         draggable={false}
@@ -116,7 +117,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img
-          src={beforeImage}
+          src={getAssetUrl(beforeImage)}
           alt="Raw Bare Concrete Construction Shell"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-95 cinematic-video-sync"
           draggable={false}

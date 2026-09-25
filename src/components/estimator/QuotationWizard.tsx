@@ -19,6 +19,7 @@ import { StepRenderer } from './StepRenderer';
 import { UnlockGateModal } from './UnlockGateModal';
 import { QuotationSummaryCard } from './QuotationSummaryCard';
 import { RemotionQuoteButton } from '../common/RemotionQuoteButton';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 export const QuotationWizard: React.FC = () => {
   const [calculatorState, setCalculatorState] = useState<CalculatorState>({
@@ -179,7 +180,7 @@ export const QuotationWizard: React.FC = () => {
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-[#DDD5C7]">
                   <img
-                    src={selectedPreset.image}
+                    src={getAssetUrl(selectedPreset.image)}
                     alt={selectedPreset.title}
                     className="w-full h-full object-cover cinematic-video-1"
                   />

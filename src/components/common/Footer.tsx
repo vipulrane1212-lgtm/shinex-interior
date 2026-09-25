@@ -13,14 +13,15 @@ import {
   Clock,
 } from 'lucide-react';
 import { BRAND_PROFILE, ASSET_LIBRARY } from '@/lib/mockData';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 export const Footer: React.FC = () => {
   const instagramShots = [
     { id: 1, img: ASSET_LIBRARY.kitchenIslandAi || ASSET_LIBRARY.kitchenIsland, alt: 'Travertine Island Kitchen' },
     { id: 2, img: ASSET_LIBRARY.bedroomMasterAi || ASSET_LIBRARY.bedroomJapandi, alt: 'Japandi Master Suite' },
     { id: 3, img: ASSET_LIBRARY.livingLoungeAi || ASSET_LIBRARY.livingAcoustic, alt: 'Acoustic Fluted Living Lounge' },
-    { id: 4, img: '/images/kitchen_lshaped_luxury.jpg', alt: 'Cashmere Acrylic Cabinetry' },
-    { id: 5, img: '/images/bedroom_classical_wardrobe.jpg', alt: 'Fluted Dressing Walk-In' },
+    { id: 4, img: getAssetUrl('/images/kitchen_lshaped_luxury.jpg'), alt: 'Cashmere Acrylic Cabinetry' },
+    { id: 5, img: getAssetUrl('/images/bedroom_classical_wardrobe.jpg'), alt: 'Fluted Dressing Walk-In' },
     { id: 6, img: ASSET_LIBRARY.afterFinished, alt: 'Turnkey Handover Living Room' },
   ];
 

@@ -27,6 +27,7 @@ import {
   AESTHETIC_FACTORS,
   MATERIAL_TIERS,
 } from '@/lib/calculatorLogic';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 interface StepRendererProps {
   state: CalculatorState;
@@ -211,22 +212,22 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
     const aestheticOptions: { key: AestheticStyle; image: string; tag: string }[] = [
       {
         key: 'warm_minimalist',
-        image: '/images/luxury_kitchen_island.jpg',
+        image: getAssetUrl('/images/luxury_kitchen_island.jpg'),
         tag: 'Travertine & Bouclé',
       },
       {
         key: 'modern_classical',
-        image: '/images/bedroom_classical_wardrobe.jpg',
+        image: getAssetUrl('/images/bedroom_classical_wardrobe.jpg'),
         tag: 'Fluted Glass & Boiserie',
       },
       {
         key: 'japandi',
-        image: '/images/luxury_master_suite.jpg',
+        image: getAssetUrl('/images/luxury_master_suite.jpg'),
         tag: 'Smoked Oak & Slats',
       },
       {
         key: 'luxe_contemporary',
-        image: '/images/architectural_marble_lounge.jpg',
+        image: getAssetUrl('/images/architectural_marble_lounge.jpg'),
         tag: 'Botticino & Champagne',
       },
     ];

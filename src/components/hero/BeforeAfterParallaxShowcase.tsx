@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { BEFORE_AFTER_GALLERY } from '@/lib/mockData';
 import { RemotionQuoteButton } from '../common/RemotionQuoteButton';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 export const BeforeAfterParallaxShowcase: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -171,7 +172,7 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
           >
             {/* Background Image (After: Finished Turnkey Room) */}
             <motion.img
-              src={activeItem.afterImage}
+              src={getAssetUrl(activeItem.afterImage)}
               alt={activeItem.title}
               className="absolute inset-0 w-full h-full object-cover pointer-events-none cinematic-video-sync"
               draggable={false}
@@ -186,7 +187,7 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
               <img
-                src={activeItem.beforeImage}
+                src={getAssetUrl(activeItem.beforeImage)}
                 alt={activeItem.beforeLabel}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-95 cinematic-video-sync"
                 draggable={false}

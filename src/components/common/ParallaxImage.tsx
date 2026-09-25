@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 interface ParallaxImageProps {
   src: string;
@@ -62,7 +63,7 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
         className="absolute inset-x-0 -top-[24%] w-full h-[148%] pointer-events-none"
       >
         <img
-          src={src}
+          src={getAssetUrl(src)}
           alt={alt}
           loading={loading}
           className={`w-full h-full object-cover object-center ${imgClassName}`}

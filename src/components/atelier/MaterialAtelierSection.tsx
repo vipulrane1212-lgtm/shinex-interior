@@ -9,6 +9,7 @@ import {
   Compass,
 } from 'lucide-react';
 import { ASSET_LIBRARY } from '@/lib/mockData';
+import { getAssetUrl } from '@/lib/assetHelper';
 import { ParallaxImage } from '@/components/common/ParallaxImage';
 
 interface MaterialSpec {
@@ -36,8 +37,8 @@ export const MaterialAtelierSection: React.FC = () => {
       name: 'Roman Alabaster Travertine',
       category: 'Natural Architectural Stone',
       tag: 'Atelier Signature',
-      image: ASSET_LIBRARY.materialTravertine || '/images/material_travertine.jpg',
-      thumbnail: ASSET_LIBRARY.materialTravertine || '/images/material_travertine.jpg',
+      image: ASSET_LIBRARY.materialTravertine || getAssetUrl('/images/material_travertine.jpg'),
+      thumbnail: ASSET_LIBRARY.materialTravertine || getAssetUrl('/images/material_travertine.jpg'),
       thickness: '20mm Solid Slab',
       origin: 'Tivoli Quarry, Central Italy',
       finish: 'Honed Matte with Micro-Beveled Miter Edge',
@@ -52,8 +53,8 @@ export const MaterialAtelierSection: React.FC = () => {
       name: 'Smoked European White Oak',
       category: 'Acoustic Timber Joinery',
       tag: 'Japandi Warmth',
-      image: ASSET_LIBRARY.materialSmokedOak || '/images/material_smoked_oak.jpg',
-      thumbnail: ASSET_LIBRARY.materialSmokedOak || '/images/material_smoked_oak.jpg',
+      image: ASSET_LIBRARY.materialSmokedOak || getAssetUrl('/images/material_smoked_oak.jpg'),
+      thumbnail: ASSET_LIBRARY.materialSmokedOak || getAssetUrl('/images/material_smoked_oak.jpg'),
       thickness: '18mm Calibrated Core + 1.2mm Real Wood Flutes',
       origin: 'Bavarian Sustainable Forests (FSC Certified)',
       finish: 'Rubio Monocoat Natural Zero-VOC Matte Oil',
@@ -68,8 +69,8 @@ export const MaterialAtelierSection: React.FC = () => {
       name: 'Calacatta Gold Seamless Quartz',
       category: 'Architectural Worktops',
       tag: 'Zero-Porosity Surface',
-      image: ASSET_LIBRARY.materialCalacatta || '/images/material_calacatta.jpg',
-      thumbnail: ASSET_LIBRARY.materialCalacatta || '/images/material_calacatta.jpg',
+      image: ASSET_LIBRARY.materialCalacatta || getAssetUrl('/images/material_calacatta.jpg'),
+      thumbnail: ASSET_LIBRARY.materialCalacatta || getAssetUrl('/images/material_calacatta.jpg'),
       thickness: '15mm / 40mm Built-Up Miter Profile',
       origin: 'Engineered Quartz Crystal Slab',
       finish: 'Velvet Satin Anti-Glare Polish',
@@ -84,8 +85,8 @@ export const MaterialAtelierSection: React.FC = () => {
       name: 'German Homag PUR Edgebanding',
       category: 'Factory Joint Technology',
       tag: 'Zero-Joint Seam',
-      image: ASSET_LIBRARY.materialPurEdge || '/images/material_pur_edge.jpg',
-      thumbnail: ASSET_LIBRARY.materialPurEdge || '/images/material_pur_edge.jpg',
+      image: ASSET_LIBRARY.materialPurEdge || getAssetUrl('/images/material_pur_edge.jpg'),
+      thumbnail: ASSET_LIBRARY.materialPurEdge || getAssetUrl('/images/material_pur_edge.jpg'),
       thickness: '1.3mm Impact-Resistant Profile',
       origin: 'Homag LaserTech Plant, Germany',
       finish: 'PUR Reactive Hot-Melt Waterproof Bond',
@@ -100,8 +101,8 @@ export const MaterialAtelierSection: React.FC = () => {
       name: 'Brushed Champagne PVD Brass',
       category: 'Architectural Motion & Hardware',
       tag: 'Haute Quincaillerie',
-      image: ASSET_LIBRARY.materialChampagneBrass || '/images/material_champagne_brass.jpg',
-      thumbnail: ASSET_LIBRARY.materialChampagneBrass || '/images/material_champagne_brass.jpg',
+      image: ASSET_LIBRARY.materialChampagneBrass || getAssetUrl('/images/material_champagne_brass.jpg'),
+      thumbnail: ASSET_LIBRARY.materialChampagneBrass || getAssetUrl('/images/material_champagne_brass.jpg'),
       thickness: 'Solid Forged Brass Core',
       origin: 'Bespoke European Precision Tooling',
       finish: 'Micro-Knurled Texture with Anti-Oxidation PVD',

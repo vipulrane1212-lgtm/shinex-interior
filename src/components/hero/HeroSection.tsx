@@ -16,6 +16,7 @@ import { MagneticButton } from '../common/MagneticButton';
 import { RemotionQuoteButton } from '../common/RemotionQuoteButton';
 import { BeforeAfterParallaxShowcase } from './BeforeAfterParallaxShowcase';
 import { ASSET_LIBRARY } from '@/lib/mockData';
+import { getAssetUrl } from '@/lib/assetHelper';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ export const HeroSection: React.FC = () => {
         {/* Full-bleed Architectural Penthouse Canvas with Directional Warm Scrim */}
         <div className="absolute inset-0 w-full h-full opacity-35 lg:opacity-45">
           <img
-            src={ASSET_LIBRARY.heroAi}
+            src={getAssetUrl(ASSET_LIBRARY.heroAi)}
             alt="Luxury Architectural Interior Atelier"
             className="w-full h-full object-cover object-right-top filter saturate-95 contrast-100 cinematic-video-hero"
           />
