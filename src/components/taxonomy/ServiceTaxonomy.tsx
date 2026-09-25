@@ -88,26 +88,25 @@ export const ServiceTaxonomy: React.FC<ServiceTaxonomyProps> = ({ onSelectVarian
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
-            <span>Interactive Service Taxonomy</span>
+            <span>Curated Interior Designs</span>
           </div>
 
           <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
-            The 2026 Architectural{' '}
+            Luxury Interior{' '}
             <span className="font-script font-normal text-gold-gradient text-[1.45em] inline-block transform -rotate-1 relative">
-              Catalog
+              Designs
               <span className="absolute -bottom-1 left-2 right-2 h-[2px] bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent" />
             </span>
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
-            Explore curated design typologies engineered with calibrated core boards, laser PUR edge-banding,
-            and German motion hardware. Select any archetype to pre-fill your exact BOQ.
+            Explore premium modular kitchens, master bedroom suites, and designer living rooms. Select any design to calculate your exact quotation.
           </p>
 
           {/* Architectural Dimension Line */}
           <div className="max-w-xs mx-auto pt-2 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[#8C8479]/70">
             <span className="w-8 h-[1px] bg-[#DDD5C7]" />
-            <span>CALIBRATED CORE SPECIFICATION</span>
+            <span>FACTORY-PRECISION FINISHES</span>
             <span className="w-8 h-[1px] bg-[#DDD5C7]" />
           </div>
         </div>
