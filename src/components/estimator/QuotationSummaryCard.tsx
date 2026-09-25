@@ -41,10 +41,28 @@ export const QuotationSummaryCard: React.FC<QuotationSummaryCardProps> = ({
 
   const handleDownloadPDF = () => {
     setDownloadSuccess(true);
-    // Simulate generation and trigger print / PDF save
+    // Trigger automated webhook logging & CRM sync
+    try {
+      const webhookPayload = {
+        event: 'boq_pdf_breakdown_requested',
+        boqCode,
+        config: result.config,
+        subtotal: result.subtotal,
+        finalTotal: result.finalDiscountedTotal,
+        savings: result.discountSavings,
+        client: userData || { fullName: 'Valued Client' },
+        timestamp: new Date().toISOString(),
+      };
+      const events = JSON.parse(localStorage.getItem('shinex_webhook_queue') || '[]');
+      events.push(webhookPayload);
+      localStorage.setItem('shinex_webhook_queue', JSON.stringify(events));
+    } catch {
+      // LocalStorage fallback
+    }
+
     setTimeout(() => {
       window.print();
-    }, 300);
+    }, 350);
     setTimeout(() => setDownloadSuccess(false), 4000);
   };
 
@@ -55,30 +73,30 @@ export const QuotationSummaryCard: React.FC<QuotationSummaryCardProps> = ({
   };
 
   return (
-    <div className="space-y-8 bg-[#FFFFFF] p-6 sm:p-10 rounded-3xl border border-[#DDD5C7] shadow-xl relative overflow-hidden">
+    <div id="boq-schedule-document" className="space-y-8 bg-[#FFFFFF] p-6 sm:p-10 rounded-3xl border border-[#DDD5C7] shadow-xl relative overflow-hidden print:p-0 print:border-none print:shadow-none">
       {/* Top Architectural Print Watermark */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#EDE7DC] gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="font-serif text-2xl font-medium text-[#181615]">
-              Shine<span className="text-[#C8A97E] font-semibold">X</span>
+            <span className="font-heading text-2xl font-bold text-[#181615]">
+              Shine<span className="text-[#C8A97E] font-black">X</span>
             </span>
             <span className="text-xs uppercase font-sans tracking-[0.2em] font-bold text-[#8C8479] pl-2 border-l border-[#DDD5C7]">
               Turnkey BOQ Schedule
             </span>
           </div>
-          <p className="text-xs text-[#5E5952] mt-1">
+          <p className="text-xs text-[#5E5952] mt-1 font-medium">
             Prepared under Sneha Enterprises Master Specifications • Valid for 30 Days
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="text-right">
-            <p className="text-[10px] uppercase tracking-wider text-[#8C8479]">Reference BOQ No.</p>
+            <p className="text-[10px] uppercase tracking-wider text-[#8C8479] font-medium">Reference BOQ No.</p>
             <button
               onClick={handleCopyCode}
               title="Click to copy voucher reference"
-              className="font-mono text-xs font-semibold text-[#181615] hover:text-[#C8A97E] flex items-center gap-1.5 transition-colors"
+              className="font-mono text-xs font-bold text-[#181615] hover:text-[#C8A97E] flex items-center gap-1.5 transition-colors"
             >
               <span>{boqCode}</span>
               {copied ? <Check className="w-3.5 h-3.5 text-[#3A6B56]" /> : <Share2 className="w-3 h-3 text-[#8C8479]" />}
@@ -99,17 +117,17 @@ export const QuotationSummaryCard: React.FC<QuotationSummaryCardProps> = ({
       <div className="p-6 sm:p-8 rounded-2xl bg-[#F7F1E6] border border-[#E5D2BA] grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Total Price & Discount Pill */}
         <div className="lg:col-span-7 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E5D2BA] text-xs font-semibold text-[#3A6B56]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E5D2BA] text-xs font-bold text-[#3A6B56]">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
             <span>15% Sneha Enterprises Digital Grant Applied</span>
           </div>
 
           <div>
-            <span className="text-xs uppercase tracking-wider text-[#8C8479] block">
+            <span className="text-xs uppercase tracking-wider text-[#8C8479] font-bold block">
               Final Net Turnkey Investment
             </span>
             <div className="flex items-baseline gap-4 mt-1">
-              <span className="font-serif text-3xl sm:text-5xl font-semibold text-[#181615]">
+              <span className="font-serif text-3xl sm:text-5xl font-extrabold text-[#181615]">
                 {formatINR(result.finalDiscountedTotal)}
               </span>
               <span className="text-sm sm:text-base text-[#8C8479] line-through">
@@ -138,7 +156,7 @@ export const QuotationSummaryCard: React.FC<QuotationSummaryCardProps> = ({
             className="w-full py-3 px-5 rounded-xl bg-[#FFFFFF] hover:bg-[#F3EFE6] text-[#181615] font-medium text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 border border-[#DDD5C7]"
           >
             <Download className="w-4 h-4 text-[#C8A97E]" />
-            <span>{downloadSuccess ? 'Generating PDF...' : 'Download Official BOQ PDF'}</span>
+            <span>{downloadSuccess ? 'Generating BOQ PDF...' : 'Download PDF Breakdown'}</span>
           </button>
         </div>
       </div>

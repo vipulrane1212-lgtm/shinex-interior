@@ -12,12 +12,28 @@ export function useLenis() {
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
       smoothWheel: true,
       wheelMultiplier: 0.9,
       touchMultiplier: 1.5,
     });
+
+    (window as unknown as { lenis: Lenis }).lenis = lenis;
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('a');
+      if (!target) return;
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        const el = document.querySelector(href);
+        if (el) {
+          e.preventDefault();
+          lenis.scrollTo(el as HTMLElement, { offset: -70 });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
 
     let rafId: number;
 
@@ -30,6 +46,8 @@ export function useLenis() {
 
     return () => {
       cancelAnimationFrame(rafId);
+      document.removeEventListener('click', handleAnchorClick);
+      delete (window as unknown as { lenis?: Lenis }).lenis;
       lenis.destroy();
     };
   }, []);

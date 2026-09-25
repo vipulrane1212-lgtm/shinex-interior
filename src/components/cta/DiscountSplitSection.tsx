@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 import { ASSET_LIBRARY } from '@/lib/mockData';
 import { PropertyConfig } from '@/lib/types';
+import { sanitizeWhatsAppPhone } from '@/lib/calculatorLogic';
+import { ParallaxImage } from '@/components/common/ParallaxImage';
+import { RemotionQuoteButton } from '@/components/common/RemotionQuoteButton';
 
 export const DiscountSplitSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -26,46 +29,102 @@ export const DiscountSplitSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [voucherCode, setVoucherCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName.trim() || formData.whatsappNumber.length < 10) return;
+    setPhoneError('');
+    if (!formData.fullName.trim()) return;
+
+    const phoneCheck = sanitizeWhatsAppPhone(formData.whatsappNumber);
+    if (!phoneCheck.isValid) {
+      setPhoneError('Please enter a valid 10-digit WhatsApp number');
+      return;
+    }
 
     setIsSubmitting(true);
+    const code = `SHINEX-GRANT-15-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    try {
+      const existing = JSON.parse(localStorage.getItem('shinex_leads') || '[]');
+      existing.push({
+        ...formData,
+        whatsappNumber: phoneCheck.formatted,
+        voucherCode: code,
+        timestamp: new Date().toISOString(),
+        type: '15_percent_discount_booking',
+      });
+      localStorage.setItem('shinex_leads', JSON.stringify(existing));
+    } catch {
+      // LocalStorage fallback
+    }
+
     setTimeout(() => {
-      const code = `SHINEX-GRANT-15-${Math.floor(1000 + Math.random() * 9000)}`;
       setVoucherCode(code);
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }, 500);
   };
 
   return (
-    <section id="discount-booking" className="py-24 bg-[#F3EFE6] border-t border-[#EDE7DC] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl overflow-hidden border border-[#DDD5C7] shadow-2xl bg-[#FFFFFF] grid grid-cols-1 lg:grid-cols-12">
+    <section id="discount-booking" className="py-24 bg-luxury-canvas border-t border-[#EDE7DC] relative overflow-hidden cove-lighting-wash">
+      {/* Background Architectural Drafting Grid Pattern & Radial Illumination */}
+      <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+        {/* Fluted Oak Slat Margins */}
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+
+        {/* Multi-layered Drafting Grids */}
+        <div className="absolute inset-0 bg-architectural-fine-grid opacity-25" />
+        <div className="absolute inset-0 bg-architectural-grid opacity-15" />
+        <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
+
+        {/* Golden Radial Ambient Light */}
+        <div className="absolute top-1/2 left-1/3 w-[700px] h-[550px] bg-[#C8A97E]/14 rounded-full blur-[150px]" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[450px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+
+        {/* Architectural CAD Blueprint Watermark Annotation */}
+        <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>GRANT DWG: PROMO-15 // SNEHA ENTERPRISES DIGITAL SUBSIDY</span>
+          <span>100% FIXED PRICE LOCK // ZERO ESCALATION BOND</span>
+        </div>
+
+        <div className="absolute top-12 right-12 hidden 2xl:flex flex-col items-end text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>FACTORY ALLOCATION: 25 TOTAL SLOTS</span>
+          <span>COMPLIMENTARY GERMAN HARDWARE INCLUDED</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="rounded-3xl overflow-hidden border border-[#DDD5C7] shadow-2xl bg-[#FFFFFF] grid grid-cols-1 lg:grid-cols-12 relative">
+          {/* Corner Registration Brackets */}
+          <div className="absolute top-3 left-3 z-20 font-mono text-[9px] text-[#C8A97E] pointer-events-none hidden sm:block">┌ GRANT-2026</div>
+          <div className="absolute top-3 right-3 z-20 font-mono text-[9px] text-[#C8A97E] pointer-events-none hidden sm:block">SNEHA-LOCK ┐</div>
+
           {/* Left Column (50%): High-Resolution Architectural Visual Hook */}
           <div className="lg:col-span-6 relative p-8 sm:p-12 lg:p-14 flex flex-col justify-between overflow-hidden min-h-[500px]">
-            {/* Background Image with Dark Vignette */}
+            {/* Background Image with Dark Vignette and Parallax Scroll */}
             <div className="absolute inset-0 z-0">
-              <img
-                src={ASSET_LIBRARY.handoverGift}
+              <ParallaxImage
+                src={ASSET_LIBRARY.handoverGiftAi || ASSET_LIBRARY.handoverGift}
                 alt="Luxury Handover Detail"
-                className="w-full h-full object-cover object-center filter brightness-[0.78]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#181615]/95 via-[#181615]/60 to-black/30" />
+                className="w-full h-full"
+                imgClassName="filter brightness-[0.78] cinematic-video-1"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#181615]/95 via-[#181615]/60 to-black/30 pointer-events-none" />
+              </ParallaxImage>
             </div>
 
             {/* Top Floating Badge */}
             <div className="relative z-10 space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[11px] font-semibold text-[#181615] uppercase tracking-wider shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[11px] font-bold text-[#181615] uppercase tracking-wider shadow-sm">
                 <Gift className="w-3.5 h-3.5 text-[#C8A97E]" />
                 <span>Exclusive Digital Booking Privilege</span>
               </span>
 
-              <h2 className="font-editorial-h2 text-white leading-tight text-3xl sm:text-4xl">
-                Claim Flat 15% OFF <br />
-                On Complete Turnkey Interiors
+              <h2 className="font-editorial text-white font-bold leading-tight tracking-tight text-3xl sm:text-4xl">
+                Get Flat <span className="font-script text-gold-light text-[1.42em] font-normal inline-block transform -rotate-1">15% OFF</span> <br />
+                On Your Complete Turnkey Package
               </h2>
 
               <p className="text-xs sm:text-sm text-[#EDE7DC] leading-relaxed max-w-md">
@@ -87,6 +146,14 @@ export const DiscountSplitSection: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
                 <div>
+                  <span className="font-semibold">Free Chimney &amp; Hob Upgrade</span>{' '}
+                  <span className="text-[#E5D2BA]">(German Faber/Franke Specification)</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#C8A97E] shrink-0 mt-0.5" />
+                <div>
                   <span className="font-semibold">Complimentary German Hardware Upgrade</span>{' '}
                   <span className="text-[#E5D2BA]">(Blum Soft-Close Drawer Runners)</span>
                 </div>
@@ -101,15 +168,15 @@ export const DiscountSplitSection: React.FC = () => {
               </div>
 
               {/* Ethical Scarcity Counter */}
-              <div className="mt-4 pt-3 flex items-center justify-between p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+              <div className="mt-4 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#F59E0B] animate-ping" />
                   <span className="text-[11px] font-semibold text-[#EDE7DC]">
-                    18 of 25 Factory Slots Claimed This Month
+                    Valid for the next 7 bookings this month
                   </span>
                 </div>
                 <span className="text-[10px] uppercase font-mono text-[#C8A97E] font-bold">
-                  7 Slots Left
+                  18/25 Slots Claimed
                 </span>
               </div>
             </div>
@@ -120,7 +187,7 @@ export const DiscountSplitSection: React.FC = () => {
             {!submitted ? (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-editorial-h3 text-2xl text-[#181615]">
+                  <h3 className="font-editorial text-2xl sm:text-3xl text-[#181615] font-bold tracking-tight">
                     Schedule Site Laser Consultation
                   </h3>
                   <p className="text-xs text-[#5E5952] mt-1 leading-relaxed">
@@ -157,9 +224,15 @@ export const DiscountSplitSection: React.FC = () => {
                       required
                       placeholder="+91 98450 12890"
                       value={formData.whatsappNumber}
-                      onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#DDD5C7] text-sm text-[#181615] bg-[#FBF9F5] focus:outline-none focus:ring-1 focus:ring-[#C8A97E]"
+                      onChange={(e) => {
+                        setFormData({ ...formData, whatsappNumber: e.target.value });
+                        if (phoneError) setPhoneError('');
+                      }}
+                      className={`w-full px-4 py-3 rounded-xl border text-sm text-[#181615] bg-[#FBF9F5] focus:outline-none focus:ring-1 focus:ring-[#C8A97E] ${
+                        phoneError ? 'border-red-400 bg-red-50/20' : 'border-[#DDD5C7]'
+                      }`}
                     />
+                    {phoneError && <p className="text-[11px] text-red-500">{phoneError}</p>}
                   </div>
 
                   {/* Location & Society */}
@@ -218,21 +291,17 @@ export const DiscountSplitSection: React.FC = () => {
                   </div>
 
                   {/* Submit CTA */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full mt-3 py-4 px-6 rounded-2xl bg-[#C8A97E] hover:bg-[#B69566] text-[#181615] font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-soft-luxury hover:shadow-luxury-hover flex items-center justify-center gap-2 cursor-pointer border border-[#E5D2BA]"
-                  >
-                    {isSubmitting ? (
-                      <span>Reserving Factory Slot...</span>
-                    ) : (
-                      <>
-                        <Sparkles className="w-4 h-4" />
-                        <span>Claim 15% Voucher &amp; Book Site Visit</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
+                  <div className="mt-3">
+                    <RemotionQuoteButton
+                      type="submit"
+                      disabled={isSubmitting}
+                      size="lg"
+                      className="w-full"
+                      subtitle="Price lock guaranteed • Zero sales harassment"
+                    >
+                      {isSubmitting ? 'Reserving Factory Slot...' : 'Claim 15% Voucher & Schedule Site Consultation'}
+                    </RemotionQuoteButton>
+                  </div>
                 </form>
 
                 <p className="text-[11px] text-center text-[#8C8479]">
@@ -241,10 +310,8 @@ export const DiscountSplitSection: React.FC = () => {
               </div>
             ) : (
               /* Success / Voucher Confirmation Card */
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="space-y-6 text-center py-6"
+              <div
+                className="space-y-6 text-center py-6 animate-in fade-in duration-300"
               >
                 <div className="w-16 h-16 rounded-full bg-[#3A6B56]/10 text-[#3A6B56] mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-8 h-8" />
@@ -283,7 +350,7 @@ export const DiscountSplitSection: React.FC = () => {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>

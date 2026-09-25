@@ -11,8 +11,8 @@ interface BeforeAfterSliderProps {
 }
 
 export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
-  beforeImage = ASSET_LIBRARY.beforeConstruction,
-  afterImage = ASSET_LIBRARY.afterFinished,
+  beforeImage = ASSET_LIBRARY.beforeConstructionLocal || ASSET_LIBRARY.beforeConstruction,
+  afterImage = ASSET_LIBRARY.afterFinishedAi || ASSET_LIBRARY.afterFinished,
   className = '',
 }) => {
   const [sliderPosition, setSliderPosition] = useState(52); // Percentage 0 - 100
@@ -29,7 +29,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
   const handleTouchMove = useCallback(
     (e: TouchEvent) => {
-      if (!isDragging) return;
+      if (!isDragging || !e.touches || e.touches.length === 0) return;
       handleMove(e.touches[0].clientX);
     },
     [isDragging, handleMove]
@@ -45,6 +45,22 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
+  }, []);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.max(5, prev - 5));
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.min(95, prev + 5));
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      setSliderPosition(5);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      setSliderPosition(95);
+    }
   }, []);
 
   useEffect(() => {
@@ -65,22 +81,32 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
   return (
     <div
       ref={containerRef}
+      role="slider"
+      tabIndex={0}
+      aria-label="Interactive Before and After Turnkey Interior Comparison Slider"
+      aria-valuenow={Math.round(sliderPosition)}
+      aria-valuemin={5}
+      aria-valuemax={95}
+      aria-valuetext={`${Math.round(sliderPosition)} percent raw concrete shell, ${100 - Math.round(sliderPosition)} percent finished luxury turnkey room`}
+      onKeyDown={handleKeyDown}
       onMouseDown={(e) => {
         setIsDragging(true);
         handleMove(e.clientX);
       }}
       onTouchStart={(e) => {
         setIsDragging(true);
-        handleMove(e.touches[0].clientX);
+        if (e.touches && e.touches[0]) {
+          handleMove(e.touches[0].clientX);
+        }
       }}
-      className={`relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden select-none cursor-ew-resize border border-[#DDD5C7] shadow-luxury-hover bg-[#EDE7DC] ${className}`}
-      aria-label="Interactive Before and After Turnkey Interior Comparison Slider"
+      style={{ touchAction: 'none' }}
+      className={`relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden select-none cursor-ew-resize border border-[#DDD5C7] shadow-luxury-hover bg-[#EDE7DC] touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A97E] focus-visible:ring-offset-2 ${className}`}
     >
       {/* Background (After: Finished Turnkey Living Room) */}
       <img
         src={afterImage}
         alt="Finished Luxury Turnkey Interior by ShineX Infra"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none cinematic-video-sync"
         draggable={false}
       />
 
@@ -92,7 +118,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         <img
           src={beforeImage}
           alt="Raw Bare Concrete Construction Shell"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-95"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-95 cinematic-video-sync"
           draggable={false}
         />
       </div>

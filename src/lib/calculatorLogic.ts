@@ -203,48 +203,48 @@ export function calculateBOQ(state: CalculatorState): BOQCalculationResult {
       },
       {
         id: 'boq-t-2',
-        category: 'Bedrooms & Storage',
+        category: 'Wardrobes & Storage',
         label: 'Master & Secondary Bedroom Wardrobes',
         specification: 'Floor-to-ceiling modular storage with accessory drawers, tie racks & dressers',
         hardware: 'Silent-motion sliding tracks and soft-close German hinges',
-        rawAmount: Math.round(calculatedTotal * 0.26),
-        discountedAmount: Math.round(finalDiscountedTotal * 0.26),
+        rawAmount: Math.round(calculatedTotal * 0.24),
+        discountedAmount: Math.round(finalDiscountedTotal * 0.24),
       },
       {
         id: 'boq-t-3',
-        category: 'Living & Dining',
-        label: 'Architectural Media Unit, Wall Fluting & Foyer',
-        specification: `${aestheticData.label} wall paneling, floating credenza & shoe cabinet`,
-        hardware: 'Concealed push catches, knurled champagne handles',
-        rawAmount: Math.round(calculatedTotal * 0.20),
-        discountedAmount: Math.round(finalDiscountedTotal * 0.20),
+        category: 'False Ceiling',
+        label: 'False Ceiling & Architectural Cove Lighting',
+        specification: 'Saint-Gobain Gyproc false ceiling with perimeter cove & magnetic tracks',
+        hardware: 'Philips/CRI90+ warm 2700K ambient LED fixtures',
+        rawAmount: Math.round(calculatedTotal * 0.14),
+        discountedAmount: Math.round(finalDiscountedTotal * 0.14),
       },
       {
         id: 'boq-t-4',
-        category: 'Ceiling & Lighting',
-        label: 'Architectural False Ceiling & Magnetic Track Lights',
-        specification: 'Saint-Gobain Gyproc false ceiling with perimeter cove & magnetic tracks',
-        hardware: 'Philips/CRI90+ warm 2700K ambient LED fixtures',
+        category: 'Electrical & Plumbing',
+        label: 'Electrical Re-wiring & Concealed Plumbing',
+        specification: 'Finolex FR grade copper wiring, modular Legrand switchplates & CPVC plumbing lines',
+        hardware: 'Gold-medal modular conduits, brass ball valves, Kohler diverters',
         rawAmount: Math.round(calculatedTotal * 0.12),
         discountedAmount: Math.round(finalDiscountedTotal * 0.12),
       },
       {
         id: 'boq-t-5',
-        category: 'Civil & Finishing',
-        label: 'Countertops, Tiling Polish & Wall Paneling',
+        category: 'Civil Work',
+        label: 'Civil Work, Tiling Polish & Countertops',
         specification: '20mm Premium Quartz slab, Italian marble crystallization, Royale Luxury Emulsion',
         hardware: 'Stainless steel 304 fasteners, laser-level alignment',
-        rawAmount: Math.round(calculatedTotal * 0.08),
-        discountedAmount: Math.round(finalDiscountedTotal * 0.08),
+        rawAmount: Math.round(calculatedTotal * 0.12),
+        discountedAmount: Math.round(finalDiscountedTotal * 0.12),
       },
       {
         id: 'boq-t-6',
-        category: 'Engineering & Protection',
-        label: 'German Factory Milling, Edge Banding & Delivery',
-        specification: 'Homag German PUR edge-banding with zero-joint thermal bonding',
-        hardware: 'Protective corrugated bubble wrap & vacuum site sealing',
-        rawAmount: Math.round(calculatedTotal * 0.06),
-        discountedAmount: Math.round(finalDiscountedTotal * 0.06),
+        category: 'Living & Media',
+        label: 'Architectural Media Unit & German Factory Milling',
+        specification: `${aestheticData.label} wall paneling, Homag PUR zero-joint edge-banded cabinetry`,
+        hardware: 'Concealed push catches, knurled champagne handles',
+        rawAmount: Math.round(calculatedTotal * 0.10),
+        discountedAmount: Math.round(finalDiscountedTotal * 0.10),
       },
     ];
   }
@@ -279,13 +279,29 @@ export function calculateBOQ(state: CalculatorState): BOQCalculationResult {
  * Format Indian Rupee currency with standard Indian commas (e.g. ₹12,50,000)
  */
 export function formatINR(amount: number): string {
-  if (isNaN(amount)) return '₹0';
+  if (amount === null || amount === undefined || isNaN(amount)) return '₹0';
   const formatter = new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
     maximumFractionDigits: 0,
   });
   return formatter.format(amount);
+}
+
+/**
+ * Sanitize and validate Indian WhatsApp phone number
+ */
+export function sanitizeWhatsAppPhone(input: string): { isValid: boolean; formatted: string; rawDigits: string } {
+  if (!input) return { isValid: false, formatted: '', rawDigits: '' };
+  const digits = input.replace(/\D/g, '');
+  if (digits.length === 10) {
+    return { isValid: true, formatted: `+91 ${digits.slice(0, 5)} ${digits.slice(5)}`, rawDigits: `91${digits}` };
+  }
+  if (digits.length === 12 && digits.startsWith('91')) {
+    const local = digits.slice(2);
+    return { isValid: true, formatted: `+91 ${local.slice(0, 5)} ${local.slice(5)}`, rawDigits: digits };
+  }
+  return { isValid: false, formatted: input, rawDigits: digits };
 }
 
 /**
@@ -296,3 +312,4 @@ export function generateBOQCode(config: PropertyConfig): string {
   const randomSuffix = Math.floor(1000 + Math.random() * 9000);
   return `SX-${config}-${dateStr}-${randomSuffix}`;
 }
+

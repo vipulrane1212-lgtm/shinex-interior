@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temp tunnel artifacts
+tunnel-*.txt
+public-link.txt
+out*.html

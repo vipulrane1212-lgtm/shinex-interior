@@ -60,6 +60,7 @@ export interface TaxonomyVariant {
   subtitle: string;
   tag: string;
   image: string;
+  localAiImage?: string;
   recommendedSize: string;
   hardwareSpec: string;
   coreMaterial: string;
@@ -78,6 +79,7 @@ export interface TaxonomyVariant {
 export interface VideoReelData {
   id: string;
   title: string;
+  triggerLabel?: string;
   homeownerName: string;
   projectTag: string;
   handoverDays: number;
@@ -119,4 +121,26 @@ export interface WorkflowMilestone {
   badge: string;
   icon: string;
   highlightStat: string;
+  illustrationImage?: string;
 }
+
+export interface BeforeAfterItem {
+  id: string;
+  category: string;
+  title: string;
+  subtitle: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel: string;
+  afterLabel: string;
+  sqft: string;
+  handoverDays: number;
+  specs: {
+    coreMaterial: string;
+    hardware: string;
+    lighting: string;
+    warranty: string;
+  };
+  highlightQuote: string;
+}
+

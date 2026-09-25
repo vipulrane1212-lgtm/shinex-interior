@@ -156,6 +156,51 @@ describe('Quotation Calculator Engine & BOQ Mathematics', () => {
     assert.match(formatINR(480000), /4,80,000/);
     assert.equal(formatINR(0), '₹0');
     assert.equal(formatINR(NaN), '₹0');
+    // @ts-expect-error Testing null fallback
+    assert.equal(formatINR(null), '₹0');
+    // @ts-expect-error Testing undefined fallback
+    assert.equal(formatINR(undefined), '₹0');
+  });
+
+  it('validates Turnkey BOQ categories contain all 5 required functional cost heads', () => {
+    const state: CalculatorState = {
+      step: 5,
+      configuration: '3BHK',
+      scope: 'full_turnkey',
+      aesthetic: 'warm_minimalist',
+      materialTier: 'premium_german',
+      timeline: '30_60_days',
+    };
+    const result = calculateBOQ(state);
+    const categories = result.items.map((i) => i.category);
+
+    assert.ok(categories.includes('Modular Kitchen'), 'Must include Modular Kitchen');
+    assert.ok(categories.includes('Wardrobes & Storage'), 'Must include Wardrobes');
+    assert.ok(categories.includes('False Ceiling'), 'Must include False Ceiling');
+    assert.ok(categories.includes('Electrical & Plumbing'), 'Must include Electrical/Plumbing');
+    assert.ok(categories.includes('Civil Work'), 'Must include Civil Work');
+  });
+
+  it('sanitizes and validates Indian WhatsApp numbers robustly', async () => {
+    const { sanitizeWhatsAppPhone } = await import('../src/lib/calculatorLogic');
+
+    const valid10 = sanitizeWhatsAppPhone('9845012890');
+    assert.equal(valid10.isValid, true);
+    assert.equal(valid10.rawDigits, '919845012890');
+    assert.equal(valid10.formatted, '+91 98450 12890');
+
+    const validWithCountry = sanitizeWhatsAppPhone('+91 98450 12890');
+    assert.equal(validWithCountry.isValid, true);
+    assert.equal(validWithCountry.rawDigits, '919845012890');
+
+    const validDashed = sanitizeWhatsAppPhone('+91-98450-12890');
+    assert.equal(validDashed.isValid, true);
+
+    const invalidShort = sanitizeWhatsAppPhone('98450');
+    assert.equal(invalidShort.isValid, false);
+
+    const empty = sanitizeWhatsAppPhone('');
+    assert.equal(empty.isValid, false);
   });
 
   it('generates unique BOQ codes prefixed with SX and config', () => {
@@ -211,6 +256,10 @@ describe('Domain Data Integrity & Specifications', () => {
       assert.ok(r.videoReel?.highlights.length >= 3);
       assert.ok(r.videoReel?.specs.kitchen);
     }
+
+    const priyaReel = GOOGLE_REVIEWS_DATA.find((r) => r.author.includes('Priya'))?.videoReel;
+    assert.ok(priyaReel, 'Priya review must have video reel');
+    assert.equal(priyaReel?.triggerLabel, "Watch Priya's 45-Day Handover Video");
   });
 
   it('validates brand profile legal entities and factories', () => {

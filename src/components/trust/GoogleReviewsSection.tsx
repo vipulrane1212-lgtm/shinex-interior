@@ -11,13 +11,41 @@ import {
 import { GOOGLE_REVIEWS_DATA } from '@/lib/mockData';
 import { VideoReelData } from '@/lib/types';
 import { VideoReelModal } from './VideoReelModal';
+import { ParallaxImage } from '@/components/common/ParallaxImage';
 
 export const GoogleReviewsSection: React.FC = () => {
   const [activeReel, setActiveReel] = useState<VideoReelData | null>(null);
 
   return (
-    <section id="reviews" className="py-24 bg-[#FBF9F5] border-t border-[#EDE7DC] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-24 bg-luxury-canvas border-t border-[#EDE7DC] relative overflow-hidden cove-lighting-wash">
+      {/* Background Architectural Drafting Grid & Subtle Radial Illumination */}
+      <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+        {/* Fluted Oak Slat Margins */}
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+
+        {/* Multi-layered Drafting Grids */}
+        <div className="absolute inset-0 bg-architectural-fine-grid opacity-25" />
+        <div className="absolute inset-0 bg-architectural-grid opacity-15" />
+        <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
+
+        {/* Ambient Radial Illumination */}
+        <div className="absolute top-1/3 right-1/4 w-[700px] h-[550px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
+        <div className="absolute bottom-10 left-12 w-[500px] h-[400px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+
+        {/* Architectural CAD Blueprint Watermark Annotation */}
+        <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>AUDIT DWG: REV-03 // VERIFIED RESIDENTIAL REVIEWS</span>
+          <span>SNEHA ENTERPRISES 100% UNEDITED CLIENT TESTIMONIALS</span>
+        </div>
+
+        <div className="absolute top-12 right-12 hidden 2xl:flex flex-col items-end text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>GOOGLE MAPS VERIFIED RATING: 4.9 / 5.0</span>
+          <span>150+ APARTMENT & VILLA COMPLETIONS</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Pinned Google Trust Header */}
         <div className="p-8 rounded-3xl bg-[#FFFFFF] border border-[#DDD5C7] shadow-soft-luxury flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
           <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
@@ -45,17 +73,17 @@ export const GoogleReviewsSection: React.FC = () => {
 
             <div>
               <div className="flex items-center justify-center sm:justify-start gap-2">
-                <span className="font-serif text-3xl font-bold text-[#181615]">4.9</span>
+                <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#181615]">4.9</span>
                 <div className="flex text-[#F59E0B]">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-current" />
                   ))}
                 </div>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#3A6B56]/10 text-[#3A6B56]">
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#3A6B56]/10 text-[#3A6B56]">
                   Verified Business
                 </span>
               </div>
-              <p className="text-xs text-[#5E5952] mt-1 font-medium">
+              <p className="text-xs text-[#5E5952] mt-1 font-semibold">
                 150+ Verified Homeowner Reviews across Bangalore &amp; Mumbai
               </p>
             </div>
@@ -66,7 +94,7 @@ export const GoogleReviewsSection: React.FC = () => {
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#F7F1E6] hover:bg-[#C8A97E] text-[#181615] font-semibold text-xs uppercase tracking-wider transition-all duration-300 border border-[#E5D2BA]"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#F7F1E6] hover:bg-[#C8A97E] text-[#181615] font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-[#E5D2BA]"
             >
               <span>Verify on Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -76,19 +104,31 @@ export const GoogleReviewsSection: React.FC = () => {
 
         {/* Section Editorial Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F1E6] border border-[#E5D2BA] text-xs font-semibold text-[#181615] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
             <span>Living Stories &amp; Unedited Feedback</span>
           </div>
 
-          <h2 className="font-editorial-h2 text-[#181615]">
-            Client Video Testimonial Theater
+          <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
+            Client Video{' '}
+            <span className="font-script font-normal text-gold-gradient text-[1.45em] inline-block transform -rotate-1 relative">
+              Testimonial
+              <span className="absolute -bottom-1 left-2 right-2 h-[2px] bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent" />
+            </span>{' '}
+            Theater
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
             Real homeowners. Real 45-day on-time handovers. Real receipts. Watch unscripted tours of completed
             luxury spaces and read verified Google reviews.
           </p>
+
+          {/* Architectural Dimension Line */}
+          <div className="max-w-xs mx-auto pt-2 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[#8C8479]/70">
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+            <span>VERIFIED ON-SITE ARCHITECTURAL REVIEWS</span>
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+          </div>
         </div>
 
         {/* Reviews & Video Reel Triggers Grid */}
@@ -156,30 +196,31 @@ export const GoogleReviewsSection: React.FC = () => {
                     onClick={() => setActiveReel(review.videoReel!)}
                     className="w-full group/reel relative aspect-[16/9] rounded-2xl overflow-hidden border border-[#DDD5C7] text-left select-none focus:outline-none"
                   >
-                    <img
+                    <ParallaxImage
                       src={review.videoReel.thumbnail}
                       alt={review.videoReel.title}
-                      className="w-full h-full object-cover group-hover/reel:scale-105 transition-transform duration-500 filter brightness-90"
-                    />
+                      className="w-full h-full"
+                      imgClassName="filter brightness-90 group-hover:brightness-95 transition-all duration-700"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
-                    {/* Pulsing Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-[#C8A97E] text-[#181615] flex items-center justify-center shadow-lg group-hover/reel:scale-110 transition-transform">
-                        <Play className="w-5 h-5 fill-current ml-0.5" />
+                      {/* Pulsing Champagne Play Button */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-12 h-12 rounded-full bg-[#C8A97E] text-[#181615] flex items-center justify-center shadow-lg group-hover/reel:scale-110 transition-transform animate-pulse-glow">
+                          <Play className="w-5 h-5 fill-current ml-0.5" />
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Bottom Video Reel Label */}
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-[#E5D2BA] block">
-                        Watch {review.videoReel.duration} Tour
-                      </span>
-                      <p className="text-xs font-semibold drop-shadow-sm truncate">
-                        {review.videoReel.title}
-                      </p>
-                    </div>
+                      {/* Bottom Video Reel Label */}
+                      <div className="absolute bottom-3 left-3 right-3 text-white pointer-events-none">
+                        <span className="text-[10px] uppercase font-mono tracking-wider text-[#E5D2BA] block">
+                          {review.videoReel.triggerLabel || `Watch ${review.videoReel.duration} Tour`}
+                        </span>
+                        <p className="text-xs font-semibold drop-shadow-sm truncate">
+                          {review.videoReel.title}
+                        </p>
+                      </div>
+                    </ParallaxImage>
                   </button>
                 </div>
               )}

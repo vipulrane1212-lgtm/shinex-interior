@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Phone, ArrowUpRight, Menu, X, Shield, Sparkles } from 'lucide-react';
 import { MagneticButton } from './MagneticButton';
+import { RemotionQuoteButton } from './RemotionQuoteButton';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,11 +19,12 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Catalog & Taxonomy', href: '#catalog' },
-    { label: '5-Step Workflow', href: '#journey' },
+    { label: 'Catalog', href: '#catalog' },
+    { label: 'Material Atelier', href: '#materials' },
+    { label: '5-Step Journey', href: '#journey' },
     { label: 'Cost Engine', href: '#estimator' },
-    { label: 'Client Reels & Reviews', href: '#reviews' },
-    { label: '15% Digital Grant', href: '#discount-booking' },
+    { label: 'Client Stories', href: '#reviews' },
+    { label: '15% Grant', href: '#discount-booking' },
   ];
 
   return (
@@ -38,8 +40,8 @@ export const Navbar: React.FC = () => {
           {/* Brand & Legal Trust Anchor */}
           <Link href="/" className="group flex flex-col focus:outline-none">
             <div className="flex items-center gap-2">
-              <span className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#181615] group-hover:text-[#B69566] transition-colors">
-                Shine<span className="text-[#C8A97E] font-semibold">X</span>
+              <span className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-[#181615] group-hover:text-[#B69566] transition-colors">
+                Shine<span className="text-[#C8A97E] font-black">X</span>
               </span>
               <span className="hidden sm:inline-block text-[11px] font-sans tracking-[0.2em] uppercase font-bold text-[#8C8479] pl-2 border-l border-[#DDD5C7]">
                 Infra Interior
@@ -77,25 +79,23 @@ export const Navbar: React.FC = () => {
               <span>+91 98450 12890</span>
             </a>
 
-            <MagneticButton
+            <RemotionQuoteButton
               href="#estimator"
-              variant="primary"
               size="sm"
-              ariaLabel="Launch Quotation Calculator"
+              subtitle="15% Factory Benefit"
             >
-              <span>Instant BOQ</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </MagneticButton>
+              Instant BOQ
+            </RemotionQuoteButton>
           </div>
 
           {/* Mobile Hamburger Toggle */}
           <div className="flex md:hidden items-center gap-2">
-            <a
+            <RemotionQuoteButton
               href="#estimator"
-              className="text-[11px] font-semibold tracking-wider uppercase bg-[#C8A97E] text-[#181615] px-3 py-1.5 rounded-full"
+              size="sm"
             >
               Get Quote
-            </a>
+            </RemotionQuoteButton>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#181615] hover:text-[#C8A97E] transition-colors focus:outline-none"

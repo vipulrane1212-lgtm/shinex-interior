@@ -13,6 +13,8 @@ import {
   MapPin,
 } from 'lucide-react';
 import { UserLeadData } from '@/lib/types';
+import { sanitizeWhatsAppPhone } from '@/lib/calculatorLogic';
+import { RemotionQuoteButton } from '../common/RemotionQuoteButton';
 
 interface UnlockGateModalProps {
   onUnlock: (data: UserLeadData) => void;
@@ -35,9 +37,9 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
     if (!formData.fullName.trim()) {
       errs.fullName = 'Please enter your full name';
     }
-    const cleanPhone = formData.whatsappNumber.replace(/\D/g, '');
-    if (cleanPhone.length < 10) {
-      errs.whatsappNumber = 'Please enter a valid 10-digit WhatsApp number';
+    const phoneCheck = sanitizeWhatsAppPhone(formData.whatsappNumber);
+    if (!phoneCheck.isValid) {
+      errs.whatsappNumber = 'Please enter a valid 10-digit WhatsApp number (e.g. +91 98450 12890)';
     }
     if (!formData.pincode.trim()) {
       errs.pincode = 'Pincode or Society name is required';
@@ -51,38 +53,54 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
     if (!validate()) return;
 
     setIsSubmitting(true);
+    const sanitized = sanitizeWhatsAppPhone(formData.whatsappNumber);
+    const finalizedData: UserLeadData = {
+      ...formData,
+      whatsappNumber: sanitized.formatted,
+    };
+
+    // Persist lead
+    try {
+      const existing = JSON.parse(localStorage.getItem('shinex_leads') || '[]');
+      existing.push({ ...finalizedData, timestamp: new Date().toISOString(), type: 'boq_unlock' });
+      localStorage.setItem('shinex_leads', JSON.stringify(existing));
+    } catch {
+      // LocalStorage fallback
+    }
+
     setTimeout(() => {
-      onUnlock(formData);
+      onUnlock(finalizedData);
       setIsSubmitting(false);
     }, 400);
   };
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center p-4">
+    <div className="fixed sm:absolute inset-0 z-50 sm:z-30 flex items-end sm:items-center justify-center p-0 sm:p-4">
       {/* Dark frosted luxury backdrop */}
-      <div className="absolute inset-0 bg-[#181615]/35 backdrop-blur-md transition-all duration-500 rounded-3xl" />
+      <div className="absolute inset-0 bg-[#181615]/45 backdrop-blur-md transition-all duration-500 rounded-none sm:rounded-3xl" />
 
-      {/* Modal Dialog Card */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 15 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="relative z-40 max-w-lg w-full bg-[#FFFFFF] rounded-3xl border border-[#E5D2BA] shadow-2xl p-6 sm:p-8 space-y-6"
+      {/* Modal Dialog Card (Bottom-Sheet on Mobile, Center Modal on Desktop) */}
+      <div
+        className="relative z-40 max-w-lg w-full bg-[#FFFFFF] rounded-t-3xl sm:rounded-3xl border border-[#E5D2BA] shadow-2xl p-6 sm:p-8 space-y-5 max-h-[92vh] overflow-y-auto animate-in fade-in slide-in-from-bottom-4 duration-300"
       >
+        {/* Mobile Drag Indicator Bar */}
+        <div className="sm:hidden w-12 h-1.5 bg-[#DDD5C7] rounded-full mx-auto mb-2" />
+
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F7F1E6] border border-[#E5D2BA] text-xs font-semibold text-[#181615] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F7F1E6] border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider">
             <Lock className="w-3.5 h-3.5 text-[#C8A97E]" />
             <span>Instant Digital Unlock</span>
           </div>
 
-          <h3 className="font-editorial-h3 text-2xl text-[#181615]">
-            Your Custom BOQ &amp; 15% Grant Voucher Are Ready
+          <h3 className="font-editorial-h3 text-xl sm:text-2xl font-bold text-[#181615] leading-tight">
+            Your customized architectural BOQ and 15% digital savings voucher are ready.
           </h3>
 
-          <p className="text-xs text-[#5E5952] leading-relaxed max-w-sm mx-auto">
-            You've unlocked an estimated <strong className="text-[#3A6B56] font-semibold">{savingsEstimate}</strong> in
-            Sneha Enterprises digital savings. Enter your contact details to reveal the itemized schedule of quantities.
+          <p className="text-xs text-[#5E5952] leading-relaxed max-w-md mx-auto">
+            Where should we send your itemized breakdown? You've unlocked an estimated{' '}
+            <strong className="text-[#3A6B56] font-semibold">{savingsEstimate}</strong> in Sneha Enterprises digital
+            savings grant.
           </p>
         </div>
 
@@ -145,21 +163,17 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full mt-2 py-4 px-6 rounded-2xl bg-[#C8A97E] hover:bg-[#B69566] text-[#181615] font-semibold text-xs uppercase tracking-widest shadow-soft-luxury hover:shadow-luxury-hover transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer border border-[#E5D2BA]"
-          >
-            {isSubmitting ? (
-              <span>Decrypting BOQ Breakdown...</span>
-            ) : (
-              <>
-                <Sparkles className="w-4 h-4" />
-                <span>Reveal Itemized BOQ &amp; Claim 15% Voucher</span>
-                <ArrowRight className="w-4 h-4" />
-              </>
-            )}
-          </button>
+          <div className="mt-2">
+            <RemotionQuoteButton
+              type="submit"
+              disabled={isSubmitting}
+              size="lg"
+              className="w-full"
+              subtitle="Zero hidden costs • 10-Year warranty certificate"
+            >
+              {isSubmitting ? 'Decrypting BOQ Breakdown...' : 'Reveal Itemized BOQ & Claim 15% Voucher'}
+            </RemotionQuoteButton>
+          </div>
         </form>
 
         {/* Security & Anti-Spam Badge */}
@@ -174,7 +188,7 @@ export const UnlockGateModal: React.FC<UnlockGateModalProps> = ({ onUnlock, savi
             <span>Encrypted Lead Security</span>
           </span>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -36,13 +36,13 @@ interface StepRendererProps {
 
 export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onNext: _onNext }) => {
   const containerVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, staggerChildren: 0.05 } },
-    exit: { opacity: 0, x: -20, transition: { duration: 0.2 } },
+    hidden: { opacity: 1, x: 0 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+    exit: { opacity: 1, x: 0, transition: { duration: 0.15 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 1, y: 0 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -67,8 +67,8 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
         className="space-y-6"
       >
         <div>
-          <h3 className="font-editorial-h3 text-[#181615]">Select Your Property Configuration</h3>
-          <p className="text-xs text-[#8C8479] mt-1">
+          <h3 className="font-editorial-h3 text-[#181615] font-bold">Select Your Property Configuration</h3>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">
             Choose your floor plan archetype to calibrate baseline timber dimensions and factory milling hours.
           </p>
         </div>
@@ -146,8 +146,8 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
         className="space-y-6"
       >
         <div>
-          <h3 className="font-editorial-h3 text-[#181615]">Define Your Scope of Work</h3>
-          <p className="text-xs text-[#8C8479] mt-1">
+          <h3 className="font-editorial-h3 text-[#181615] font-bold">Define Your Scope of Work</h3>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">
             Specify the areas required. Full Turnkey includes complete false ceiling, electricals & civil work.
           </p>
         </div>
@@ -208,11 +208,27 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
 
   // STEP 3: Interior Aesthetic
   if (state.step === 3) {
-    const aestheticOptions: { key: AestheticStyle; colorSample: string }[] = [
-      { key: 'warm_minimalist', colorSample: 'from-[#FBF9F5] to-[#F3EFE6]' },
-      { key: 'modern_classical', colorSample: 'from-[#FFFFFF] to-[#EDE7DC]' },
-      { key: 'japandi', colorSample: 'from-[#F3EFE6] to-[#E5D2BA]' },
-      { key: 'luxe_contemporary', colorSample: 'from-[#EAE3D5] to-[#C8A97E]' },
+    const aestheticOptions: { key: AestheticStyle; image: string; tag: string }[] = [
+      {
+        key: 'warm_minimalist',
+        image: '/images/luxury_kitchen_island.jpg',
+        tag: 'Travertine & Bouclé',
+      },
+      {
+        key: 'modern_classical',
+        image: '/images/bedroom_classical_wardrobe.jpg',
+        tag: 'Fluted Glass & Boiserie',
+      },
+      {
+        key: 'japandi',
+        image: '/images/luxury_master_suite.jpg',
+        tag: 'Smoked Oak & Slats',
+      },
+      {
+        key: 'luxe_contemporary',
+        image: '/images/architectural_marble_lounge.jpg',
+        tag: 'Botticino & Champagne',
+      },
     ];
 
     return (
@@ -225,9 +241,9 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
         className="space-y-6"
       >
         <div>
-          <h3 className="font-editorial-h3 text-[#181615]">Select Your Interior Aesthetic Persona</h3>
-          <p className="text-xs text-[#8C8479] mt-1">
-            Every mood evokes distinct surface textures, mood lighting temperatures, and edge trims.
+          <h3 className="font-editorial-h3 text-[#181615] font-bold">Select Your Interior Aesthetic Persona</h3>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">
+            Every persona evokes distinct surface textures, mood lighting temperatures, and edge trims.
           </p>
         </div>
 
@@ -244,29 +260,42 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
                 onClick={() => {
                   onChange('aesthetic', opt.key);
                 }}
-                className={`p-5 rounded-2xl text-left border transition-all duration-300 relative flex flex-col justify-between ${
+                className={`group rounded-2xl text-left border transition-all duration-300 relative flex flex-col justify-between overflow-hidden ${
                   isSelected
                     ? 'bg-[#F7F1E6] border-[#C8A97E] shadow-card-depth ring-1 ring-[#C8A97E]'
                     : 'bg-[#FFFFFF] border-[#EDE7DC] hover:border-[#DDD5C7] hover:bg-[#FBF9F5]'
                 }`}
               >
-                {isSelected && (
-                  <span className="absolute top-4 right-4">
-                    <CheckCircle className="w-5 h-5 text-[#3A6B56]" />
-                  </span>
-                )}
+                {/* Visual Header with Image */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#F3EFE6]">
+                  <img
+                    src={opt.image}
+                    alt={data.label}
+                    className="w-full h-full object-cover cinematic-video-1 group-hover:brightness-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${opt.colorSample} border border-[#DDD5C7]`} />
-                    <h4 className="text-base font-semibold text-[#181615]">{data.label}</h4>
+                  <span className="absolute top-2.5 left-2.5 text-[10px] uppercase font-mono font-semibold text-white bg-black/50 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/20">
+                    {opt.tag}
+                  </span>
+
+                  {isSelected && (
+                    <span className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-[#3A6B56] text-white flex items-center justify-center shadow-md">
+                      <CheckCircle className="w-4 h-4" />
+                    </span>
+                  )}
+
+                  <div className="absolute bottom-2 left-3 right-3 text-white">
+                    <h4 className="text-sm font-semibold drop-shadow-sm">{data.label}</h4>
                   </div>
-                  <p className="text-xs text-[#5E5952] leading-relaxed">{data.desc}</p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#EDE7DC]/70 flex items-center justify-between text-[11px] text-[#8C8479]">
-                  <span>Color Spectrum</span>
-                  <span className="font-medium text-[#181615]">Alabaster / Warm Earth</span>
+                <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                  <p className="text-xs text-[#5E5952] leading-relaxed">{data.desc}</p>
+                  <div className="pt-2 border-t border-[#EDE7DC]/70 flex items-center justify-between text-[11px] text-[#8C8479]">
+                    <span>Tone Palette</span>
+                    <span className="font-medium text-[#181615]">Architectural Grade</span>
+                  </div>
                 </div>
               </motion.button>
             );
@@ -290,8 +319,8 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
         className="space-y-6"
       >
         <div>
-          <h3 className="font-editorial-h3 text-[#181615]">Choose Engineering & Hardware Grade</h3>
-          <p className="text-xs text-[#8C8479] mt-1">
+          <h3 className="font-editorial-h3 text-[#181615] font-bold">Choose Engineering & Hardware Grade</h3>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">
             All tiers include certified zero-joint edge banding and 10-year structural warranty.
           </p>
         </div>
@@ -381,8 +410,8 @@ export const StepRenderer: React.FC<StepRendererProps> = ({ state, onChange, onN
         className="space-y-6"
       >
         <div>
-          <h3 className="font-editorial-h3 text-[#181615]">When is Your Anticipated Handover?</h3>
-          <p className="text-xs text-[#8C8479] mt-1">
+          <h3 className="font-editorial-h3 text-[#181615] font-bold">When is Your Anticipated Handover?</h3>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">
             Our 45-day penalty guarantee is legally activated once the laser measurement is executed.
           </p>
         </div>

@@ -37,12 +37,19 @@ const config: Config = {
           star: "var(--color-google-star, #F59E0B)",
         },
         success: {
+          DEFAULT: "var(--color-success, #3A6B56)",
           emerald: "var(--color-success, #3A6B56)",
         },
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
-        sans: ["var(--font-plus-jakarta)", "Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
+        editorial: ["var(--font-cormorant)", "'Cormorant Garamond'", "Georgia", "serif"],
+        serif: ["var(--font-cormorant)", "'Cormorant Garamond'", "var(--font-playfair)", "'Playfair Display'", "Georgia", "serif"],
+        script: ["var(--font-calligraphy)", "'Pinyon Script'", "'Italianno'", "cursive"],
+        calligraphy: ["var(--font-calligraphy)", "'Pinyon Script'", "cursive"],
+        display: ["var(--font-cinzel)", "Cinzel", "var(--font-playfair)", "Playfair Display", "serif"],
+        heading: ["var(--font-cormorant)", "'Cormorant Garamond'", "var(--font-playfair)", "'Playfair Display'", "Cinzel", "Georgia", "serif"],
+        sans: ["var(--font-plus-jakarta)", "'Plus Jakarta Sans'", "var(--font-outfit)", "Outfit", "system-ui", "sans-serif"],
+        italiana: ["var(--font-italiana)", "'Italiana'", "serif"],
       },
       boxShadow: {
         'soft-luxury': '0 10px 30px -10px rgba(24, 22, 21, 0.05), 0 2px 8px -2px rgba(24, 22, 21, 0.03)',

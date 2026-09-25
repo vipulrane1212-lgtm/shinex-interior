@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll } from 'framer-motion';
 import {
   Sparkles,
   ShieldCheck,
@@ -13,30 +14,75 @@ import { MagneticButton } from '../common/MagneticButton';
 
 export const WorkflowJourney: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start 65%', 'end 75%'],
+  });
 
   return (
-    <section id="journey" className="py-24 bg-[#FBF9F5] border-t border-[#EDE7DC] relative overflow-hidden">
+    <section id="journey" className="py-24 bg-luxury-canvas border-t border-[#EDE7DC] relative overflow-hidden cove-lighting-wash">
+      {/* Background Architectural Drafting Grid & Ambient Radial Light */}
+      <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+        {/* Fluted Oak Slat Margins */}
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+
+        {/* Multi-layered Drafting Grids */}
+        <div className="absolute inset-0 bg-architectural-fine-grid opacity-25" />
+        <div className="absolute inset-0 bg-architectural-grid opacity-15" />
+        <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
+
+        {/* Ambient Radial Lighting Pool */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[650px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
+        <div className="absolute bottom-12 right-12 w-[500px] h-[450px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+
+        {/* Architectural CAD Blueprint Watermark Annotation */}
+        <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>TIMELINE DWG: PM-05 // CRITICAL PATH METHOD</span>
+          <span>SNEHA ENTERPRISES 45-DAY PERFORMANCE BOND</span>
+        </div>
+
+        <div className="absolute top-12 right-12 hidden 2xl:flex flex-col items-end text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>LEICA 3D DISTO SCAN // HOMAG DUST-FREE CNC</span>
+          <span>DAILY PENALTY: ₹1,500/DAY DELAY CREDIT</span>
+        </div>
+      </div>
+
       {/* Editorial Watermark */}
-      <div className="absolute left-1/2 top-10 -translate-x-1/2 text-[140px] md:text-[220px] font-serif font-light text-[#DDD5C7]/15 select-none pointer-events-none tracking-widest leading-none">
+      <div className="absolute left-1/2 top-10 -translate-x-1/2 text-[140px] md:text-[220px] font-display-monumental font-extrabold text-[#DDD5C7]/12 select-none pointer-events-none tracking-widest leading-none">
         ATELIER
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F1E6] border border-[#E5D2BA] text-xs font-semibold text-[#181615] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
-            <span>Canva-Style Infographical Execution</span>
+            <span>Infographical Execution Plan</span>
           </div>
 
-          <h2 className="font-editorial-h2 text-[#181615]">
-            The 5-Milestone Turnkey Journey
+          <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
+            The 5-Milestone{' '}
+            <span className="font-script font-normal text-gold-gradient text-[1.45em] inline-block transform -rotate-1 relative">
+              Turnkey
+              <span className="absolute -bottom-1 left-2 right-2 h-[2px] bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent" />
+            </span>{' '}
+            Journey
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
             From millimeter laser site scans to off-site German CNC fabrication and a strict 45-day penalty-backed
             handover. Experience total architectural transparency with Sneha Enterprises.
           </p>
+
+          {/* Architectural Dimension Line */}
+          <div className="max-w-xs mx-auto pt-2 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[#8C8479]/70">
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+            <span>RIGID 45-DAY PERFORMANCE PROTOCOL</span>
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+          </div>
         </div>
 
         {/* Timeline Navigation Dots (Quick Jump) */}
@@ -59,9 +105,46 @@ export const WorkflowJourney: React.FC = () => {
         </div>
 
         {/* Infographical Connected Cards Grid */}
-        <div className="relative">
-          {/* Vertical Connecting Champagne Line for Desktop */}
-          <div className="hidden lg:block absolute top-12 bottom-12 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-[#C8A97E] via-[#DDD5C7] to-[#C8A97E] dashed pointer-events-none" />
+        <div ref={containerRef} className="relative">
+          {/* Animated SVG Connecting Champagne Line for Desktop */}
+          <div className="hidden lg:block absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-6 pointer-events-none z-0">
+            <svg className="w-full h-full" viewBox="0 0 24 100" preserveAspectRatio="none">
+              <line
+                x1="12"
+                y1="0"
+                x2="12"
+                y2="100"
+                stroke="#DDD5C7"
+                strokeWidth="2"
+                strokeDasharray="4 4"
+                vectorEffect="non-scaling-stroke"
+              />
+              <motion.line
+                x1="12"
+                y1="0"
+                x2="12"
+                y2="100"
+                stroke="#C8A97E"
+                strokeWidth="3"
+                vectorEffect="non-scaling-stroke"
+                style={{
+                  pathLength: scrollYProgress,
+                }}
+              />
+            </svg>
+          </div>
+
+          {/* Animated Line for Mobile / Tablet */}
+          <div className="lg:hidden absolute top-8 bottom-8 left-6 w-[2px] bg-[#DDD5C7] pointer-events-none z-0">
+            <motion.div
+              className="w-full bg-[#C8A97E]"
+              style={{
+                scaleY: scrollYProgress,
+                transformOrigin: 'top',
+                height: '100%',
+              }}
+            />
+          </div>
 
           <div className="space-y-10 lg:space-y-16">
             {WORKFLOW_MILESTONES.map((milestone, idx) => {
@@ -127,8 +210,8 @@ export const WorkflowJourney: React.FC = () => {
             <ShieldCheck className="w-6 h-6" />
           </div>
 
-          <h3 className="font-editorial-h3 text-xl text-[#181615]">
-            Backed by the Sneha Enterprises 45-Day Performance Bond
+          <h3 className="font-editorial text-2xl sm:text-3xl font-bold tracking-tight text-[#181615]">
+            Backed by the Sneha Enterprises 45-Day <span className="font-script font-normal text-gold-gradient text-[1.3em]">Performance Bond</span>
           </h3>
 
           <p className="text-xs text-[#5E5952] max-w-xl mx-auto leading-relaxed">

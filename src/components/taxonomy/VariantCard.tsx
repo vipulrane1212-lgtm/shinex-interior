@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Sparkles, Layers, Cpu } from 'lucide-react';
 import { TaxonomyVariant } from '@/lib/types';
+import { ParallaxImage } from '@/components/common/ParallaxImage';
 
 interface VariantCardProps {
   variant: TaxonomyVariant;
@@ -12,52 +13,54 @@ interface VariantCardProps {
 
 export const VariantCard: React.FC<VariantCardProps> = ({ variant, onSelectForQuote }) => {
   return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 15 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="group flex flex-col bg-[#FFFFFF] rounded-2xl overflow-hidden border border-[#EDE7DC] hover:border-[#DDD5C7] shadow-soft-luxury hover:shadow-luxury-hover transition-all duration-500"
+    <article
+      className="group relative flex flex-col bg-[#FFFFFF] rounded-2xl overflow-hidden border border-[#EDE7DC] hover:border-[#DDD5C7] shadow-soft-luxury hover:shadow-luxury-hover transition-all duration-500 hover:-translate-y-1"
     >
-      {/* Visual Showcase with smooth zoom */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F3EFE6]">
-        <img
-          src={variant.image}
-          alt={variant.title}
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-          loading="lazy"
-        />
+      {/* Corner Drafting Registration Ticks */}
+      <div className="absolute top-2 left-2 z-20 font-mono text-[9px] text-white/50 pointer-events-none">┌</div>
+      <div className="absolute top-2 right-2 z-20 font-mono text-[9px] text-white/50 pointer-events-none">┐</div>
 
+      {/* Visual Showcase with smooth parallax window scroll */}
+      <ParallaxImage
+        src={variant.localAiImage || variant.image}
+        alt={variant.title}
+        className="aspect-[4/3] w-full bg-[#F3EFE6]"
+        imgClassName="group-hover:brightness-105 transition-all duration-700"
+      >
         {/* Gradient Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#181615]/70 via-transparent to-black/10 opacity-70 group-hover:opacity-60 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#181615]/75 via-transparent to-black/15 opacity-70 group-hover:opacity-60 transition-opacity" />
 
         {/* Top Badges */}
         <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[11px] font-semibold text-[#181615] shadow-sm uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[11px] font-bold text-[#181615] shadow-sm uppercase tracking-wider">
             <Sparkles className="w-3 h-3 text-[#C8A97E]" />
             <span>{variant.tag}</span>
           </span>
 
-          <span className="text-[11px] font-medium tracking-wide text-white bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full">
+          <span className="text-[11px] font-bold tracking-wide text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full">
             {variant.recommendedSize}
           </span>
         </div>
 
         {/* Bottom Image Overlay: Price Tag & Title */}
-        <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
-          <p className="text-[11px] uppercase tracking-widest text-[#E5D2BA] font-medium">Starting Range</p>
-          <p className="text-lg font-serif font-semibold text-white drop-shadow-sm">{variant.startingPrice}</p>
+        <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white flex items-end justify-between">
+          <div>
+            <p className="text-[10px] uppercase font-mono tracking-widest text-[#E5D2BA] font-bold">Starting Range</p>
+            <p className="text-xl font-editorial font-bold tracking-tight text-white drop-shadow-md">{variant.startingPrice}</p>
+          </div>
+          <span className="text-[9px] font-mono uppercase tracking-widest text-white/70 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded border border-white/10">
+            SPEC #{variant.id.slice(0, 8).toUpperCase()}
+          </span>
         </div>
-      </div>
+      </ParallaxImage>
 
       {/* Card Content & Architectural Specs */}
       <div className="p-6 flex-1 flex flex-col justify-between space-y-5 bg-[#FFFFFF]">
         <div>
-          <h3 className="font-serif text-xl font-medium text-[#181615] group-hover:text-[#B69566] transition-colors leading-snug">
+          <h3 className="font-editorial text-2xl font-bold tracking-tight text-[#181615] group-hover:text-[#B69566] transition-colors leading-snug">
             {variant.title}
           </h3>
-          <p className="text-xs text-[#8C8479] mt-1">{variant.subtitle}</p>
+          <p className="text-xs text-[#8C8479] mt-1 font-medium">{variant.subtitle}</p>
 
           {/* Technical Spec Matrix */}
           <div className="mt-4 pt-4 border-t border-[#EDE7DC] space-y-2.5 text-xs text-[#5E5952]">
@@ -95,11 +98,11 @@ export const VariantCard: React.FC<VariantCardProps> = ({ variant, onSelectForQu
             onClick={() => onSelectForQuote(variant)}
             className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-[#F7F1E6] hover:bg-[#C8A97E] text-[#181615] font-semibold text-xs tracking-wider uppercase transition-all duration-300 group/btn border border-[#E5D2BA]"
           >
-            <span>Select for Custom Quote</span>
+            <span>Select for Quote -&gt;</span>
             <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };

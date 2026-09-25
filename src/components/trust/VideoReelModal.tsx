@@ -32,14 +32,33 @@ export const VideoReelModal: React.FC<VideoReelModalProps> = ({ reel, onClose })
       setProgress((prev) => (prev >= 100 ? 0 : prev + 2));
     }, 400);
 
-    return () => clearInterval(timer);
-  }, [reel]);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [reel, onClose]);
 
   if (!reel) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={reel.title}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      >
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -62,7 +81,7 @@ export const VideoReelModal: React.FC<VideoReelModalProps> = ({ reel, onClose })
             <img
               src={reel.thumbnail}
               alt={reel.title}
-              className="w-full h-full object-cover object-center filter brightness-90"
+              className="w-full h-full object-cover object-center filter brightness-90 cinematic-video-1"
             />
             {/* Dark gradient overlay for readable typography */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />

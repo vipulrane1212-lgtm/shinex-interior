@@ -29,9 +29,14 @@
   --color-google-star: #F59E0B;         /* Google Maps Verified Star Amber */
   --color-success: #3A6B56;             /* Heritage Deep Sage Green */
 
-  /* Font Families */
+  /* Font Families - Ultra-Luxury Architectural Typography */
+  --font-playfair: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', 'Playfair Display', Georgia, serif;
   --font-cormorant: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-plus-jakarta: 'Plus Jakarta Sans', 'Satoshi', system-ui, -apple-system, sans-serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-calligraphy: 'Pinyon Script', cursive;
+  --font-italiana: 'Italiana', serif;
 }
 
 /* Ensure no dark mode inversion overrides the warm residential-luxury palette */
@@ -97,29 +102,85 @@ html.lenis, html.lenis body {
   background: #C8A97E;
 }
 
-/* Editorial Fluid Typography System */
+/* Editorial Fluid Typography System - Bold Premium Architecture */
 .font-editorial-h1 {
-  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
-  font-size: clamp(2.75rem, 5vw + 1rem, 4.75rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-family: var(--font-playfair), "Playfair Display", var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2.85rem, 5.5vw + 1rem, 5.25rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .font-editorial-h2 {
-  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
-  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.25rem);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.15;
+  font-family: var(--font-playfair), "Playfair Display", var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2.15rem, 3.8vw + 0.5rem, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .font-editorial-h3 {
-  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
-  font-size: clamp(1.25rem, 1.5vw + 0.25rem, 1.75rem);
-  font-weight: 600;
+  font-family: var(--font-playfair), "Playfair Display", var(--font-cormorant), Georgia, serif;
+  font-size: clamp(1.35rem, 1.6vw + 0.25rem, 1.95rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+}
+
+.font-editorial-h4 {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 800;
   letter-spacing: -0.01em;
-  line-height: 1.25;
+  line-height: 1.3;
+}
+
+.font-display-monumental {
+  font-family: var(--font-cinzel), 'Cinzel', serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Step 1: Editorial Luxury Typography & Calligraphy Utility Classes */
+.font-editorial {
+  font-family: 'Cormorant Garamond', var(--font-cormorant), Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Pinyon Script', var(--font-calligraphy), cursive;
+}
+
+/* Step 2: Lenis Smooth Scrolling Engine Integration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.font-editorial-display {
+  font-family: var(--font-cinzel), 'Cinzel', var(--font-playfair), Georgia, serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-heading-bold {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  letter-spacing: -0.015em;
 }
 
 .text-body-large {
@@ -150,9 +211,467 @@ html.lenis, html.lenis body {
   border-color: var(--color-border-strong);
 }
 
+/* Typography Extensions: Calligraphy & Haute Couture */
+.font-calligraphy {
+  font-family: var(--font-calligraphy), 'Pinyon Script', cursive;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.font-italiana {
+  font-family: var(--font-italiana), 'Italiana', serif;
+}
+
+/* Luxury Metallic Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #DFBA73 0%, #C8A97E 45%, #9B7E4B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  background: linear-gradient(135deg, #F9F1E2 0%, #DFBA73 50%, #C8A97E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Architectural Textured Blueprint Grid Background */
+.bg-architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(200, 169, 126, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 169, 126, 0.18) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-architectural-fine-grid {
+  background-image: 
+    linear-gradient(to right, rgba(221, 213, 199, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 213, 199, 0.4) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Authentic Isometric Drafting Graph for Architectural Planning */
+.bg-architectural-isometric {
+  background-image: 
+    linear-gradient(30deg, rgba(200, 169, 126, 0.12) 1px, transparent 1px),
+    linear-gradient(-30deg, rgba(200, 169, 126, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 213, 199, 0.25) 1px, transparent 1px);
+  background-size: 48px 84px;
+}
+
+/* Luxury Plaster / Limestone Architectural Canvas */
+.bg-luxury-canvas {
+  background-color: var(--color-canvas-primary);
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(200, 169, 126, 0.14) 0px, transparent 55%),
+    radial-gradient(at 85% 25%, rgba(237, 231, 220, 0.7) 0px, transparent 55%),
+    radial-gradient(at 50% 60%, rgba(247, 241, 230, 0.5) 0px, transparent 75%),
+    radial-gradient(at 20% 85%, rgba(200, 169, 126, 0.10) 0px, transparent 60%);
+}
+
+/* Hand-Troweled Venetian Lime Plaster Grain & Light Grazing */
+.venetian-plaster-grain {
+  background-image: radial-gradient(rgba(24, 22, 21, 0.08) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+/* Architectural 2700K Cove Lighting Grazing Wash (Top/Bottom) */
+.cove-lighting-wash {
+  position: relative;
+}
+.cove-lighting-wash::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(200, 169, 126, 0.18) 0%, rgba(200, 169, 126, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Rhythmic Fluted Oak Slat Shadows for Wall Elevation Depth */
+.fluted-slat-shadows {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 18px,
+    rgba(221, 213, 199, 0.35) 18px,
+    rgba(200, 169, 126, 0.12) 19px,
+    rgba(24, 22, 21, 0.03) 20px
+  );
+}
+
+/* Architectural CAD Technical Stamp Seal */
+.architectural-stamp {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed rgba(200, 169, 126, 0.55);
+  border-radius: 9999px;
+  padding: 0.6rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8C8479;
+}
+
+/* Corner Drafting Registration Crosshairs */
+.drafting-crosshair {
+  position: relative;
+}
+.drafting-crosshair::before,
+.drafting-crosshair::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(200, 169, 126, 0.45);
+}
+
+/* Gold Leaf Shimmer Micro-Border */
+.gold-leaf-border {
+  border: 1px solid rgba(200, 169, 126, 0.45);
+  box-shadow: 0 0 15px -3px rgba(200, 169, 126, 0.18), inset 0 0 12px -4px rgba(200, 169, 126, 0.12);
+}
+
+/* Architectural Dimension Line (Horizontal) */
+.dimension-line-h {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 14px;
+}
+.dimension-line-h::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #DDD5C7;
+}
+.dimension-line-h::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 1px;
+  background: #C8A97E;
+  box-shadow: calc(100% - 1px) 0 0 #C8A97E;
+}
+
+/* Subtle Luxury Radial Glow */
+.bg-radial-luxury {
+  background: radial-gradient(circle at 50% 0%, rgba(200, 169, 126, 0.16) 0%, rgba(251, 249, 245, 0) 70%);
+}
+
+.bg-radial-dark-luxury {
+  background: radial-gradient(circle at 50% 30%, rgba(200, 169, 126, 0.22) 0%, rgba(24, 22, 21, 0.96) 75%);
+}
+
+/* Luxury Glassmorphism Container */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(229, 210, 186, 0.6);
+  box-shadow: 0 20px 45px -15px rgba(24, 22, 21, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.glass-dark-luxury {
+  background: rgba(24, 22, 21, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 169, 126, 0.3);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.45);
+}
+
+/* Floating Architectural Annotation Pin */
+.architectural-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid #E5D2BA;
+  color: #5E5952;
+}
+
 /* Backdrop blur fallback */
 @supports not (backdrop-filter: blur(8px)) {
   .backdrop-blur-md {
     background-color: rgba(251, 249, 245, 0.96);
   }
 }
+
+/* Print Optimization for Official Architectural BOQ Schedule */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #181615 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header,
+  footer,
+  section#catalog,
+  section#journey,
+  section#reviews,
+  section#discount-booking,
+  .no-print,
+  button,
+  .custom-cursor {
+    display: none !important;
+  }
+
+  #estimator {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  #boq-schedule-document {
+    border: 1px solid #DDD5C7 !important;
+    box-shadow: none !important;
+    padding: 1.5rem !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* =========================================================================
+   CINEMATIC VIDEO MOTION ENGINE (Auto Smooth, Lag-Free Ken Burns Pan & Zoom)
+   GPU-composited CSS transforms running at 60/120fps with zero layout thrashing
+   ========================================================================= */
+
+@keyframes cinematicVideoPanZoom1 {
+  0% {
+    transform: scale(1.08) translate3d(-2.5%, -0.6%, 0);
+  }
+  35% {
+    transform: scale(1.15) translate3d(-0.5%, 0.8%, 0);
+  }
+  70% {
+    transform: scale(1.11) translate3d(1.8%, -0.5%, 0);
+  }
+  100% {
+    transform: scale(1.16) translate3d(2.5%, 0.6%, 0);
+  }
+}
+
+@keyframes cinematicVideoPanZoom2 {
+  0% {
+    transform: scale(1.16) translate3d(2.5%, 0.6%, 0);
+  }
+  35% {
+    transform: scale(1.10) translate3d(0.6%, -0.8%, 0);
+  }
+  70% {
+    transform: scale(1.15) translate3d(-1.5%, 0.5%, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-2.5%, -0.6%, 0);
+  }
+}
+
+@keyframes cinematicVideoPanZoom3 {
+  0% {
+    transform: scale(1.09) translate3d(-2.0%, 1.2%, 0);
+  }
+  50% {
+    transform: scale(1.16) translate3d(2.0%, -1.0%, 0);
+  }
+  100% {
+    transform: scale(1.10) translate3d(-0.8%, -1.2%, 0);
+  }
+}
+
+@keyframes cinematicVideoHero {
+  0% {
+    transform: scale(1.08) translate3d(-2.2%, -0.8%, 0);
+  }
+  50% {
+    transform: scale(1.16) translate3d(2.2%, 0.8%, 0);
+  }
+  100% {
+    transform: scale(1.10) translate3d(-1.0%, 1.2%, 0);
+  }
+}
+
+@keyframes cinematicVideoSync {
+  0% {
+    transform: scale(1.08) translate3d(-2.2%, -0.8%, 0);
+  }
+  50% {
+    transform: scale(1.15) translate3d(2.2%, 0.8%, 0);
+  }
+  100% {
+    transform: scale(1.10) translate3d(0.4%, -1.0%, 0);
+  }
+}
+
+@keyframes cinematicVideoMacro {
+  0% {
+    transform: scale(1.08) translate3d(-1.6%, -1.0%, 0);
+  }
+  50% {
+    transform: scale(1.16) translate3d(1.6%, 1.0%, 0);
+  }
+  100% {
+    transform: scale(1.10) translate3d(-0.8%, 1.2%, 0);
+  }
+}
+
+.cinematic-video,
+.cinematic-video-1 {
+  animation: cinematicVideoPanZoom1 20s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cinematic-video-2 {
+  animation: cinematicVideoPanZoom2 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cinematic-video-3 {
+  animation: cinematicVideoPanZoom3 22s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cinematic-video-hero {
+  animation: cinematicVideoHero 28s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cinematic-video-sync {
+  animation: cinematicVideoSync 22s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cinematic-video-macro {
+  animation: cinematicVideoMacro 20s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Stagger Delays for Multi-Card Grids */
+.cinematic-delay-1 {
+  animation-delay: -3.5s;
+}
+
+.cinematic-delay-2 {
+  animation-delay: -7s;
+}
+
+.cinematic-delay-3 {
+  animation-delay: -10.5s;
+}
+
+.cinematic-delay-4 {
+  animation-delay: -14s;
+}
+
+.cinematic-delay-5 {
+  animation-delay: -17.5s;
+}
+
+/* Remotion-Style Kinetic Micro-Motion CTA System */
+@keyframes remotionConicSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes remotionShimmer {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  45%, 100% {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+@keyframes remotionPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(200, 169, 126, 0.25), 0 8px 30px rgba(24, 22, 21, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(200, 169, 126, 0.55), 0 14px 45px rgba(200, 169, 126, 0.25);
+  }
+}
+
+.remotion-shimmer-sweep {
+  animation: remotionShimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.remotion-pulse-glow {
+  animation: remotionPulseGlow 3s ease-in-out infinite;
+}
+
+.remotion-conic-border {
+  animation: remotionConicSpin 4s linear infinite;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-video,
+  .cinematic-video-1,
+  .cinematic-video-2,
+  .cinematic-video-3,
+  .cinematic-video-hero,
+  .cinematic-video-sync,
+  .cinematic-video-macro,
+  .remotion-shimmer-sweep,
+  .remotion-pulse-glow,
+  .remotion-conic-border {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+

@@ -43,32 +43,73 @@ export const ServiceTaxonomy: React.FC<ServiceTaxonomyProps> = ({ onSelectVarian
         })
       );
 
-      // Smooth scroll to Quotation Engine
+      // Smooth scroll to Quotation Engine using Lenis if available
+      const win = window as unknown as { lenis?: { scrollTo: (target: HTMLElement | string, opts?: { offset?: number }) => void } };
       const el = document.getElementById('estimator');
-      if (el) {
+      if (win.lenis && el) {
+        win.lenis.scrollTo(el, { offset: -70 });
+      } else if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
 
   return (
-    <section id="catalog" className="py-24 bg-[#FBF9F5] border-t border-[#EDE7DC] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="catalog" className="py-24 bg-luxury-canvas border-t border-[#EDE7DC] relative overflow-hidden cove-lighting-wash">
+      {/* Architectural Background Atmosphere & Drafting Schematics */}
+      <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+        {/* Fluted Architectural Oak Wall Shadows on Margins */}
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-16 opacity-30 fluted-slat-shadows hidden lg:block" />
+
+        {/* Multi-layered Drafting Grids */}
+        <div className="absolute inset-0 bg-architectural-fine-grid opacity-25" />
+        <div className="absolute inset-0 bg-architectural-grid opacity-15" />
+        <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
+
+        {/* Ambient Warm Golden Radial Glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[550px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
+        <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-[#EDE7DC]/60 rounded-full blur-[120px]" />
+
+        {/* Architectural CAD Blueprint Watermark Annotation */}
+        <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>DWG: AR-02 // JOINERY ARCHETYPES</span>
+          <span>SCALE: 1:25 @ A1 // HOMAG PUR 0.0mm SEAM</span>
+        </div>
+
+        <div className="absolute top-12 right-12 hidden 2xl:flex flex-col items-end text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">
+          <span>ELEVATION // WALL FINISH +3200MM</span>
+          <span>SPEC: BLUM CLIP-TOP 110° BLUMOTION</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F1E6] border border-[#E5D2BA] text-xs font-semibold text-[#181615] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E5D2BA] text-xs font-bold text-[#181615] uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A97E]" />
             <span>Interactive Service Taxonomy</span>
           </div>
 
-          <h2 className="font-editorial-h2 text-[#181615]">
-            The 2026 Architectural Catalog
+          <h2 className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight text-[#181615] leading-tight">
+            The 2026 Architectural{' '}
+            <span className="font-script font-normal text-gold-gradient text-[1.45em] inline-block transform -rotate-1 relative">
+              Catalog
+              <span className="absolute -bottom-1 left-2 right-2 h-[2px] bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent" />
+            </span>
           </h2>
 
           <p className="text-body-base text-[#5E5952] leading-relaxed">
             Explore curated design typologies engineered with calibrated core boards, laser PUR edge-banding,
             and German motion hardware. Select any archetype to pre-fill your exact BOQ.
           </p>
+
+          {/* Architectural Dimension Line */}
+          <div className="max-w-xs mx-auto pt-2 flex items-center justify-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[#8C8479]/70">
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+            <span>CALIBRATED CORE SPECIFICATION</span>
+            <span className="w-8 h-[1px] bg-[#DDD5C7]" />
+          </div>
         </div>
 
         {/* Category Tabs */}
@@ -105,33 +146,18 @@ export const ServiceTaxonomy: React.FC<ServiceTaxonomyProps> = ({ onSelectVarian
 
         {/* Variant Cards Grid */}
         <div className="min-h-[500px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.08,
-                  },
-                },
-                exit: { opacity: 0, transition: { duration: 0.2 } },
-              }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {filteredVariants.map((variant) => (
-                <VariantCard
-                  key={variant.id}
-                  variant={variant}
-                  onSelectForQuote={handleSelectForQuote}
-                />
-              ))}
-            </motion.div>
-          </AnimatePresence>
+          <div
+            key={activeCategory}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-in fade-in duration-300"
+          >
+            {filteredVariants.map((variant) => (
+              <VariantCard
+                key={variant.id}
+                variant={variant}
+                onSelectForQuote={handleSelectForQuote}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom Banner Note */}
