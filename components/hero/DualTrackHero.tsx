@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_HERO_IMAGE, COMMERCIAL_HERO_IMAGE } from '@/lib/assets';
@@ -22,13 +22,13 @@ export default function DualTrackHero() {
     if (side === 'left') {
       gsap.to(leftRef.current, { flex: '0 0 65%', duration: 0.6, ease: 'power3.out' });
       gsap.to(rightRef.current, { flex: '0 0 35%', duration: 0.6, ease: 'power3.out' });
-      gsap.to(leftImgRef.current, { scale: 1.06, duration: 0.8, ease: 'power2.out' });
+      gsap.to(leftImgRef.current, { scale: 1.08, duration: 0.8, ease: 'power2.out' });
       gsap.to(rightImgRef.current, { filter: 'brightness(0.5) contrast(0.95)', duration: 0.6 });
       gsap.to(leftImgRef.current, { filter: 'brightness(0.95) contrast(1.05)', duration: 0.6 });
     } else {
       gsap.to(rightRef.current, { flex: '0 0 65%', duration: 0.6, ease: 'power3.out' });
       gsap.to(leftRef.current, { flex: '0 0 35%', duration: 0.6, ease: 'power3.out' });
-      gsap.to(rightImgRef.current, { scale: 1.06, duration: 0.8, ease: 'power2.out' });
+      gsap.to(rightImgRef.current, { scale: 1.08, duration: 0.8, ease: 'power2.out' });
       gsap.to(leftImgRef.current, { filter: 'brightness(0.5) contrast(0.95)', duration: 0.6 });
       gsap.to(rightImgRef.current, { filter: 'brightness(0.95) contrast(1.05)', duration: 0.6 });
     }
@@ -52,7 +52,6 @@ export default function DualTrackHero() {
 
   const handleSelectTrack = (selectedTrack: 'residential' | 'commercial') => {
     setTrack(selectedTrack);
-    // Smooth scroll to the Bento Service Grid section
     const target = document.getElementById('services');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -72,14 +71,14 @@ export default function DualTrackHero() {
         ref={leftRef}
         onMouseEnter={() => handleMouseEnter('left')}
         onClick={() => handleSelectTrack('residential')}
-        className={`relative flex-1 group cursor-pointer overflow-hidden border-b lg:border-b-0 lg:border-r border-ink-border/60 transition-all duration-300 min-h-[45vh] lg:min-h-full flex items-end p-8 md:p-14 ${
+        className={`relative flex-1 group cursor-pointer overflow-hidden border-b lg:border-b-0 lg:border-r border-ink-border/60 transition-all duration-300 min-h-[46vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 ${
           track === 'residential' ? 'ring-1 ring-gold/40' : ''
         }`}
       >
         {/* Background Image Container */}
         <div
           ref={leftImgRef}
-          className="absolute inset-0 z-0 origin-center transition-transform"
+          className="absolute inset-0 z-0 origin-center transition-transform will-change-transform"
           style={{ filter: 'brightness(0.75)' }}
         >
           <Image
@@ -98,36 +97,41 @@ export default function DualTrackHero() {
 
         {/* Active Track Highlight Badge */}
         {track === 'residential' && (
-          <div className="absolute top-24 left-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-ink text-[11px] font-bold tracking-widest uppercase shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-ink animate-ping" />
+          <div className="absolute top-24 left-6 sm:left-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             Active Track
           </div>
         )}
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-xl space-y-4">
+        <div className="relative z-10 max-w-xl space-y-3">
           <div className="flex items-center gap-2 text-gold">
-            <Home size={16} />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold">
+            <Home size={15} />
+            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
               Track 01 · Residential Atelier
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.08] group-hover:text-gold-light transition-colors">
-            Design Your <br className="hidden sm:inline" />
-            Dream Home.
-          </h2>
+          <div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.04] group-hover:text-gold-light transition-colors">
+              Design Your <br className="hidden sm:inline" />
+              Dream Home.
+            </h2>
+            <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
+              bespoke living sanctuaries
+            </span>
+          </div>
 
-          <div className="pt-2 flex items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider group-hover:bg-gold-light group-hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all"
+              className="btn-luxury inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
             >
               <span>Explore Residential</span>
               <ArrowUpRight size={14} />
             </button>
             <span className="text-[11px] uppercase tracking-widest text-plaster-muted font-mono hidden sm:inline">
-              Kitchens · Bedrooms · Civil Finish
+              Kitchens · Bedrooms · Turnkey
             </span>
           </div>
         </div>
@@ -140,14 +144,14 @@ export default function DualTrackHero() {
         ref={rightRef}
         onMouseEnter={() => handleMouseEnter('right')}
         onClick={() => handleSelectTrack('commercial')}
-        className={`relative flex-1 group cursor-pointer overflow-hidden transition-all duration-300 min-h-[45vh] lg:min-h-full flex items-end p-8 md:p-14 ${
+        className={`relative flex-1 group cursor-pointer overflow-hidden transition-all duration-300 min-h-[46vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 ${
           track === 'commercial' ? 'ring-1 ring-gold/40' : ''
         }`}
       >
         {/* Background Image Container */}
         <div
           ref={rightImgRef}
-          className="absolute inset-0 z-0 origin-center transition-transform"
+          className="absolute inset-0 z-0 origin-center transition-transform will-change-transform"
           style={{ filter: 'brightness(0.75)' }}
         >
           <Image
@@ -166,30 +170,35 @@ export default function DualTrackHero() {
 
         {/* Active Track Highlight Badge */}
         {track === 'commercial' && (
-          <div className="absolute top-24 right-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-ink text-[11px] font-bold tracking-widest uppercase shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-ink animate-ping" />
+          <div className="absolute top-24 right-6 sm:right-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             Active Track
           </div>
         )}
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-xl space-y-4">
+        <div className="relative z-10 max-w-xl space-y-3">
           <div className="flex items-center gap-2 text-gold">
-            <Building2 size={16} />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold">
-              Track 02 · Commercial & Civil
+            <Building2 size={15} />
+            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
+              Track 02 · Commercial &amp; Civil
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.08] group-hover:text-gold-light transition-colors">
-            Build Your Business. <br className="hidden sm:inline" />
-            Claim Your Contract.
-          </h2>
+          <div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.04] group-hover:text-gold-light transition-colors">
+              Build Your Business. <br className="hidden sm:inline" />
+              Claim Your Contract.
+            </h2>
+            <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
+              direct civil precision &amp; scale
+            </span>
+          </div>
 
-          <div className="pt-2 flex items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider group-hover:bg-gold-light group-hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all"
+              className="btn-luxury inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
             >
               <span>Explore Commercial</span>
               <ArrowUpRight size={14} />

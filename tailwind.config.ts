@@ -28,8 +28,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-cinzel)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        script: ['var(--font-pinyon)', 'cursive'],
+        sans: ['var(--font-jakarta)', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

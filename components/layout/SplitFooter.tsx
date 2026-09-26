@@ -36,8 +36,8 @@ export default function SplitFooter() {
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[720px] border-b border-ink-border">
         {/* Left Side (50%): High-Res Architectural Render with Bold Graphic Overlay */}
         <div className="lg:col-span-6 relative overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 min-h-[480px]">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
+          {/* Background Image with Shimmer */}
+          <div className="absolute inset-0 z-0 skeleton-shimmer">
             <Image
               src={FOOTER_HERO_IMAGE}
               alt="ShineX Luxury Architecture Handover"
@@ -59,12 +59,16 @@ export default function SplitFooter() {
           </div>
 
           {/* Center / Bottom Graphic Text */}
-          <div className="relative z-10 space-y-6 mt-12 lg:mt-0">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-plaster tracking-tight font-normal leading-[1.08]">
-              Claim Your Free Quote &amp; <br />
-              <span className="text-gold font-light italic">Get 15% Off</span> <br />
-              Your First Project.
-            </h2>
+          <div className="relative z-10 space-y-5 mt-12 lg:mt-0">
+            <div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-plaster tracking-tight font-normal leading-[1.08]">
+                Claim Your Free Quote &amp; <br />
+                Your First Project.
+              </h2>
+              <span className="font-script text-3xl sm:text-4xl text-gold capitalize block mt-1 leading-none">
+                exclusive season privilege · 15% voucher
+              </span>
+            </div>
 
             {/* Guaranteed Perks List */}
             <div className="space-y-2.5 pt-2 max-w-md">
@@ -73,7 +77,7 @@ export default function SplitFooter() {
                 'Free on-site laser measurement & 3D CAD schematic',
                 'Direct Sneha Enterprises civil contracting & 10-year moisture seal',
               ].map((perk) => (
-                <div key={perk} className="flex items-center gap-2.5 text-xs text-plaster-muted font-light">
+                <div key={perk} className="flex items-center gap-2.5 text-xs text-plaster-muted font-sans font-light">
                   <CheckCircle2 size={14} className="text-gold shrink-0" />
                   <span>{perk}</span>
                 </div>
@@ -82,7 +86,7 @@ export default function SplitFooter() {
 
             <div className="pt-2 flex items-center gap-2 text-[11px] text-gold font-mono">
               <ShieldCheck size={14} />
-              <span>16 Years Direct Civil Execution in Navi Mumbai & Mumbai</span>
+              <span>16 Years Direct Civil Execution in Navi Mumbai &amp; Mumbai</span>
             </div>
           </div>
         </div>
@@ -102,7 +106,7 @@ export default function SplitFooter() {
                   <h3 className="text-2xl sm:text-3xl font-serif text-plaster">
                     Estimate Queued for {formData.name}.
                   </h3>
-                  <p className="text-xs text-plaster-muted font-light leading-relaxed">
+                  <p className="text-xs text-plaster-muted font-sans font-light leading-relaxed">
                     Our senior architect will review your <strong className="text-plaster">{formData.serviceType}</strong> requirements
                     and reach out directly on <strong className="text-gold font-mono">{formData.phone}</strong> with your 15% discount voucher.
                   </p>
@@ -110,7 +114,7 @@ export default function SplitFooter() {
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 rounded-full bg-ink border border-ink-border hover:border-gold text-plaster text-xs uppercase tracking-wider transition-colors"
+                  className="px-6 py-2.5 rounded-full bg-ink border border-ink-border hover:border-gold text-plaster text-xs uppercase tracking-wider transition-colors font-sans"
                 >
                   Submit Another Project
                 </button>
@@ -124,7 +128,10 @@ export default function SplitFooter() {
                   <h3 className="text-2xl sm:text-3xl font-serif text-plaster">
                     Speak Directly with an Architect.
                   </h3>
-                  <p className="text-xs text-plaster-muted font-light">
+                  <span className="font-script text-2xl text-gold capitalize block mt-0.5 leading-none">
+                    direct atelier consultation
+                  </span>
+                  <p className="text-xs text-plaster-muted font-sans font-light mt-1">
                     No middlemen. Direct consultation with our Seawoods atelier engineers.
                   </p>
                 </div>
@@ -142,7 +149,7 @@ export default function SplitFooter() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Anand Mahindra"
-                      className="w-full px-4 py-3.5 rounded-xl bg-ink border border-ink-border text-plaster text-xs focus:outline-none focus:border-gold transition-colors"
+                      className="input-luxury w-full px-4 py-3.5 rounded-xl text-plaster text-xs"
                     />
                   </div>
 
@@ -157,7 +164,7 @@ export default function SplitFooter() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98200 00000"
-                      className="w-full px-4 py-3.5 rounded-xl bg-ink border border-ink-border text-plaster text-xs focus:outline-none focus:border-gold transition-colors"
+                      className="input-luxury w-full px-4 py-3.5 rounded-xl text-plaster text-xs font-mono"
                     />
                   </div>
 
@@ -172,7 +179,7 @@ export default function SplitFooter() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="anand@company.com"
-                      className="w-full px-4 py-3.5 rounded-xl bg-ink border border-ink-border text-plaster text-xs focus:outline-none focus:border-gold transition-colors"
+                      className="input-luxury w-full px-4 py-3.5 rounded-xl text-plaster text-xs"
                     />
                   </div>
 
@@ -192,9 +199,9 @@ export default function SplitFooter() {
                           key={item}
                           type="button"
                           onClick={() => setFormData({ ...formData, serviceType: item })}
-                          className={`py-2.5 px-3 rounded-lg text-xs font-medium border text-center transition-all ${
+                          className={`py-2.5 px-3 rounded-lg text-xs font-sans font-medium border text-center transition-all ${
                             formData.serviceType === item
-                              ? 'bg-gold text-ink border-gold font-semibold shadow-md'
+                              ? 'bg-gold text-white border-gold font-semibold shadow-md'
                               : 'bg-ink border-ink-border text-plaster-muted hover:border-gold/40'
                           }`}
                         >
@@ -209,7 +216,7 @@ export default function SplitFooter() {
                 <div className="pt-2 space-y-3">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-full bg-gold text-ink text-xs font-bold uppercase tracking-widest hover:bg-gold-light hover:shadow-[0_0_35px_rgba(197,168,128,0.45)] transition-all flex items-center justify-center gap-2"
+                    className="btn-luxury w-full py-4 rounded-full bg-gold text-white text-xs font-sans font-bold uppercase tracking-widest shadow-lg flex items-center justify-center gap-2"
                   >
                     <span>Claim 15% Off &amp; Get Estimate</span>
                     <ArrowUpRight size={15} />
@@ -236,21 +243,21 @@ export default function SplitFooter() {
               <span className="text-xl font-serif tracking-[0.2em] text-plaster font-semibold uppercase">
                 ShineX
               </span>
-              <span className="text-[11px] tracking-[0.25em] uppercase text-gold font-medium">
+              <span className="text-[11px] tracking-[0.25em] uppercase text-gold font-medium font-sans">
                 Infra Solutions
               </span>
             </div>
-            <p className="text-xs text-plaster-muted font-light max-w-md">
+            <p className="text-xs text-plaster-muted font-sans font-light max-w-md">
               Legal entity: <strong className="text-plaster">ShineX Infra Solutions</strong>. Operating brands:{' '}
               <span className="text-gold font-medium">ShineX Interior</span> (residential &amp; commercial fit-outs) &amp;{' '}
               <span className="text-gold font-medium">ShineX Infra</span> (civil contracting, waterproofing &amp; MEP). Backed by Sneha Enterprises Class-1 direct execution licensure.
             </p>
           </div>
 
-          <div className="md:col-span-6 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-6 text-xs text-plaster-muted">
+          <div className="md:col-span-6 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-6 text-xs text-plaster-muted font-sans">
             <a
               href="/calculator"
-              className="px-4 py-2 rounded-xl bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-ink font-mono uppercase tracking-wider text-xs transition-all flex items-center gap-1.5"
+              className="px-4 py-2 rounded-xl bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-white font-mono uppercase tracking-wider text-xs transition-all flex items-center gap-1.5"
             >
               <span>Instant Cost Calculator</span>
               <ArrowUpRight size={13} />

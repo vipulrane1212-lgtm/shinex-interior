@@ -121,7 +121,7 @@ export default function CostCalculator() {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="py-2.5 px-6 rounded-xl bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(197,168,128,0.25)]"
+                    className="btn-luxury py-2.5 px-6 rounded-xl bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider hover:bg-gold-light transition-all flex items-center gap-2 shadow-md"
                   >
                     <span>Proceed to Step {step + 1}</span>
                     <ArrowRight size={14} />

@@ -75,21 +75,24 @@ export default function ProcessTimeline() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-3">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block">
+          <span className="text-xs uppercase tracking-[0.25em] text-gold font-sans font-semibold block">
             Why Choose ShineX
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
             The 4-Stage Architectural Protocol.
           </h2>
-          <p className="text-xs sm:text-sm text-plaster-muted font-light leading-relaxed">
+          <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
+            disciplined four-stage execution delivery
+          </span>
+          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed">
             Eliminating contractor opacity with millimetric precision, direct civil licensure, and guaranteed handover timelines.
           </p>
         </div>
 
         {/* Timeline Container */}
         <div ref={containerRef} className="relative">
-          {/* Central Glowing Vertical Progress Line */}
-          <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 -translate-x-1/2 w-[2px] bg-gradient-to-b from-gold/20 via-gold to-gold/20 shadow-[0_0_15px_rgba(197,168,128,0.5)] pointer-events-none" />
+          {/* Central Glowing Vertical Progress Line on Desktop */}
+          <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 -translate-x-1/2 w-[2px] bg-gradient-to-b from-gold/20 via-gold to-gold/20 shadow-[0_0_15px_rgba(158,120,62,0.4)] pointer-events-none" />
 
           {/* 4 Visual Milestone Nodes */}
           <div className="space-y-12 lg:space-y-24">
@@ -121,7 +124,7 @@ export default function ProcessTimeline() {
                       {node.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-plaster-muted font-light leading-relaxed max-w-md inline-block">
+                    <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed max-w-md inline-block">
                       {node.tagline}
                     </p>
 
@@ -134,7 +137,7 @@ export default function ProcessTimeline() {
                       {node.specs.map((spec) => (
                         <span
                           key={spec}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-card border border-ink-border text-[11px] text-plaster-muted font-light"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-card border border-ink-border text-[11px] text-plaster-muted font-sans font-light"
                         >
                           <CheckCircle2 size={12} className="text-gold" />
                           <span>{spec}</span>
@@ -143,20 +146,20 @@ export default function ProcessTimeline() {
                     </div>
                   </div>
 
-                  {/* Center Node Icon Bulb */}
-                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-ink border-2 border-gold items-center justify-center shadow-[0_0_25px_rgba(197,168,128,0.5)]">
+                  {/* Center Node Icon Bulb (Desktop) */}
+                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-ink border-2 border-gold items-center justify-center shadow-[0_0_25px_rgba(158,120,62,0.35)]">
                     {node.icon}
                   </div>
 
-                  {/* Right / Photographic Card */}
+                  {/* Right / Photographic Card with Shimmer Placeholder */}
                   <div className="w-full lg:w-1/2">
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-ink-border bg-ink-card group hover:border-gold/60 transition-all duration-500 shadow-xl">
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-ink-border bg-ink-card group hover:border-gold/60 transition-all duration-500 shadow-xl skeleton-shimmer">
                       <Image
                         src={node.image}
                         alt={node.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60" />
 
@@ -164,7 +167,7 @@ export default function ProcessTimeline() {
                         <span className="font-mono text-[10px] text-gold uppercase tracking-wider">
                           Protocol 0{idx + 1}
                         </span>
-                        <span className="text-[11px] font-medium text-plaster bg-ink/75 backdrop-blur-md px-3 py-1 rounded-full border border-ink-border">
+                        <span className="text-[11px] font-sans font-medium text-plaster bg-ink/75 backdrop-blur-md px-3 py-1 rounded-full border border-ink-border">
                           Direct Supervision
                         </span>
                       </div>
@@ -185,7 +188,7 @@ export default function ProcessTimeline() {
             <h4 className="text-xl sm:text-2xl font-serif text-plaster">
               Begin with Step 01: Free Atelier Consultation.
             </h4>
-            <p className="text-xs text-plaster-muted font-light">
+            <p className="text-xs text-plaster-muted font-sans font-light">
               Visit our Seawoods studio or request an on-site structural audit.
             </p>
           </div>
@@ -193,7 +196,7 @@ export default function ProcessTimeline() {
           <button
             type="button"
             onClick={() => openQuiz()}
-            className="shrink-0 inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_25px_rgba(197,168,128,0.4)] transition-all"
+            className="btn-luxury shrink-0 inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
           >
             <span>Launch Quotation Wizard</span>
             <ArrowUpRight size={14} />

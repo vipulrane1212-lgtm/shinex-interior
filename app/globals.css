@@ -16,10 +16,49 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.font-script {
+  font-family: var(--font-pinyon), cursive;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+/* Lenis Recommended Smooth Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 /* Custom minimal scrollbar */
@@ -37,6 +76,41 @@ body {
   background: #9E783E;
 }
 
+/* Shimmer Skeleton Placeholder for Heavy Image Assets */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-shimmer {
+  overflow: hidden;
+  background-color: #EDE8DE;
+}
+
+.skeleton-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.25) 20%,
+    rgba(255, 255, 255, 0.4) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 2.2s infinite;
+  content: '';
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Glassmorphism helpers for Cream Luxury Palette */
 .glass-panel {
   background: rgba(255, 255, 255, 0.88);
@@ -52,6 +126,33 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(158, 120, 62, 0.35);
   box-shadow: 0 15px 35px -5px rgba(158, 120, 62, 0.12);
+}
+
+/* Luxury Micro-Interactions & Buttons */
+.btn-luxury {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(158, 120, 62, 0.3);
+}
+.btn-luxury:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Luxury Input Field Treatment (No default outlines, clean borders) */
+.input-luxury {
+  outline: none !important;
+  border: 1px solid #E2DBD0;
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease;
+}
+.input-luxury:focus {
+  border-color: #9E783E !important;
+  box-shadow: 0 0 0 3px rgba(158, 120, 62, 0.15) !important;
+  outline: none !important;
 }
 
 /* Luxury border glow on hover */

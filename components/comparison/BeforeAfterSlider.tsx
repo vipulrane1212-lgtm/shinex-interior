@@ -65,13 +65,18 @@ export default function BeforeAfterSlider() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block">
+            <span className="text-xs uppercase tracking-[0.25em] text-gold font-sans font-semibold block">
               Direct Site Transformation
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-              Raw Civil to Atelier Turnkey.
-            </h2>
-            <p className="text-xs sm:text-sm text-plaster-muted font-light leading-relaxed">
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
+                Raw Civil to Atelier Turnkey.
+              </h2>
+              <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
+                civil transformation in physical reality
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed">
               Drag the vertical separator to witness the raw concrete and masonry transform into finished architectural craftsmanship.
             </p>
           </div>
@@ -86,9 +91,9 @@ export default function BeforeAfterSlider() {
                   setActiveProjectIndex(idx);
                   setSliderPosition(50);
                 }}
-                className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${
+                className={`px-4 py-2 rounded-full text-xs font-sans font-medium tracking-wide transition-all ${
                   activeProjectIndex === idx
-                    ? 'bg-gold text-ink font-semibold shadow-lg'
+                    ? 'bg-gold text-white font-semibold shadow-lg'
                     : 'bg-ink-card border border-ink-border text-plaster-muted hover:text-plaster'
                 }`}
               >
@@ -104,7 +109,7 @@ export default function BeforeAfterSlider() {
           onMouseDown={() => setIsDragging(true)}
           onTouchStart={() => setIsDragging(true)}
           onClick={(e) => handleMove(e.clientX)}
-          className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[640px] rounded-2xl overflow-hidden border border-ink-border bg-ink cursor-ew-resize select-none shadow-2xl"
+          className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[640px] rounded-2xl overflow-hidden border border-ink-border bg-ink cursor-ew-resize select-none shadow-2xl skeleton-shimmer"
         >
           {/* Bottom Layer: After Image (Turnkey Handover - Right Side) */}
           <div className="absolute inset-0">
@@ -147,7 +152,7 @@ export default function BeforeAfterSlider() {
             style={{ left: `${sliderPosition}%` }}
           >
             {/* Center Draggable Knob */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink border-2 border-gold flex items-center justify-center text-gold shadow-[0_0_20px_rgba(197,168,128,0.5)] transition-transform group-hover:scale-110">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink border-2 border-gold flex items-center justify-center text-gold shadow-[0_0_20px_rgba(158,120,62,0.5)] transition-transform group-hover:scale-110">
               <ArrowLeftRight size={16} />
             </div>
           </div>
@@ -171,10 +176,10 @@ export default function BeforeAfterSlider() {
               {activeProject.specs.map((spec) => (
                 <span
                   key={spec}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink border border-ink-border/80 text-[11px] text-plaster-muted"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink border border-ink-border/80 text-[11px] text-plaster-muted font-sans"
                 >
                   <CheckCircle2 size={12} className="text-gold" />
-                  {spec}
+                  <span>{spec}</span>
                 </span>
               ))}
             </div>
@@ -183,7 +188,7 @@ export default function BeforeAfterSlider() {
           {/* Quote Button for This Specific Transformation */}
           <Link
             href={`/quote?transformation=${activeProject.id}&track=${track}`}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_20px_rgba(197,168,128,0.3)] transition-all"
+            className="btn-luxury shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
           >
             <span>Quote Similar Project</span>
             <ArrowUpRight size={14} />

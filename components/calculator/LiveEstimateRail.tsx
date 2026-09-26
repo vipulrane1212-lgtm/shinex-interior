@@ -74,7 +74,7 @@ export default function LiveEstimateRail() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="w-full mt-5 py-2.5 px-4 rounded-xl bg-gold text-ink font-semibold text-xs uppercase tracking-wider hover:bg-gold-light transition-all flex items-center justify-center gap-2 shadow-lg"
+                className="btn-luxury w-full mt-5 py-2.5 px-4 rounded-xl bg-gold text-white font-sans font-semibold text-xs uppercase tracking-wider hover:bg-gold-light transition-all flex items-center justify-center gap-2 shadow-lg"
               >
                 <span>Continue</span>
                 <ArrowRight size={14} />
@@ -82,7 +82,7 @@ export default function LiveEstimateRail() {
             )}
 
             {/* Trust Seal */}
-            <div className="pt-4 mt-2 border-t border-ink-border/50 flex items-center gap-2 text-[10px] text-plaster-dim">
+            <div className="pt-4 mt-2 border-t border-ink-border/50 flex items-center gap-2 text-[10px] text-plaster-dim font-sans">
               <ShieldCheck size={14} className="text-gold shrink-0" />
               <span>ShineX Infra Solutions · Direct Execution</span>
             </div>
@@ -91,7 +91,7 @@ export default function LiveEstimateRail() {
       </aside>
 
       {/* ================= MOBILE BOTTOM FLOATING BAR ================= */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-ink-card/95 backdrop-blur-xl border-t border-gold/30 shadow-[0_-10px_25px_rgba(0,0,0,0.6)]">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-ink-card/95 backdrop-blur-xl border-t border-gold/30 shadow-[0_-10px_25px_rgba(0,0,0,0.6)]">
         {/* Expandable Breakdown Drawer */}
         {mobileExpanded && (
           <div className="px-5 py-4 border-b border-ink-border bg-ink/95 space-y-3 animate-in slide-in-from-bottom-2 duration-300">
@@ -148,7 +148,7 @@ export default function LiveEstimateRail() {
             <button
               type="button"
               onClick={nextStep}
-              className="py-2 px-5 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider shrink-0 flex items-center gap-1.5"
+              className="btn-luxury py-2 px-5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shrink-0 flex items-center gap-1.5 shadow-md"
             >
               <span>Next</span>
               <ArrowRight size={13} />

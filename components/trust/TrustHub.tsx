@@ -23,14 +23,19 @@ export default function TrustHub() {
               <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center font-bold text-[10px] shadow-sm">
                 <span className="text-blue-500 font-sans">G</span>
               </div>
-              <span className="text-xs uppercase tracking-[0.25em] font-semibold">
+              <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
                 Google-Verified Trust Hub
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-              Homeowner Proof. Civil Discipline.
-            </h2>
-            <p className="text-xs sm:text-sm text-plaster-muted font-light leading-relaxed">
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
+                Homeowner Proof. Civil Discipline.
+              </h2>
+              <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
+                unedited homeowner &amp; enterprise accounts
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed">
               Unedited reviews and live video walkthroughs from families and enterprises across Seawoods, Kharghar, Vashi, Nerul, and Powai.
             </p>
           </div>
@@ -62,7 +67,7 @@ export default function TrustHub() {
             <div
               key={`${rev.id}-${idx}`}
               onClick={() => setSelectedReview(rev)}
-              className="w-[360px] sm:w-[420px] shrink-0 p-6 rounded-2xl bg-ink border border-ink-border hover:border-gold/60 transition-all duration-300 flex flex-col justify-between gap-6 cursor-pointer group shadow-xl hover:shadow-[0_0_25px_rgba(197,168,128,0.18)]"
+              className="w-[360px] sm:w-[420px] shrink-0 p-6 rounded-2xl bg-ink border border-ink-border hover:border-gold/60 transition-all duration-300 flex flex-col justify-between gap-6 cursor-pointer group shadow-xl hover:shadow-[0_10px_30px_rgba(158,120,62,0.15)]"
             >
               {/* Card Header: Google logo, stars, time */}
               <div className="flex items-start justify-between">
@@ -71,7 +76,7 @@ export default function TrustHub() {
                     <span className="text-blue-500 font-sans">G</span>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-plaster group-hover:text-gold-light transition-colors leading-tight">
+                    <h4 className="text-sm font-semibold text-plaster group-hover:text-gold transition-colors leading-tight font-sans">
                       {rev.name}
                     </h4>
                     <span className="text-[10px] text-plaster-dim font-mono block">
@@ -93,27 +98,27 @@ export default function TrustHub() {
               </div>
 
               {/* Review Body */}
-              <p className="text-xs text-plaster-muted font-light leading-relaxed italic line-clamp-3">
+              <p className="text-xs text-plaster-muted font-sans font-light leading-relaxed italic line-clamp-3">
                 &ldquo;{rev.comment}&rdquo;
               </p>
 
               {/* Video Thumbnail CTA trigger */}
               <div className="pt-2 border-t border-ink-border/80 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-8 rounded-md overflow-hidden bg-ink-card shrink-0">
+                  <div className="relative w-12 h-8 rounded-md overflow-hidden bg-ink-card shrink-0 skeleton-shimmer">
                     <Image
                       src={rev.videoThumbnail}
                       alt={rev.name}
                       fill
                       sizes="48px"
-                      className="object-cover opacity-75 group-hover:scale-110 transition-transform"
+                      className="object-cover opacity-75 group-hover:scale-110 transition-transform will-change-transform"
                     />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <Play size={10} className="fill-gold text-gold" />
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[11px] font-medium text-plaster group-hover:text-gold transition-colors">
+                    <span className="text-[11px] font-sans font-medium text-plaster group-hover:text-gold transition-colors">
                       Watch Video Story
                     </span>
                     <span className="text-[9px] text-plaster-dim font-mono">

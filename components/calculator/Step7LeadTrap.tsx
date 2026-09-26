@@ -168,7 +168,7 @@ export default function Step7LeadTrap() {
                   value={leadName}
                   onChange={(e) => setLeadName(e.target.value)}
                   placeholder="e.g. Rajesh Sharma"
-                  className="w-full px-4 py-3 rounded-xl bg-ink border border-ink-border text-xs text-plaster placeholder:text-plaster-dim focus:outline-none focus:border-gold transition-colors"
+                  className="input-luxury w-full px-4 py-3 rounded-xl text-xs text-plaster placeholder:text-plaster-dim"
                 />
               </div>
 
@@ -187,7 +187,7 @@ export default function Step7LeadTrap() {
                     value={leadPhone}
                     onChange={(e) => setLeadPhone(e.target.value)}
                     placeholder="98200 00000"
-                    className="w-full px-4 py-3 rounded-r-xl bg-ink border border-ink-border text-xs text-plaster placeholder:text-plaster-dim focus:outline-none focus:border-gold transition-colors font-mono"
+                    className="input-luxury w-full px-4 py-3 rounded-r-xl text-xs text-plaster placeholder:text-plaster-dim font-mono"
                   />
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function Step7LeadTrap() {
                   value={leadEmail}
                   onChange={(e) => setLeadEmail(e.target.value)}
                   placeholder="rajesh@example.com"
-                  className="w-full px-4 py-3 rounded-xl bg-ink border border-ink-border text-xs text-plaster placeholder:text-plaster-dim focus:outline-none focus:border-gold transition-colors"
+                  className="input-luxury w-full px-4 py-3 rounded-xl text-xs text-plaster placeholder:text-plaster-dim"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export default function Step7LeadTrap() {
                   value={leadCity}
                   onChange={(e) => setLeadCity(e.target.value)}
                   placeholder="Seawoods, Navi Mumbai"
-                  className="w-full px-4 py-3 rounded-xl bg-ink border border-ink-border text-xs text-plaster placeholder:text-plaster-dim focus:outline-none focus:border-gold transition-colors"
+                  className="input-luxury w-full px-4 py-3 rounded-xl text-xs text-plaster placeholder:text-plaster-dim"
                 />
               </div>
 
@@ -243,7 +243,7 @@ export default function Step7LeadTrap() {
                 <select
                   value={preferredCallTime}
                   onChange={(e) => setPreferredCallTime(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-ink border border-ink-border text-xs text-plaster focus:outline-none focus:border-gold transition-colors"
+                  className="input-luxury w-full px-4 py-3 rounded-xl text-xs text-plaster"
                 >
                   <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
                   <option value="Afternoon (1 PM - 5 PM)">Afternoon (1 PM - 5 PM)</option>
@@ -257,7 +257,7 @@ export default function Step7LeadTrap() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(197,168,128,0.3)] disabled:opacity-50"
+                className="btn-luxury w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 <span>{isSubmitting ? 'Generating Specification...' : 'Get Exact Quote & PDF Breakdown'}</span>
                 <ArrowRight size={15} />

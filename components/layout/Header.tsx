@@ -34,11 +34,11 @@ export default function Header() {
         <Link href="/" className="group flex items-center gap-3">
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="text-xl md:text-2xl font-serif tracking-[0.18em] text-plaster font-semibold uppercase group-hover:text-gold transition-colors">
+              <span className="text-xl md:text-2xl font-serif tracking-[0.16em] text-plaster font-semibold uppercase group-hover:text-gold transition-colors">
                 ShineX
               </span>
               <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="hidden sm:inline-block text-[10px] tracking-[0.22em] uppercase text-plaster-muted font-medium">
+              <span className="hidden sm:inline-block text-[10px] tracking-[0.22em] uppercase text-plaster-muted font-sans font-medium">
                 Infra Interior
               </span>
             </div>
@@ -64,25 +64,25 @@ export default function Header() {
           </Link>
           <a
             href="/#services"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
             Services
           </a>
           <a
             href="/#transformation"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
             Before / After
           </a>
           <a
             href="/#timeline"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
             Protocol
           </a>
           <a
             href="/#reviews"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
             Trust Hub
           </a>
@@ -90,7 +90,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => openQuiz()}
-            className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_20px_rgba(197,168,128,0.35)] transition-all duration-300"
+            className="btn-luxury group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
           >
             <span>Get a Quote</span>
             <ArrowUpRight
@@ -129,28 +129,28 @@ export default function Header() {
             <a
               href="/#services"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
             >
               Services Bento
             </a>
             <a
               href="/#transformation"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
             >
               Before / After Sliders
             </a>
             <a
               href="/#timeline"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
             >
               Architectural Protocol
             </a>
             <a
               href="/#reviews"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
             >
               Google Trust Hub
             </a>
@@ -161,7 +161,7 @@ export default function Header() {
                   setMobileMenuOpen(false);
                   openQuiz();
                 }}
-                className="w-full inline-flex justify-center items-center gap-2 py-3 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider shadow-lg"
+                className="btn-luxury w-full inline-flex justify-center items-center gap-2 py-3.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-lg"
               >
                 <span>Get a Quote (15% Off)</span>
                 <ArrowUpRight size={14} />

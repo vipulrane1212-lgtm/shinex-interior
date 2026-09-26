@@ -14,21 +14,26 @@ export default function BentoGrid() {
   const services = track === 'residential' ? RESIDENTIAL_SERVICES : COMMERCIAL_SERVICES;
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-ink border-b border-ink-border/60 relative">
+    <section id="services" className="py-20 md:py-32 bg-ink border-b border-ink-border/60 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 sm:mb-16">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 text-gold">
               <Layers size={16} />
-              <span className="text-xs uppercase tracking-[0.25em] font-semibold">
+              <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
                 {track === 'residential' ? 'Residential Atelier' : 'Commercial & Civil Division'}
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-              {track === 'residential' ? 'The Sanctuaries We Shape.' : 'The Infrastructure We Execute.'}
-            </h2>
-            <p className="text-xs sm:text-sm text-plaster-muted font-light leading-relaxed max-w-lg">
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
+                {track === 'residential' ? 'The Sanctuaries We Shape.' : 'The Infrastructure We Execute.'}
+              </h2>
+              <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
+                {track === 'residential' ? 'exclusive residential environments' : 'high-throughput corporate architecture'}
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed max-w-lg">
               {track === 'residential'
                 ? 'Ultra-matte acrylics, quartz waterfalls, fluted acoustics, and moisture-sealed civil carcasses.'
                 : 'Direct civil contracting, large-scale vitrified flooring, MEP integration, and institutional compliance.'}
@@ -83,7 +88,7 @@ export default function BentoGrid() {
         <LayoutFlowChart />
 
         {/* Cost Calculator Callout Banner */}
-        <div className="mt-10 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-ink-card via-ink-card to-gold/10 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-ink-card via-ink-card to-gold/10 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-1 text-center sm:text-left">
             <span className="text-[10px] uppercase tracking-[0.25em] text-gold font-mono font-semibold">
               Transparent Mumbai Costing
@@ -91,13 +96,13 @@ export default function BentoGrid() {
             <h3 className="text-xl sm:text-2xl font-serif text-plaster">
               Need a granular room-by-room quote?
             </h3>
-            <p className="text-xs text-plaster-muted font-light max-w-lg">
+            <p className="text-xs text-plaster-muted font-sans font-light max-w-lg">
               Use our multi-step interactive cost estimator to pick modular joinery, kitchen shapes, civil wet packages, and calculate live indicative rates.
             </p>
           </div>
           <Link
             href="/calculator"
-            className="shrink-0 px-6 py-3.5 rounded-full bg-gold text-ink font-semibold text-xs uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_25px_rgba(197,168,128,0.4)] transition-all flex items-center gap-2"
+            className="btn-luxury shrink-0 px-7 py-3.5 rounded-full bg-gold text-white font-sans font-semibold text-xs uppercase tracking-wider shadow-md flex items-center gap-2"
           >
             <span>Launch Cost Calculator</span>
             <ArrowUpRight size={15} />

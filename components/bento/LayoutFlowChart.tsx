@@ -44,11 +44,8 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
-        {/* L-Shape walls */}
         <polyline points="20,20 20,80 80,80" />
-        {/* Counter depth */}
         <polyline points="35,35 35,65 65,65" strokeDasharray="3 3" className="stroke-gold/50" />
-        {/* Circulation Flow Arrow */}
         <path d="M 30,30 Q 50,50 65,75" strokeDasharray="2 2" className="stroke-gold animate-pulse" />
         <circle cx="28" cy="28" r="3" className="fill-gold" />
         <circle cx="72" cy="72" r="3" className="fill-gold" />
@@ -68,10 +65,8 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     image: 'https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
-        {/* Two parallel counters */}
         <line x1="20" y1="20" x2="20" y2="80" />
         <line x1="80" y1="20" x2="80" y2="80" />
-        {/* Central aisle motion arrow */}
         <line x1="50" y1="25" x2="50" y2="75" strokeDasharray="3 3" className="stroke-gold animate-pulse" />
         <polygon points="50,80 46,72 54,72" className="fill-gold stroke-none" />
       </svg>
@@ -90,11 +85,8 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
-        {/* U-Shape 3 walls */}
         <polyline points="20,20 20,80 80,80 80,20" />
-        {/* Counter inner border */}
         <polyline points="35,30 35,65 65,65 65,30" strokeDasharray="3 3" className="stroke-gold/50" />
-        {/* Work Triangle */}
         <polygon points="25,50 50,75 75,50" className="stroke-gold/70 stroke-[1.5]" strokeDasharray="2 2" />
       </svg>
     ),
@@ -112,11 +104,8 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
-        {/* Perimeter run */}
         <polyline points="20,20 80,20 80,80" />
-        {/* Freestanding Center Island */}
         <rect x="35" y="45" width="30" height="22" rx="3" className="stroke-gold fill-gold/15" />
-        {/* Circulation orbit */}
         <ellipse cx="50" cy="56" rx="24" ry="18" strokeDasharray="2 2" className="stroke-gold/40 animate-spin origin-center" />
       </svg>
     ),
@@ -216,14 +205,17 @@ export default function LayoutFlowChart() {
         <div>
           <div className="flex items-center gap-2 text-gold">
             <Workflow size={16} />
-            <span className="text-xs uppercase tracking-[0.25em] font-mono font-semibold">
+            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
               Architectural Layout Flow Chart
             </span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-serif text-plaster font-semibold mt-1">
             {track === 'residential' ? 'Modular Ergonomics & Spatial Circulation' : 'Commercial Space Flow Planning'}
           </h3>
-          <p className="text-xs sm:text-sm text-plaster-muted font-light mt-1 max-w-xl">
+          <span className="font-script text-2xl text-gold capitalize block mt-0.5 leading-none">
+            {track === 'residential' ? 'ergonomic movement patterns' : 'workplace circulation protocol'}
+          </span>
+          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light mt-1 max-w-xl">
             Compare configurations side-by-side. Tapping a flow node below updates the architectural blueprint and spatial specifications.
           </p>
         </div>
@@ -272,7 +264,7 @@ export default function LayoutFlowChart() {
                 <h4 className="text-sm sm:text-base font-serif font-semibold text-plaster group-hover:text-gold transition-colors">
                   {node.title}
                 </h4>
-                <p className="text-[11px] text-plaster-dim font-light mt-0.5 leading-snug">
+                <p className="text-[11px] text-plaster-dim font-sans font-light mt-0.5 leading-snug">
                   {node.tagline}
                 </p>
               </div>
@@ -297,13 +289,13 @@ export default function LayoutFlowChart() {
       {/* ================= INTERACTIVE MOTION STAGE (IMAGE + BLUEPRINT DATA) ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-5 sm:p-7 rounded-3xl bg-ink-card border border-ink-border shadow-xl overflow-hidden">
         {/* Left Side (7 Cols): Crisp Un-Obscured Architectural Photograph */}
-        <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] rounded-2xl overflow-hidden border border-ink-border">
+        <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] rounded-2xl overflow-hidden border border-ink-border skeleton-shimmer">
           <Image
             src={activeNode.image}
             alt={activeNode.title}
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover transition-all duration-700 ease-out"
+            className="object-cover transition-all duration-700 ease-out will-change-transform"
           />
           {/* Subtle Corner Badge */}
           <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-ink-card/90 backdrop-blur-md border border-ink-border text-xs font-mono uppercase tracking-wider text-gold shadow-sm">
@@ -323,7 +315,7 @@ export default function LayoutFlowChart() {
                 <h4 className="text-xl sm:text-2xl font-serif text-plaster font-semibold mt-0.5">
                   {activeNode.title}
                 </h4>
-                <p className="text-xs text-plaster-muted font-light mt-0.5">
+                <p className="text-xs text-plaster-muted font-sans font-light mt-0.5">
                   {activeNode.tagline}
                 </p>
               </div>
@@ -378,7 +370,7 @@ export default function LayoutFlowChart() {
           <div className="pt-4 border-t border-ink-border flex flex-col sm:flex-row items-center gap-3">
             <Link
               href="/calculator"
-              className="w-full sm:flex-1 py-3 px-5 rounded-full bg-gold text-white font-semibold text-xs uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_20px_rgba(158,120,62,0.3)] transition-all flex items-center justify-center gap-2 shadow-sm text-center"
+              className="btn-luxury w-full sm:flex-1 py-3 px-5 rounded-full bg-gold text-white font-sans font-semibold text-xs uppercase tracking-wider shadow-sm flex items-center justify-center gap-2 text-center"
             >
               <span>Calculate This Layout</span>
               <ArrowUpRight size={14} />
