@@ -68,8 +68,8 @@ export const ServiceTaxonomy: React.FC<ServiceTaxonomyProps> = ({ onSelectVarian
         <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
 
         {/* Ambient Warm Golden Radial Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[550px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
-        <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-[#EDE7DC]/60 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[550px] ambient-glow-gold rounded-full" />
+        <div className="absolute bottom-10 left-10 w-[450px] h-[450px] ambient-glow-linen rounded-full" />
 
         {/* Architectural CAD Blueprint Watermark Annotation */}
         <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">

@@ -41,8 +41,8 @@ export const HeroSection: React.FC = () => {
         <div className="absolute top-0 bottom-0 right-0 w-16 opacity-35 fluted-slat-shadows hidden lg:block" />
 
         {/* Ambient Warm Golden Radial Glow */}
-        <div className="absolute top-16 left-1/4 w-[650px] h-[650px] bg-[#C8A97E]/15 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 right-10 w-[550px] h-[550px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+        <div className="absolute top-16 left-1/4 w-[650px] h-[650px] ambient-glow-gold rounded-full" />
+        <div className="absolute top-1/2 right-10 w-[550px] h-[550px] ambient-glow-linen rounded-full" />
 
         {/* Architectural Drafting Hairline Grid */}
         <div className="absolute inset-0 bg-architectural-fine-grid opacity-25" />

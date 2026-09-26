@@ -35,8 +35,8 @@ export const WorkflowJourney: React.FC = () => {
         <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
 
         {/* Ambient Radial Lighting Pool */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[650px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
-        <div className="absolute bottom-12 right-12 w-[500px] h-[450px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[650px] ambient-glow-gold rounded-full" />
+        <div className="absolute bottom-12 right-12 w-[500px] h-[450px] ambient-glow-linen rounded-full" />
 
         {/* Architectural CAD Blueprint Watermark Annotation */}
         <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">

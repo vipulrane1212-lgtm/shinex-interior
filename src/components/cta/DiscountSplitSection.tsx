@@ -80,8 +80,8 @@ export const DiscountSplitSection: React.FC = () => {
         <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
 
         {/* Golden Radial Ambient Light */}
-        <div className="absolute top-1/2 left-1/3 w-[700px] h-[550px] bg-[#C8A97E]/14 rounded-full blur-[150px]" />
-        <div className="absolute bottom-10 right-10 w-[500px] h-[450px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+        <div className="absolute top-1/2 left-1/3 w-[700px] h-[550px] ambient-glow-gold rounded-full" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[450px] ambient-glow-linen rounded-full" />
 
         {/* Architectural CAD Blueprint Watermark Annotation */}
         <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">

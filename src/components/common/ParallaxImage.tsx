@@ -58,14 +58,14 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
         style={{
           y,
           scale,
-          willChange: 'transform',
         }}
-        className="absolute inset-x-0 -top-[24%] w-full h-[148%] pointer-events-none"
+        className="absolute inset-x-0 -top-[20%] w-full h-[140%] pointer-events-none transform-gpu"
       >
         <img
           src={getAssetUrl(src)}
           alt={alt}
           loading={loading}
+          decoding="async"
           className={`w-full h-full object-cover object-center ${imgClassName}`}
         />
       </motion.div>

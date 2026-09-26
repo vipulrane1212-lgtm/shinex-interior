@@ -11,7 +11,7 @@ export const StorylinePrologue: React.FC = () => {
       <div className="absolute inset-0 bg-architectural-fine-grid opacity-25 pointer-events-none" />
 
       {/* Warm Ambient Radial Illumination */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#C8A97E]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] ambient-glow-gold rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Storyline Prologue Box */}

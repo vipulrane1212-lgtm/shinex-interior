@@ -30,8 +30,8 @@ export const GoogleReviewsSection: React.FC = () => {
         <div className="absolute inset-0 bg-architectural-isometric opacity-12" />
 
         {/* Ambient Radial Illumination */}
-        <div className="absolute top-1/3 right-1/4 w-[700px] h-[550px] bg-[#C8A97E]/12 rounded-full blur-[150px]" />
-        <div className="absolute bottom-10 left-12 w-[500px] h-[400px] bg-[#EDE7DC]/70 rounded-full blur-[130px]" />
+        <div className="absolute top-1/3 right-1/4 w-[700px] h-[550px] ambient-glow-gold rounded-full" />
+        <div className="absolute bottom-10 left-12 w-[500px] h-[400px] ambient-glow-linen rounded-full" />
 
         {/* Architectural CAD Blueprint Watermark Annotation */}
         <div className="absolute top-12 left-12 hidden 2xl:flex flex-col text-[10px] font-mono text-[#8C8479]/45 uppercase tracking-widest space-y-1">

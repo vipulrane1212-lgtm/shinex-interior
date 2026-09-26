@@ -535,65 +535,64 @@ html.lenis, html.lenis body {
   }
 }
 
+/* Zero-Overhead Hardware-Accelerated Ambient Illumination (Replaces GPU-melting blur-[150px]) */
+.ambient-glow-gold {
+  background: radial-gradient(ellipse at center, rgba(200, 169, 126, 0.16) 0%, rgba(200, 169, 126, 0.05) 50%, transparent 72%);
+  pointer-events: none;
+}
+
+.ambient-glow-linen {
+  background: radial-gradient(ellipse at center, rgba(237, 231, 220, 0.65) 0%, rgba(237, 231, 220, 0.18) 55%, transparent 72%);
+  pointer-events: none;
+}
+
 .cinematic-video,
 .cinematic-video-1 {
-  animation: cinematicVideoPanZoom1 20s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoPanZoom1 24s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 .cinematic-video-2 {
-  animation: cinematicVideoPanZoom2 24s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoPanZoom2 28s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 .cinematic-video-3 {
-  animation: cinematicVideoPanZoom3 22s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoPanZoom3 26s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 .cinematic-video-hero {
-  animation: cinematicVideoHero 28s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoHero 30s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 .cinematic-video-sync {
-  animation: cinematicVideoSync 22s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoSync 26s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 .cinematic-video-macro {
-  animation: cinematicVideoMacro 20s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: cinematicVideoMacro 24s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
   transform-origin: center center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 /* Stagger Delays for Multi-Card Grids */

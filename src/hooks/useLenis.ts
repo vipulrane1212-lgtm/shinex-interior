@@ -11,11 +11,18 @@ export function useLenis() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    // Do NOT hijack touch devices - iOS & Android have native 120Hz momentum scroll
+    const isTouch = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 1024;
+    if (isTouch) {
+      document.documentElement.style.scrollBehavior = 'smooth';
+      return;
+    }
+
     const lenis = new Lenis({
-      lerp: 0.1,
+      lerp: 0.16, // Snappy, responsive momentum without floaty lag
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.0,
+      syncTouch: false,
     });
 
     (window as unknown as { lenis: Lenis }).lenis = lenis;

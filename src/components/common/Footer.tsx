@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
         <div className="absolute inset-0 bg-architectural-isometric opacity-10" />
 
         {/* Ambient Warm Golden Glow */}
-        <div className="absolute -bottom-20 left-1/4 w-[600px] h-[400px] bg-[#C8A97E]/10 rounded-full blur-[140px]" />
+        <div className="absolute -bottom-20 left-1/4 w-[600px] h-[400px] ambient-glow-gold rounded-full" />
 
         {/* Architectural Footer Stamp */}
         <div className="absolute top-6 left-12 hidden 2xl:flex items-center gap-3 text-[10px] font-mono tracking-widest text-[#8C8479]/45 uppercase">

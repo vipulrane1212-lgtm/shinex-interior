@@ -9,64 +9,20 @@ export const ArchitecturalAtmosphere: React.FC = () => {
       aria-hidden="true"
       className="fixed inset-0 pointer-events-none z-[1] overflow-hidden select-none"
     >
-      {/* 1. Procedural Venetian Lime Plaster (Marmorino) Micro-Texture Filter */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.032] mix-blend-overlay">
-        <filter id="marmorino-plaster-grain">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.82"
-            numOctaves={4}
-            stitchTiles="stitch"
-          />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#marmorino-plaster-grain)" />
-      </svg>
+      {/* 1. Lightweight CSS Micro-Grain Plaster Texture (Zero SVG CPU Overhead) */}
+      <div className="absolute inset-0 opacity-[0.035] venetian-plaster-grain pointer-events-none" />
 
-      {/* 2. Ambient 2700K Golden Sunbeam & Cove Light Drifts */}
-      <motion.div
-        animate={{
-          opacity: [0.12, 0.22, 0.14],
-          scale: [1, 1.08, 1],
-          x: ['-2%', '2%', '-1%'],
-          y: ['-1%', '3%', '0%'],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute -top-32 left-1/4 w-[750px] h-[750px] bg-gradient-to-br from-[#DFBA73]/20 via-[#C8A97E]/10 to-transparent rounded-full blur-[160px]"
+      {/* 2. Hardware-Accelerated Ambient 2700K Sunbeam & Cove Light Drifts (Native CSS Gradients, Zero Blur Overhead) */}
+      <div
+        className="absolute -top-32 left-1/4 w-[750px] h-[750px] pointer-events-none opacity-40 bg-[radial-gradient(ellipse_at_center,rgba(223,186,115,0.25)_0%,rgba(200,169,126,0.1)_40%,transparent_70%)]"
       />
 
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.16, 0.10],
-          scale: [1, 1.05, 1],
-          x: ['2%', '-2%', '1%'],
-          y: ['2%', '-2%', '1%'],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 4,
-        }}
-        className="absolute top-1/2 -right-40 w-[700px] h-[700px] bg-gradient-to-bl from-[#C8A97E]/15 via-[#E5D2BA]/10 to-transparent rounded-full blur-[170px]"
+      <div
+        className="absolute top-1/2 -right-40 w-[700px] h-[700px] pointer-events-none opacity-30 bg-[radial-gradient(ellipse_at_center,rgba(200,169,126,0.2)_0%,rgba(229,210,186,0.1)_45%,transparent_70%)]"
       />
 
-      <motion.div
-        animate={{
-          opacity: [0.06, 0.14, 0.08],
-          scale: [1.02, 0.98, 1.02],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 8,
-        }}
-        className="absolute -bottom-32 left-1/3 w-[800px] h-[600px] bg-gradient-to-t from-[#C8A97E]/15 via-[#DDD5C7]/15 to-transparent rounded-full blur-[160px]"
+      <div
+        className="absolute -bottom-32 left-1/3 w-[800px] h-[600px] pointer-events-none opacity-25 bg-[radial-gradient(ellipse_at_center,rgba(200,169,126,0.18)_0%,rgba(221,213,199,0.12)_50%,transparent_70%)]"
       />
 
       {/* 3. Architectural Marginal Scale Ruler (Left Margin) */}
