@@ -3,13 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TrackToggle from '@/components/ui/TrackToggle';
-import { ArrowUpRight, Menu, X, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useTrack } from '@/context/TrackContext';
+import { useQuiz } from '@/context/QuizContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { track } = useTrack();
+  const { openQuiz } = useQuiz();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
           ? 'py-3.5 bg-ink/90 backdrop-blur-xl border-b border-ink-border/80 shadow-2xl'
           : 'py-6 bg-gradient-to-b from-ink/90 via-ink/40 to-transparent'
@@ -52,7 +54,7 @@ export default function Header() {
         </div>
 
         {/* Right Nav & CTA */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-5">
           <a
             href="#services"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
@@ -65,9 +67,22 @@ export default function Header() {
           >
             Before / After
           </a>
+          <a
+            href="#timeline"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+          >
+            Protocol
+          </a>
+          <a
+            href="#reviews"
+            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
+          >
+            Trust Hub
+          </a>
           <div className="h-4 w-[1px] bg-ink-border" />
-          <Link
-            href={`/quote?track=${track}`}
+          <button
+            type="button"
+            onClick={() => openQuiz()}
             className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_20px_rgba(197,168,128,0.35)] transition-all duration-300"
           >
             <span>Get a Quote</span>
@@ -75,7 +90,7 @@ export default function Header() {
               size={14}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -110,15 +125,32 @@ export default function Header() {
             >
               Before / After Sliders
             </a>
+            <a
+              href="#timeline"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+            >
+              Architectural Protocol
+            </a>
+            <a
+              href="#reviews"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
+            >
+              Google Trust Hub
+            </a>
             <div className="pt-2">
-              <Link
-                href={`/quote?track=${track}`}
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openQuiz();
+                }}
                 className="w-full inline-flex justify-center items-center gap-2 py-3 rounded-full bg-gold text-ink text-xs font-semibold uppercase tracking-wider shadow-lg"
               >
-                <span>Get a Quote</span>
+                <span>Get a Quote (15% Off)</span>
                 <ArrowUpRight size={14} />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

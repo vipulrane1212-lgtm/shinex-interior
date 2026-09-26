@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { TrackProvider } from '@/context/TrackContext';
+import { QuizProvider } from '@/context/QuizContext';
+import QuotationTrapModal from '@/components/quiz/QuotationTrapModal';
 
 export const metadata: Metadata = {
   title: 'ShineX Infra Interior | Architecture, Luxury Interiors & Civil Contracting',
@@ -16,7 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="bg-ink text-plaster antialiased selection:bg-gold selection:text-ink">
-        <TrackProvider>{children}</TrackProvider>
+        <TrackProvider>
+          <QuizProvider>
+            {children}
+            <QuotationTrapModal />
+          </QuizProvider>
+        </TrackProvider>
       </body>
     </html>
   );
