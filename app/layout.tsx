@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-ink text-plaster antialiased selection:bg-gold selection:text-ink">
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-ink text-plaster antialiased selection:bg-gold selection:text-white">
         <TrackProvider>
           <QuizProvider>
             {children}

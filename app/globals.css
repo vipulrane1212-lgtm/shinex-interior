@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0A0B;
-  --foreground: #F5F5F7;
+  --background: #F8F6F1;
+  --foreground: #1B1917;
 }
 
 * {
@@ -27,29 +27,31 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0B;
+  background: #F8F6F1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #DDD5C7;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A880;
+  background: #9E783E;
 }
 
-/* Glassmorphism helpers */
+/* Glassmorphism helpers for Cream Luxury Palette */
 .glass-panel {
-  background: rgba(18, 18, 20, 0.7);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 219, 208, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(27, 25, 23, 0.05);
 }
 
 .glass-panel-gold {
-  background: rgba(24, 24, 27, 0.75);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 168, 128, 0.25);
+  border: 1px solid rgba(158, 120, 62, 0.35);
+  box-shadow: 0 15px 35px -5px rgba(158, 120, 62, 0.12);
 }
 
 /* Luxury border glow on hover */
@@ -57,8 +59,8 @@ body {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hover-gold-glow:hover {
-  border-color: rgba(197, 168, 128, 0.6);
-  box-shadow: 0 0 25px -5px rgba(197, 168, 128, 0.2);
+  border-color: rgba(158, 120, 62, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(158, 120, 62, 0.15);
 }
 
 /* Infinite Marquee */

@@ -10,21 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: '#0A0A0B',
-          soft: '#121214',
-          card: '#18181B',
-          border: '#27272A',
+          DEFAULT: '#F8F6F1', // Primary warm cream background (travertine plaster)
+          soft: '#F0EBE1',    // Secondary warmer cream for alternating panels & sections
+          card: '#FFFFFF',    // Crisp elevated white card for sharp tactile definition
+          border: '#E2DBD0',  // Warm limestone hairline border
         },
         gold: {
-          DEFAULT: '#C5A880',
-          light: '#E5D4BA',
-          dark: '#9F8052',
-          subtle: 'rgba(197, 168, 128, 0.15)',
+          DEFAULT: '#9E783E', // Rich burnished antique gold (contrasts with cream & white)
+          light: '#B69255',   // Brighter warm gold accent
+          dark: '#7A5A2B',    // Deep bronze tone
+          subtle: 'rgba(158, 120, 62, 0.12)', // Soft gold tint for pills and highlights
         },
         plaster: {
-          DEFAULT: '#F5F5F7',
-          muted: '#A1A1AA',
-          dim: '#71717A',
+          DEFAULT: '#1B1917', // Deep warm charcoal/ebony for high-contrast, editorial typography
+          muted: '#54504A',   // Warm graphite for paragraphs & subheadings
+          dim: '#857F76',     // Soft stone tone for captions, metadata & disclaimers
         },
       },
       fontFamily: {
@@ -33,7 +33,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'glass-glow': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+        'glass-glow': 'linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%)',
       },
     },
   },
