@@ -237,15 +237,24 @@ export default function SplitFooter() {
                 ShineX
               </span>
               <span className="text-[11px] tracking-[0.25em] uppercase text-gold font-medium">
-                Infra Interior
+                Infra Solutions
               </span>
             </div>
             <p className="text-xs text-plaster-muted font-light max-w-md">
-              Legal entity: <strong className="text-plaster">Sneha Enterprises</strong>. Registered civil, interior, and MEP turnkey contracting studio operating across Navi Mumbai and Mumbai.
+              Legal entity: <strong className="text-plaster">ShineX Infra Solutions</strong>. Operating brands:{' '}
+              <span className="text-gold font-medium">ShineX Interior</span> (residential &amp; commercial fit-outs) &amp;{' '}
+              <span className="text-gold font-medium">ShineX Infra</span> (civil contracting, waterproofing &amp; MEP). Backed by Sneha Enterprises Class-1 direct execution licensure.
             </p>
           </div>
 
           <div className="md:col-span-6 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-6 text-xs text-plaster-muted">
+            <a
+              href="/calculator"
+              className="px-4 py-2 rounded-xl bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-ink font-mono uppercase tracking-wider text-xs transition-all flex items-center gap-1.5"
+            >
+              <span>Instant Cost Calculator</span>
+              <ArrowUpRight size={13} />
+            </a>
             <div className="flex items-center gap-2">
               <MapPin size={14} className="text-gold shrink-0" />
               <span>Sector 19A, Seawoods / Vashi, Navi Mumbai</span>
@@ -258,7 +267,7 @@ export default function SplitFooter() {
         </div>
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-plaster-dim font-mono">
-          <p>© {new Date().getFullYear()} ShineX Infra Interior · Sneha Enterprises. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ShineX Infra Solutions · All rights reserved. Estimate only · Final quote after site measure.</p>
           <div className="flex items-center gap-4">
             <span>Seawoods · Kharghar · Vashi · Panvel · Mumbai</span>
             <span>Direct Civil Licensure</span>

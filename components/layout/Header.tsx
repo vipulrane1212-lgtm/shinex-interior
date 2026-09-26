@@ -55,26 +55,33 @@ export default function Header() {
 
         {/* Right Nav & CTA */}
         <div className="hidden md:flex items-center gap-5">
+          <Link
+            href="/calculator"
+            className="text-xs uppercase tracking-widest text-gold hover:text-gold-light transition-colors font-mono font-semibold flex items-center gap-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+            <span>Cost Calculator</span>
+          </Link>
           <a
-            href="#services"
+            href="/#services"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
           >
             Services
           </a>
           <a
-            href="#transformation"
+            href="/#transformation"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
           >
             Before / After
           </a>
           <a
-            href="#timeline"
+            href="/#timeline"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
           >
             Protocol
           </a>
           <a
-            href="#reviews"
+            href="/#reviews"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-medium"
           >
             Trust Hub
@@ -111,29 +118,37 @@ export default function Header() {
             <TrackToggle />
           </div>
           <div className="flex flex-col gap-4 text-center">
+            <Link
+              href="/calculator"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm uppercase tracking-widest text-gold font-mono font-bold py-1.5 flex items-center justify-center gap-2 bg-gold/10 rounded-xl border border-gold/30"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span>Project Cost Calculator</span>
+            </Link>
             <a
-              href="#services"
+              href="/#services"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
             >
               Services Bento
             </a>
             <a
-              href="#transformation"
+              href="/#transformation"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
             >
               Before / After Sliders
             </a>
             <a
-              href="#timeline"
+              href="/#timeline"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
             >
               Architectural Protocol
             </a>
             <a
-              href="#reviews"
+              href="/#reviews"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1"
             >

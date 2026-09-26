@@ -1,11 +1,12 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_SERVICES, COMMERCIAL_SERVICES } from '@/lib/assets';
 import BentoCard from './BentoCard';
 import TrackToggle from '@/components/ui/TrackToggle';
-import { Sparkles, Layers } from 'lucide-react';
+import { Sparkles, Layers, ArrowUpRight } from 'lucide-react';
 
 export default function BentoGrid() {
   const { track } = useTrack();
@@ -75,6 +76,28 @@ export default function BentoGrid() {
               className="md:col-span-6 lg:col-span-3 min-h-[380px]"
             />
           )}
+        </div>
+
+        {/* Cost Calculator Callout Banner */}
+        <div className="mt-10 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-ink-card via-ink-card to-gold/10 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-1 text-center sm:text-left">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-gold font-mono font-semibold">
+              Transparent Mumbai Costing
+            </span>
+            <h3 className="text-xl sm:text-2xl font-serif text-plaster">
+              Need a granular room-by-room quote?
+            </h3>
+            <p className="text-xs text-plaster-muted font-light max-w-lg">
+              Use our multi-step interactive cost estimator to pick modular joinery, kitchen shapes, civil wet packages, and calculate live indicative rates.
+            </p>
+          </div>
+          <Link
+            href="/calculator"
+            className="shrink-0 px-6 py-3.5 rounded-full bg-gold text-ink font-semibold text-xs uppercase tracking-wider hover:bg-gold-light hover:shadow-[0_0_25px_rgba(197,168,128,0.4)] transition-all flex items-center gap-2"
+          >
+            <span>Launch Cost Calculator</span>
+            <ArrowUpRight size={15} />
+          </Link>
         </div>
       </div>
     </section>
