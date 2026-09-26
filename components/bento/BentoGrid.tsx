@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_SERVICES, COMMERCIAL_SERVICES } from '@/lib/assets';
 import BentoCard from './BentoCard';
+import LayoutFlowChart from './LayoutFlowChart';
 import TrackToggle from '@/components/ui/TrackToggle';
 import { Sparkles, Layers, ArrowUpRight } from 'lucide-react';
 
@@ -77,6 +78,9 @@ export default function BentoGrid() {
             />
           )}
         </div>
+
+        {/* Architectural Layout Flow Diagram (Outside the cards) */}
+        <LayoutFlowChart />
 
         {/* Cost Calculator Callout Banner */}
         <div className="mt-10 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-ink-card via-ink-card to-gold/10 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
