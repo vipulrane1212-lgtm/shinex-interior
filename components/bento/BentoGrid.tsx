@@ -21,22 +21,24 @@ export default function BentoGrid() {
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 text-gold">
               <Layers size={16} />
-              <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
-                {track === 'residential' ? 'Residential Atelier' : 'Commercial & Civil Division'}
+              <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
+                {track === 'residential' ? 'Residential Interiors' : 'Commercial & Civil Division'}
               </span>
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-                {track === 'residential' ? 'The Sanctuaries We Shape.' : 'The Infrastructure We Execute.'}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-semibold">
+                {track === 'residential' ? 'Everything Your Home Needs.' : 'Commercial Spaces & Civil Works.'}
               </h2>
-              <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
-                {track === 'residential' ? 'exclusive residential environments' : 'high-throughput corporate architecture'}
+              <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+                {track === 'residential'
+                  ? 'Modular Kitchens · Luxury Bedrooms · Living Rooms · Bathrooms'
+                  : 'Offices · Retail Showrooms · Direct Civil Contracts'}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed max-w-lg">
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed max-w-xl">
               {track === 'residential'
-                ? 'Ultra-matte acrylics, quartz waterfalls, fluted acoustics, and moisture-sealed civil carcasses.'
-                : 'Direct civil contracting, large-scale vitrified flooring, MEP integration, and institutional compliance.'}
+                ? 'Factory-pressed modular furniture, false ceiling, and civil work — designed and built under one roof with a 10-year warranty.'
+                : 'Direct civil execution, flooring, electrical, and turnkey office fit-outs with licensed Sneha Enterprises supervisors.'}
             </p>
           </div>
 

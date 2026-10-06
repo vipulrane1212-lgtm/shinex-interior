@@ -23,20 +23,20 @@ export default function TrustHub() {
               <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center font-bold text-[10px] shadow-sm">
                 <span className="text-blue-500 font-sans">G</span>
               </div>
-              <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
-                Google-Verified Trust Hub
+              <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
+                Google Verified Reviews
               </span>
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-                Homeowner Proof. Civil Discipline.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-semibold">
+                What Our Clients Say.
               </h2>
-              <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
-                unedited homeowner &amp; enterprise accounts
+              <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+                Real experiences from Mumbai &amp; Navi Mumbai homeowners
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed">
-              Unedited reviews and live video walkthroughs from families and enterprises across Seawoods, Kharghar, Vashi, Nerul, and Powai.
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
+              Read verified 5-star Google reviews and watch real video walkthroughs from completed projects across Seawoods, Kharghar, Vashi, and Mumbai.
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export default function TrustHub() {
                       alt={rev.name}
                       fill
                       sizes="48px"
-                      className="object-cover opacity-75 group-hover:scale-110 transition-transform will-change-transform"
+                      className="object-cover opacity-100 group-hover:scale-110 transition-transform will-change-transform"
                     />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <Play size={10} className="fill-gold text-gold" />

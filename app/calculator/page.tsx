@@ -39,8 +39,8 @@ export default function CalculatorPage() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight mt-1 text-plaster">
                 Build Your Project Estimate.
               </h1>
-              <p className="text-xs sm:text-sm text-plaster-muted font-light mt-1.5 max-w-2xl leading-relaxed">
-                Configure your space, pick modular joinery, and review calibrated Navi Mumbai rates in real-time.
+              <p className="text-xs sm:text-sm text-plaster-muted font-normal mt-1.5 max-w-2xl leading-relaxed">
+                Choose your rooms, customize modular furniture, and calculate accurate rates in real-time.
                 Backed by <strong>ShineX Infra Solutions</strong>.
               </p>
             </div>

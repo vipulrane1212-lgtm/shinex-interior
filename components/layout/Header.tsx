@@ -43,7 +43,7 @@ export default function Header() {
               </span>
             </div>
             <span className="text-[9px] tracking-wider text-plaster-dim uppercase font-mono mt-0.5">
-              Sneha Enterprises · Direct Execution
+              Licensed Civil &amp; Interior Contractor · Mumbai
             </span>
           </div>
         </Link>
@@ -72,19 +72,19 @@ export default function Header() {
             href="/#transformation"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
-            Before / After
+            Transformations
           </a>
           <a
             href="/#timeline"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
-            Protocol
+            How We Work
           </a>
           <a
             href="/#reviews"
             className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
           >
-            Trust Hub
+            Reviews
           </a>
           <div className="h-4 w-[1px] bg-ink-border" />
           <button
@@ -92,7 +92,7 @@ export default function Header() {
             onClick={() => openQuiz()}
             className="btn-luxury group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
           >
-            <span>Get a Quote</span>
+            <span>Get Free Quote</span>
             <ArrowUpRight
               size={14}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
@@ -121,38 +121,38 @@ export default function Header() {
             <Link
               href="/calculator"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-gold font-mono font-bold py-1.5 flex items-center justify-center gap-2 bg-gold/10 rounded-xl border border-gold/30"
+              className="text-sm uppercase tracking-widest text-gold font-mono font-bold py-2 flex items-center justify-center gap-2 bg-gold/10 rounded-xl border border-gold/30"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span>Project Cost Calculator</span>
+              <span>Cost Calculator</span>
             </Link>
             <a
               href="/#services"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
             >
-              Services Bento
+              Our Services
             </a>
             <a
               href="/#transformation"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
             >
-              Before / After Sliders
+              Real Transformations
             </a>
             <a
               href="/#timeline"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
             >
-              Architectural Protocol
+              How We Work
             </a>
             <a
               href="/#reviews"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1 font-sans"
+              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
             >
-              Google Trust Hub
+              Client Reviews
             </a>
             <div className="pt-2">
               <button
@@ -163,7 +163,7 @@ export default function Header() {
                 }}
                 className="btn-luxury w-full inline-flex justify-center items-center gap-2 py-3.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-lg"
               >
-                <span>Get a Quote (15% Off)</span>
+                <span>Get Free Quote (15% Off)</span>
                 <ArrowUpRight size={14} />
               </button>
             </div>

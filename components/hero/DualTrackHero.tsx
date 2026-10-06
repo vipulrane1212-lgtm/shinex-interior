@@ -23,14 +23,14 @@ export default function DualTrackHero() {
       gsap.to(leftRef.current, { flex: '0 0 65%', duration: 0.6, ease: 'power3.out' });
       gsap.to(rightRef.current, { flex: '0 0 35%', duration: 0.6, ease: 'power3.out' });
       gsap.to(leftImgRef.current, { scale: 1.08, duration: 0.8, ease: 'power2.out' });
-      gsap.to(rightImgRef.current, { filter: 'brightness(0.5) contrast(0.95)', duration: 0.6 });
-      gsap.to(leftImgRef.current, { filter: 'brightness(0.95) contrast(1.05)', duration: 0.6 });
+      gsap.to(rightImgRef.current, { filter: 'brightness(0.85) contrast(1)', duration: 0.6 });
+      gsap.to(leftImgRef.current, { filter: 'brightness(1.05) contrast(1.05)', duration: 0.6 });
     } else {
       gsap.to(rightRef.current, { flex: '0 0 65%', duration: 0.6, ease: 'power3.out' });
       gsap.to(leftRef.current, { flex: '0 0 35%', duration: 0.6, ease: 'power3.out' });
       gsap.to(rightImgRef.current, { scale: 1.08, duration: 0.8, ease: 'power2.out' });
-      gsap.to(leftImgRef.current, { filter: 'brightness(0.5) contrast(0.95)', duration: 0.6 });
-      gsap.to(rightImgRef.current, { filter: 'brightness(0.95) contrast(1.05)', duration: 0.6 });
+      gsap.to(leftImgRef.current, { filter: 'brightness(0.85) contrast(1)', duration: 0.6 });
+      gsap.to(rightImgRef.current, { filter: 'brightness(1.05) contrast(1.05)', duration: 0.6 });
     }
   };
 
@@ -44,7 +44,7 @@ export default function DualTrackHero() {
     });
     gsap.to([leftImgRef.current, rightImgRef.current], {
       scale: 1,
-      filter: 'brightness(0.75) contrast(1)',
+      filter: 'brightness(1) contrast(1)',
       duration: 0.6,
       ease: 'power2.out',
     });
@@ -79,7 +79,6 @@ export default function DualTrackHero() {
         <div
           ref={leftImgRef}
           className="absolute inset-0 z-0 origin-center transition-transform will-change-transform"
-          style={{ filter: 'brightness(0.75)' }}
         >
           <Image
             src={RESIDENTIAL_HERO_IMAGE}
@@ -91,9 +90,9 @@ export default function DualTrackHero() {
           />
         </div>
 
-        {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/50 to-transparent opacity-90 lg:opacity-80 group-hover:opacity-75 transition-opacity" />
-        <div className="absolute inset-0 z-1 bg-gradient-to-r from-ink/80 via-transparent to-transparent opacity-70 hidden lg:block" />
+        {/* Soft Warm Gradient Overlays */}
+        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-65 lg:opacity-50 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute inset-0 z-1 bg-gradient-to-r from-ink/60 via-transparent to-transparent opacity-40 hidden lg:block" />
 
         {/* Active Track Highlight Badge */}
         {track === 'residential' && (
@@ -107,18 +106,18 @@ export default function DualTrackHero() {
         <div className="relative z-10 max-w-xl space-y-3">
           <div className="flex items-center gap-2 text-gold">
             <Home size={15} />
-            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
-              Track 01 · Residential Atelier
+            <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
+              Track 01 · Residential Homes
             </span>
           </div>
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.04] group-hover:text-gold-light transition-colors">
-              Design Your <br className="hidden sm:inline" />
-              Dream Home.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-semibold leading-[1.08] group-hover:text-gold-light transition-colors">
+              Luxury Interiors &amp; <br className="hidden sm:inline" />
+              Custom Homes.
             </h2>
-            <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
-              bespoke living sanctuaries
+            <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+              Modular Kitchens · Luxury Bedrooms · Turnkey Interiors
             </span>
           </div>
 
@@ -127,11 +126,11 @@ export default function DualTrackHero() {
               type="button"
               className="btn-luxury inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
             >
-              <span>Explore Residential</span>
+              <span>Explore Homes</span>
               <ArrowUpRight size={14} />
             </button>
             <span className="text-[11px] uppercase tracking-widest text-plaster-muted font-mono hidden sm:inline">
-              Kitchens · Bedrooms · Turnkey
+              10-Year Warranty · Direct Factory Build
             </span>
           </div>
         </div>
@@ -152,7 +151,6 @@ export default function DualTrackHero() {
         <div
           ref={rightImgRef}
           className="absolute inset-0 z-0 origin-center transition-transform will-change-transform"
-          style={{ filter: 'brightness(0.75)' }}
         >
           <Image
             src={COMMERCIAL_HERO_IMAGE}
@@ -164,9 +162,9 @@ export default function DualTrackHero() {
           />
         </div>
 
-        {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/50 to-transparent opacity-90 lg:opacity-80 group-hover:opacity-75 transition-opacity" />
-        <div className="absolute inset-0 z-1 bg-gradient-to-l from-ink/80 via-transparent to-transparent opacity-70 hidden lg:block" />
+        {/* Soft Warm Gradient Overlays */}
+        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-65 lg:opacity-50 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute inset-0 z-1 bg-gradient-to-l from-ink/60 via-transparent to-transparent opacity-40 hidden lg:block" />
 
         {/* Active Track Highlight Badge */}
         {track === 'commercial' && (
@@ -180,18 +178,18 @@ export default function DualTrackHero() {
         <div className="relative z-10 max-w-xl space-y-3">
           <div className="flex items-center gap-2 text-gold">
             <Building2 size={15} />
-            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
+            <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
               Track 02 · Commercial &amp; Civil
             </span>
           </div>
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-normal leading-[1.04] group-hover:text-gold-light transition-colors">
-              Build Your Business. <br className="hidden sm:inline" />
-              Claim Your Contract.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-semibold leading-[1.08] group-hover:text-gold-light transition-colors">
+              Offices, Showrooms &amp; <br className="hidden sm:inline" />
+              Civil Works.
             </h2>
-            <span className="font-script text-2xl sm:text-3xl text-gold block capitalize mt-1 leading-none">
-              direct civil precision &amp; scale
+            <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+              Complete Office Fit-outs &amp; Licensed Civil Contracts
             </span>
           </div>
 
@@ -204,7 +202,7 @@ export default function DualTrackHero() {
               <ArrowUpRight size={14} />
             </button>
             <span className="text-[11px] uppercase tracking-widest text-plaster-muted font-mono hidden sm:inline">
-              Offices · Civil Works · Tenders
+              Offices · Retail · Tenders
             </span>
           </div>
         </div>
@@ -212,8 +210,8 @@ export default function DualTrackHero() {
 
       {/* Center Divider Cue */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden lg:flex flex-col items-center gap-2 pointer-events-none opacity-80">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-plaster-dim font-mono">
-          Hover to inspect · Click to enter
+        <span className="text-[10px] uppercase tracking-[0.2em] text-plaster-dim font-mono">
+          Tap to choose your project type
         </span>
         <div className="w-8 h-8 rounded-full border border-ink-border bg-ink/70 flex items-center justify-center text-gold animate-bounce">
           <ChevronDown size={14} />

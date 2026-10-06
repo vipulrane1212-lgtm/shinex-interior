@@ -82,11 +82,11 @@ export default function QuotationTrapModal() {
           const currentVal = Math.round(obj.val);
           setCalcProgress(currentVal);
           if (currentVal < 35) {
-            setCalcStatus('Analyzing structural layout & spatial volume...');
+            setCalcStatus('Calculating room dimensions & carpet area...');
           } else if (currentVal < 70) {
-            setCalcStatus('Matching Navi Mumbai Sneha civil index...');
+            setCalcStatus('Matching direct factory & civil rates...');
           } else {
-            setCalcStatus('Calculating 15% seasonal voucher discount...');
+            setCalcStatus('Applying your 15% discount voucher...');
           }
         },
       });
@@ -542,14 +542,14 @@ export default function QuotationTrapModal() {
                       <Lock size={12} />
                       <span>Estimate Generated · 15% Seasonal Discount Applied</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-serif text-plaster">
-                      Unlock Your Custom 15% Off Estimate.
+                    <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-plaster">
+                      Unlock Your 15% Off Estimate.
                     </h3>
-                    <span className="font-script text-2xl text-gold capitalize block mt-0.5 leading-none">
-                      instant voucher generation &amp; itemized boq
+                    <span className="text-sm sm:text-base text-gold font-sans font-medium block mt-1 tracking-wide">
+                      Instant estimate breakdown &amp; 15% discount voucher
                     </span>
-                    <p className="text-xs text-plaster-muted font-sans font-light">
-                      Enter your contact credentials below to receive your itemized BOQ breakdown and lock your 15% discount.
+                    <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal">
+                      Enter your details below to receive your itemized quote directly on WhatsApp.
                     </p>
                   </div>
 

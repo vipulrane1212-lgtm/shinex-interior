@@ -48,20 +48,17 @@ function QuoteContent() {
             href="/"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors mb-4 font-mono"
           >
-            <ArrowLeft size={14} /> Back to Atelier Showcase
+            <ArrowLeft size={14} /> Back to Home
           </Link>
 
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-sans font-semibold block">
             Direct Civil &amp; Interior Estimate
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight mt-1">
-            Specify Your Architecture.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight mt-1 font-bold">
+            Get an Exact Project Estimate
           </h1>
-          <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
-            direct engineering specification
-          </span>
-          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light mt-2">
-            No generic sales agents. Direct consultation with our principal project engineers in Navi Mumbai.
+          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal mt-2">
+            No middleman brokers. Direct consultation with our senior project engineers in Navi Mumbai.
           </p>
         </div>
 

@@ -33,7 +33,7 @@ export default function BentoCard({ card, className = '', isMainHero = false }: 
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 will-change-transform"
         />
         {/* Soft Warm Gradient Overlay for Clean Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-40 group-hover:opacity-30 transition-opacity duration-500" />
       </Link>
 
       {/* Top Header Row */}
@@ -46,34 +46,31 @@ export default function BentoCard({ card, className = '', isMainHero = false }: 
         </div>
       </div>
 
-      {/* Bottom Content Row (Uncluttered, Zero Nested Images) */}
-      <div className="relative z-10 p-5 sm:p-6 space-y-3">
+      {/* Bottom Content Row */}
+      <div className="relative z-10 p-5 sm:p-6 space-y-3 bg-gradient-to-t from-ink/90 via-ink/60 to-transparent">
         <div>
-          <span className="font-script text-lg text-gold lowercase block leading-none mb-1">
-            bespoke execution
-          </span>
           <Link
             href={`/quote?service=${card.id}&track=${track}`}
-            className="block text-2xl sm:text-3xl font-serif text-plaster group-hover:text-gold transition-colors leading-tight"
+            className="block text-xl sm:text-2xl font-serif font-semibold text-plaster group-hover:text-gold transition-colors leading-tight"
           >
             {card.title}
           </Link>
-          <p className="text-xs text-plaster-muted font-sans font-light mt-1.5 line-clamp-2">
-            Precision engineering, concealed hardware, and moisture-sealed civil carcasses tailored for Mumbai residences.
+          <p className="text-xs text-plaster-muted font-sans font-normal mt-1">
+            Waterproof Marine Ply · German Hardware · 10-Year Warranty
           </p>
         </div>
 
         {/* Direct Action Link */}
-        <div className="pt-3 flex items-center justify-between border-t border-ink-border/80">
+        <div className="pt-2.5 flex items-center justify-between border-t border-ink-border/80">
           <Link
             href={`/quote?service=${card.id}&track=${track}`}
-            className="text-xs uppercase tracking-widest text-gold font-sans font-semibold hover:text-plaster transition-colors inline-flex items-center gap-1.5"
+            className="text-xs uppercase tracking-wider text-gold font-sans font-semibold hover:text-plaster transition-colors inline-flex items-center gap-1.5"
           >
-            <span>Quote This Space</span>
+            <span>Get Free Estimate</span>
             <ArrowUpRight size={13} />
           </Link>
           <span className="text-[10px] text-plaster-dim font-mono uppercase">
-            1-Click Funnel
+            Instant Quote
           </span>
         </div>
       </div>

@@ -47,37 +47,37 @@ export default function SplitFooter() {
             />
           </div>
 
-          {/* Cinematic Dark Gradient Overlay */}
-          <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/65 to-ink/40" />
+          {/* Soft Warm Gradient Overlay for Clean Image Visibility */}
+          <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
 
           {/* Top Badge Overlay */}
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-mono uppercase tracking-wider">
               <Sparkles size={13} />
-              <span>Limited Season Privilege · 15% Off</span>
+              <span>Special Offer · 15% Off Your Project</span>
             </div>
           </div>
 
           {/* Center / Bottom Graphic Text */}
           <div className="relative z-10 space-y-5 mt-12 lg:mt-0">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-plaster tracking-tight font-normal leading-[1.08]">
-                Claim Your Free Quote &amp; <br />
-                Your First Project.
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-plaster tracking-tight leading-[1.08]">
+                Get a Free 3D Design &amp; <br />
+                15% Off Your Project.
               </h2>
-              <span className="font-script text-3xl sm:text-4xl text-gold capitalize block mt-1 leading-none">
-                exclusive season privilege · 15% voucher
+              <span className="text-base sm:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+                Direct factory pricing · Zero middleman charges
               </span>
             </div>
 
             {/* Guaranteed Perks List */}
             <div className="space-y-2.5 pt-2 max-w-md">
               {[
-                'Transparent itemized BOQ with zero hidden surcharges',
-                'Free on-site laser measurement & 3D CAD schematic',
-                'Direct Sneha Enterprises civil contracting & 10-year moisture seal',
+                'Itemized quotation with zero hidden charges',
+                'Free on-site laser measurement & 3D layout plan',
+                '10-year warranty backed by Sneha Enterprises Class-1 civil license',
               ].map((perk) => (
-                <div key={perk} className="flex items-center gap-2.5 text-xs text-plaster-muted font-sans font-light">
+                <div key={perk} className="flex items-center gap-2.5 text-xs text-plaster-muted font-sans font-normal">
                   <CheckCircle2 size={14} className="text-gold shrink-0" />
                   <span>{perk}</span>
                 </div>
@@ -86,7 +86,7 @@ export default function SplitFooter() {
 
             <div className="pt-2 flex items-center gap-2 text-[11px] text-gold font-mono">
               <ShieldCheck size={14} />
-              <span>16 Years Direct Civil Execution in Navi Mumbai &amp; Mumbai</span>
+              <span>16+ Years Direct Civil &amp; Interior Execution in Mumbai</span>
             </div>
           </div>
         </div>
@@ -122,17 +122,14 @@ export default function SplitFooter() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-1">
-                  <span className="text-xs uppercase tracking-widest text-gold font-mono block">
-                    Fast-Track Lead Form
+                  <span className="text-xs uppercase tracking-wider text-gold font-mono font-semibold block">
+                    Direct Consultation
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-serif text-plaster">
-                    Speak Directly with an Architect.
+                  <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-plaster">
+                    Speak with an Interior Engineer.
                   </h3>
-                  <span className="font-script text-2xl text-gold capitalize block mt-0.5 leading-none">
-                    direct atelier consultation
-                  </span>
-                  <p className="text-xs text-plaster-muted font-sans font-light mt-1">
-                    No middlemen. Direct consultation with our Seawoods atelier engineers.
+                  <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal mt-1">
+                    Direct consultation with our senior project team in Seawoods. No pushy sales calls.
                   </p>
                 </div>
 
@@ -141,14 +138,14 @@ export default function SplitFooter() {
                   {/* Field 1: Name */}
                   <div>
                     <label className="text-[11px] uppercase tracking-wider text-plaster-muted font-mono block mb-1">
-                      1. Full Name *
+                      1. Your Full Name *
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Anand Mahindra"
+                      placeholder="e.g. Rahul Sharma"
                       className="input-luxury w-full px-4 py-3.5 rounded-xl text-plaster text-xs"
                     />
                   </div>
@@ -156,7 +153,7 @@ export default function SplitFooter() {
                   {/* Field 2: Phone */}
                   <div>
                     <label className="text-[11px] uppercase tracking-wider text-plaster-muted font-mono block mb-1">
-                      2. Phone Number (WhatsApp) *
+                      2. WhatsApp Mobile Number *
                     </label>
                     <input
                       type="tel"
@@ -171,14 +168,13 @@ export default function SplitFooter() {
                   {/* Field 3: Email */}
                   <div>
                     <label className="text-[11px] uppercase tracking-wider text-plaster-muted font-mono block mb-1">
-                      3. Email Address *
+                      3. Email Address
                     </label>
                     <input
                       type="email"
-                      required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="anand@company.com"
+                      placeholder="name@email.com"
                       className="input-luxury w-full px-4 py-3.5 rounded-xl text-plaster text-xs"
                     />
                   </div>
@@ -186,13 +182,13 @@ export default function SplitFooter() {
                   {/* Field 4: Service Type Selection */}
                   <div>
                     <label className="text-[11px] uppercase tracking-wider text-plaster-muted font-mono block mb-1.5">
-                      4. Service Type Required *
+                      4. Select Service Needed *
                     </label>
                     <div className="grid grid-cols-2 gap-2">
                       {[
                         'Modular Kitchen',
                         'Full Turnkey Home',
-                        'Civil & Tiling',
+                        'Civil & Waterproofing',
                         'Commercial Fit-Out',
                       ].map((item) => (
                         <button
@@ -218,7 +214,7 @@ export default function SplitFooter() {
                     type="submit"
                     className="btn-luxury w-full py-4 rounded-full bg-gold text-white text-xs font-sans font-bold uppercase tracking-widest shadow-lg flex items-center justify-center gap-2"
                   >
-                    <span>Claim 15% Off &amp; Get Estimate</span>
+                    <span>Claim 15% Off &amp; Get Free Estimate</span>
                     <ArrowUpRight size={15} />
                   </button>
 

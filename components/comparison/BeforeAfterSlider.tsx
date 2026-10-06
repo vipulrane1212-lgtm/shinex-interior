@@ -65,19 +65,19 @@ export default function BeforeAfterSlider() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-gold font-sans font-semibold block">
-              Direct Site Transformation
+            <span className="text-xs uppercase tracking-[0.2em] text-gold font-sans font-semibold block">
+              Real Site Transformations
             </span>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-normal">
-                Raw Civil to Atelier Turnkey.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-semibold">
+                From Raw Civil to Luxury Finish.
               </h2>
-              <span className="font-script text-2xl sm:text-3xl text-gold capitalize block mt-1 leading-none">
-                civil transformation in physical reality
+              <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+                100% real site execution across Mumbai &amp; Navi Mumbai
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light leading-relaxed">
-              Drag the vertical separator to witness the raw concrete and masonry transform into finished architectural craftsmanship.
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
+              Drag the center slider to compare the raw brickwork against our factory-finished interior handover.
             </p>
           </div>
 

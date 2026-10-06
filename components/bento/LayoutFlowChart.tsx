@@ -34,13 +34,13 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'l-shape',
     step: '01',
-    title: 'L-Shaped Modular',
-    tagline: '90° Ergonomic Corner Flow',
-    flowType: 'Corner Optimization',
-    idealFor: 'Apartments (750 – 1,400 sq.ft)',
+    title: 'L-Shaped Kitchen',
+    tagline: 'Smooth Corner Cooking Workflow',
+    flowType: 'Corner Layout',
+    idealFor: 'Apartments (1 BHK, 2 BHK, 3 BHK)',
     counterRun: '14 – 18 Running Ft',
-    storageCapacity: '650L Sealed Storage',
-    workTriangle: 'Optimal (1.4m Shortest Reach)',
+    storageCapacity: 'Base + Overhead Cabinets',
+    workTriangle: 'Quick access between Hob, Sink & Fridge',
     image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
@@ -55,13 +55,13 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'parallel',
     step: '02',
-    title: 'Parallel Galley',
-    tagline: 'Dual-Run Chef Throughput',
-    flowType: 'High-Volume Linear Flow',
-    idealFor: 'Gourmet Chefs & Long Kitchen Spans',
+    title: 'Parallel Kitchen',
+    tagline: 'Dual-Counter Galley Layout',
+    flowType: 'High-Capacity Flow',
+    idealFor: 'Long Kitchens with Utility Balcony',
     counterRun: '18 – 24 Running Ft',
-    storageCapacity: '850L Maximum Volume',
-    workTriangle: 'Direct Linear Split (Zero Dead Corners)',
+    storageCapacity: 'Maximum Counter & Tall Unit Storage',
+    workTriangle: 'Dual-side layout with zero dead corners',
     image: 'https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
@@ -75,13 +75,13 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'u-shape',
     step: '03',
-    title: 'U-Shaped Wrap',
-    tagline: '3-Wall Perimeter Discipline',
-    flowType: 'Continuous Culinary Enclosure',
-    idealFor: 'Large Flats & Independent Villas',
+    title: 'U-Shaped Kitchen',
+    tagline: '3-Sided Spacious Cooking Area',
+    flowType: 'Full Wrap Counter',
+    idealFor: 'Large 3 BHK, 4 BHK & Villas',
     counterRun: '22 – 30 Running Ft',
-    storageCapacity: '1,100L High Density',
-    workTriangle: '3-Point Equilateral Triangle',
+    storageCapacity: 'High-Density Storage + Pantry Unit',
+    workTriangle: 'Dedicated zones for Prep, Cook & Wash',
     image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
@@ -94,13 +94,13 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'island',
     step: '04',
-    title: 'Island Monolith',
-    tagline: '360° Social Circulation Hub',
-    flowType: 'Centric Architectural Statement',
-    idealFor: 'Luxury Penthouses & Open-Concept Homes',
+    title: 'Island Kitchen',
+    tagline: 'Center Island with Breakfast Counter',
+    flowType: 'Open Luxury Layout',
+    idealFor: 'Penthouses & Open-Concept Homes',
     counterRun: '26 – 36 Running Ft',
-    storageCapacity: '1,400L + Wine/Pantry Niches',
-    workTriangle: '360° Multi-Zone Entertaining',
+    storageCapacity: 'Island Drawers + Bar / Pantry Space',
+    workTriangle: 'Social Cooking & Family Dining',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
@@ -116,13 +116,13 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-workstations',
     step: '01',
-    title: 'Linear Agile Pods',
-    tagline: 'High-Density Ergonomic Workstations',
-    flowType: 'Team Collaboration Run',
-    idealFor: 'Tech Startups & Corporate Back-Offices',
-    counterRun: 'Raceway Integrated Conduits',
-    storageCapacity: 'Individual Lockers & Pedestals',
-    workTriangle: 'Power & LAN Concealment',
+    title: 'Team Workstations',
+    tagline: 'High-Density Ergonomic Desks',
+    flowType: 'Open Office Pods',
+    idealFor: 'Corporate Teams & IT Back-Offices',
+    counterRun: 'Integrated Power & LAN Raceways',
+    storageCapacity: 'Individual Lockers & Drawer Units',
+    workTriangle: 'Concealed Cable Management',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round">
@@ -137,13 +137,13 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-cabins',
     step: '02',
-    title: 'Acoustic Director Cabins',
-    tagline: 'Double-Glazed Soundproof Privacy',
-    flowType: 'Executive Confidentiality',
-    idealFor: 'CXOs, Senior Partners & Private Meetings',
-    counterRun: 'L-Shaped Veneer Executive Desks',
-    storageCapacity: 'Concealed Credenza & Safe Units',
-    workTriangle: '42 dB Acoustic STC Isolation',
+    title: 'Director Cabins',
+    tagline: 'Soundproof Glass Cabin Privacy',
+    flowType: 'Executive Office',
+    idealFor: 'CXOs, Partners & Private Meetings',
+    counterRun: 'L-Shaped Executive Veneer Desk',
+    storageCapacity: 'Concealed Credenza & Document Storage',
+    workTriangle: 'Acoustic Sound Isolation Glass',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round">
@@ -156,13 +156,13 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-boardroom',
     step: '03',
-    title: 'AV Conference Boardroom',
+    title: 'Conference Boardroom',
     tagline: '16-Seat Video Conference Suite',
-    flowType: 'Hybrid Collaboration Hub',
+    flowType: 'Meeting Hub',
     idealFor: 'Board Meetings & Client Presentations',
-    counterRun: 'Motorized Cable Cubbies & Mic Arrays',
-    storageCapacity: 'Flush Credenza Server Rack',
-    workTriangle: 'Acoustic Slat Ceiling + Display Wall',
+    counterRun: 'Integrated HDMI, Mic & Power Cubbies',
+    storageCapacity: 'Flush Credenza Server & AV Rack',
+    workTriangle: 'Acoustic Wall Panels + Display Screen',
     image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round">
@@ -174,13 +174,13 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-reception',
     step: '04',
-    title: 'Monolith Reception Portal',
-    tagline: 'High-Impact Brand Arrival Statement',
-    flowType: 'Visitor Greeting & Security Access',
-    idealFor: 'Flagship Corporate HQs & Studios',
-    counterRun: 'Corian / Fluted Stone Seamless Curve',
-    storageCapacity: 'Turnstile & Visitor Log Consoles',
-    workTriangle: 'Backlit 3D Acrylic Metal Signage',
+    title: 'Main Reception & Lobby',
+    tagline: 'High-Impact Brand Arrival Desk',
+    flowType: 'Visitor Greeting Area',
+    idealFor: 'Corporate HQs, Clinics & Showrooms',
+    counterRun: 'Seamless Corian / Italian Marble Counter',
+    storageCapacity: 'Visitor Lounge & Storage Units',
+    workTriangle: 'Backlit 3D Company Branding Wall',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round">
@@ -205,18 +205,15 @@ export default function LayoutFlowChart() {
         <div>
           <div className="flex items-center gap-2 text-gold">
             <Workflow size={16} />
-            <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold">
-              Architectural Layout Flow Chart
+            <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
+              Interactive Layout Planner
             </span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-serif text-plaster font-semibold mt-1">
-            {track === 'residential' ? 'Modular Ergonomics & Spatial Circulation' : 'Commercial Space Flow Planning'}
+            {track === 'residential' ? 'Choose the Perfect Kitchen Layout' : 'Smart Commercial Space Layouts'}
           </h3>
-          <span className="font-script text-2xl text-gold capitalize block mt-0.5 leading-none">
-            {track === 'residential' ? 'ergonomic movement patterns' : 'workplace circulation protocol'}
-          </span>
-          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-light mt-1 max-w-xl">
-            Compare configurations side-by-side. Tapping a flow node below updates the architectural blueprint and spatial specifications.
+          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal mt-1 max-w-xl">
+            Compare configurations side-by-side. Tap any layout below to preview the blueprint, counter length, and storage capacity.
           </p>
         </div>
 
@@ -224,7 +221,7 @@ export default function LayoutFlowChart() {
           href="/calculator"
           className="shrink-0 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-gold hover:text-plaster transition-colors"
         >
-          <span>Open Full Pricing Calculator</span>
+          <span>Calculate Your Layout Cost</span>
           <ArrowRight size={14} />
         </Link>
       </div>

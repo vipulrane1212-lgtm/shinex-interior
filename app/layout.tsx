@@ -1,22 +1,15 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Pinyon_Script, Plus_Jakarta_Sans } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { TrackProvider } from '@/context/TrackContext';
 import { QuizProvider } from '@/context/QuizContext';
 import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider';
 import QuotationTrapModal from '@/components/quiz/QuotationTrapModal';
 
-const cormorant = Cormorant_Garamond({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
-});
-
-const pinyon = Pinyon_Script({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-pinyon',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-outfit',
   display: 'swap',
 });
 
@@ -41,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${pinyon.variable} ${jakarta.variable}`}
+      className={`${outfit.variable} ${jakarta.variable}`}
     >
       <body className="bg-ink text-plaster font-sans antialiased selection:bg-gold selection:text-white">
         <TrackProvider>
