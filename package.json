@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:export": "cross-env NEXT_EXPORT=true next build",
-    "deploy:pages": "cross-env NEXT_EXPORT=true next build && gh-pages -d out -t true -b gh-pages",
+    "deploy:pages": "cross-env NEXT_EXPORT=true next build && gh-pages -d out --dotfiles -b gh-pages",
     "start": "next start",
     "lint": "next lint"
   },

@@ -24,16 +24,16 @@ body {
 
 /* Typography Hierarchy Defaults */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
   letter-spacing: -0.02em;
 }
 
 .font-script {
-  font-family: var(--font-pinyon), cursive;
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
 }
 
 .font-serif {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
 }
 
 .font-sans {
