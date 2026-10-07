@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import SplitFooter from '@/components/layout/SplitFooter';
 import DualTrackHero from '@/components/hero/DualTrackHero';
+import HeroVideoScroll from '@/components/hero/HeroVideoScroll';
 import BentoGrid from '@/components/bento/BentoGrid';
 import BeforeAfterSlider from '@/components/comparison/BeforeAfterSlider';
 import ProcessTimeline from '@/components/timeline/ProcessTimeline';
@@ -15,6 +16,9 @@ export default function HomePage() {
 
       {/* Main Experience */}
       <main className="flex-1 w-full">
+        {/* Section 0: The Interactive GSAP Video Transformation Hero */}
+        <HeroVideoScroll />
+
         {/* Section 1: The Dual-Track Hero (GSAP Split-Screen) */}
         <DualTrackHero />
 
