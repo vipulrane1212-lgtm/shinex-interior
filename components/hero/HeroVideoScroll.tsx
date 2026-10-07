@@ -62,15 +62,24 @@ export default function HeroVideoScroll() {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [isVideoReady, setIsVideoReady] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [videoSrc, setVideoSrc] = useState<string>('');
 
-  // Viewport detection
+  // Viewport & Base Path detection
   useEffect(() => {
-    const checkViewport = () => {
-      setIsMobile(window.innerWidth < 768);
+    const isGhPages = window.location.pathname.startsWith('/shinex-interior');
+    const base = isGhPages ? '/shinex-interior' : '';
+    const mobile = window.innerWidth < 768;
+    setIsMobile(mobile);
+    setVideoSrc(`${base}/videos/${mobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`);
+
+    const handleResize = () => {
+      const mob = window.innerWidth < 768;
+      setIsMobile(mob);
+      setVideoSrc(`${base}/videos/${mob ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`);
     };
-    checkViewport();
-    window.addEventListener('resize', checkViewport);
-    return () => window.removeEventListener('resize', checkViewport);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -176,8 +185,8 @@ export default function HeroVideoScroll() {
       <div className="absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
-          key={isMobile ? 'mobile-video' : 'desktop-video'}
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH || (typeof window !== 'undefined' && window.location.pathname.startsWith('/shinex-interior') ? '/shinex-interior' : '')}/videos/${isMobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`}
+          key={videoSrc || 'initial-video'}
+          src={videoSrc || undefined}
           playsInline
           muted
           preload="auto"
