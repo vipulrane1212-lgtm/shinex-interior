@@ -80,14 +80,15 @@ export default function HeroVideoScroll() {
     const container = containerRef.current;
     if (!video || !container) return;
 
-    // Wait until video has loaded duration
-    const initScrollTrigger = () => {
-      const duration = video.duration || 6;
+    let triggerInstance: ScrollTrigger | undefined;
+
+    const setupTrigger = () => {
+      if (triggerInstance) triggerInstance.kill();
+
+      const duration = video.duration && !isNaN(video.duration) && video.duration > 0 ? video.duration : 6;
       setIsVideoReady(true);
 
-      const target = { currentTime: 0 };
-
-      const trigger = ScrollTrigger.create({
+      triggerInstance = ScrollTrigger.create({
         trigger: container,
         start: 'top top',
         end: '+=350%',
@@ -117,27 +118,40 @@ export default function HeroVideoScroll() {
           setActiveMilestoneIndex(foundIndex);
 
           // Seek video smoothly
-          target.currentTime = progress * duration;
-          if (video.readyState >= 2) {
-            video.currentTime = target.currentTime;
+          if (video && !isNaN(duration)) {
+            const targetTime = progress * duration;
+            // Always set currentTime if valid
+            try {
+              video.currentTime = targetTime;
+            } catch {
+              // Ignore seek abort
+            }
           }
         },
       });
 
-      return trigger;
+      // Force recalculation
+      ScrollTrigger.refresh();
     };
 
-    let triggerInstance: ScrollTrigger | undefined;
-
     if (video.readyState >= 1) {
-      triggerInstance = initScrollTrigger();
+      setupTrigger();
     } else {
-      video.addEventListener('loadedmetadata', () => {
-        triggerInstance = initScrollTrigger();
-      });
+      video.addEventListener('loadedmetadata', setupTrigger, { once: true });
+      video.addEventListener('canplay', setupTrigger, { once: true });
     }
 
+    // Safety fallback: if metadata takes time, initialize with 6s after 400ms
+    const timer = setTimeout(() => {
+      if (!triggerInstance) {
+        setupTrigger();
+      }
+    }, 400);
+
     return () => {
+      clearTimeout(timer);
+      video.removeEventListener('loadedmetadata', setupTrigger);
+      video.removeEventListener('canplay', setupTrigger);
       if (triggerInstance) triggerInstance.kill();
     };
   }, [isMobile]);
@@ -163,7 +177,7 @@ export default function HeroVideoScroll() {
         <video
           ref={videoRef}
           key={isMobile ? 'mobile-video' : 'desktop-video'}
-          src={isMobile ? '/videos/mobile_scrub.mp4' : '/videos/desktop_scrub.mp4'}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || (typeof window !== 'undefined' && window.location.pathname.startsWith('/shinex-interior') ? '/shinex-interior' : '')}/videos/${isMobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`}
           playsInline
           muted
           preload="auto"
