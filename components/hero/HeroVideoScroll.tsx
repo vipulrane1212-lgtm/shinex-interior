@@ -1,178 +1,136 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, ArrowDown, ArrowUpRight, ShieldCheck, Ruler, CheckCircle2 } from 'lucide-react';
-import { useQuiz } from '@/context/QuizContext';
 
-interface Milestone {
-  range: [number, number]; // [start progress, end progress]
-  step: string;
-  badge: string;
-  title: string;
-  subtitle: string;
-  specs: string[];
+function getInitialVideoSrc() {
+  if (typeof window === 'undefined') {
+    return '/videos/desktop_scrub.mp4';
+  }
+  const isGhPages = window.location.pathname.startsWith('/shinex-interior');
+  const base = isGhPages ? '/shinex-interior' : '';
+  const isMobile = window.innerWidth < 768;
+  return `${base}/videos/${isMobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`;
 }
-
-const MILESTONES: Milestone[] = [
-  {
-    range: [0.0, 0.22],
-    step: 'Phase 01',
-    badge: 'Raw Structure',
-    title: 'Raw Civil Space',
-    subtitle: 'Class-1 licensed civil site audit & laser mapping across Mumbai & Navi Mumbai.',
-    specs: ['Laser 3D Room Scan', 'Class-1 Licensed Civil Works', '100% Fixed BOQ Guarantee'],
-  },
-  {
-    range: [0.25, 0.5],
-    step: 'Phase 02',
-    badge: 'Precision Joinery',
-    title: 'Woodwork & Fluted Walls',
-    subtitle: 'Factory-pressed marine plywood panels and acoustic fluted oak wall systems.',
-    specs: ['IS:710 Marine-Grade Plywood', 'Anti-Borer & Termite Proof', 'German PUR Seamless Edging'],
-  },
-  {
-    range: [0.53, 0.78],
-    step: 'Phase 03',
-    badge: 'Modular Fitment',
-    title: 'Custom Modular Interiors',
-    subtitle: 'Integrated built-in consoles, floating display shelves, and concealed lighting channels.',
-    specs: ['German Soft-Close Hardware', 'Concealed LED Warm Ambience', 'Ergonomic Workflows'],
-  },
-  {
-    range: [0.82, 1.0],
-    step: 'Phase 04',
-    badge: 'Turnkey Handover',
-    title: 'Complete Luxury Home',
-    subtitle: 'Travertine finishes, organic statement centerpieces, and clean handover with warranty.',
-    specs: ['10-Year Comprehensive Warranty', 'Deep Clean & White-Glove Handover', '45-Day Guaranteed Timeline'],
-  },
-];
 
 export default function HeroVideoScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const progressBarRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const { openQuiz } = useQuiz();
+  const mottoRef = useRef<HTMLDivElement>(null);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-  const [activeMilestoneIndex, setActiveMilestoneIndex] = useState<number>(0);
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [isVideoReady, setIsVideoReady] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [videoSrc, setVideoSrc] = useState<string>('');
+  const [videoSrc, setVideoSrc] = useState<string>(getInitialVideoSrc);
 
-  // Viewport & Base Path detection
+  // Handle client-side resize between portrait & landscape videos
   useEffect(() => {
-    const isGhPages = window.location.pathname.startsWith('/shinex-interior');
-    const base = isGhPages ? '/shinex-interior' : '';
-    const mobile = window.innerWidth < 768;
-    setIsMobile(mobile);
-    setVideoSrc(`${base}/videos/${mobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`);
-
     const handleResize = () => {
-      const mob = window.innerWidth < 768;
-      setIsMobile(mob);
-      setVideoSrc(`${base}/videos/${mob ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`);
+      const isGhPages = window.location.pathname.startsWith('/shinex-interior');
+      const base = isGhPages ? '/shinex-interior' : '';
+      const isMobile = window.innerWidth < 768;
+      const targetSrc = `${base}/videos/${isMobile ? 'mobile_scrub.mp4' : 'desktop_scrub.mp4'}`;
+      setVideoSrc((prev) => (prev !== targetSrc ? targetSrc : prev));
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Initialize GSAP ScrollTrigger timeline and direct video scrubbing
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const video = videoRef.current;
     const container = containerRef.current;
+    const motto = mottoRef.current;
     if (!video || !container) return;
 
-    let triggerInstance: ScrollTrigger | undefined;
+    // Ensure video source is loaded
+    if (video.src !== videoSrc) {
+      video.src = videoSrc;
+    }
+    video.load();
 
-    const setupTrigger = () => {
-      if (triggerInstance) triggerInstance.kill();
+    const setupScrubAnimation = () => {
+      if (tlRef.current) {
+        tlRef.current.kill();
+      }
 
-      const duration = video.duration && !isNaN(video.duration) && video.duration > 0 ? video.duration : 6;
-      setIsVideoReady(true);
+      const totalDuration =
+        video.duration && !isNaN(video.duration) && video.duration > 0
+          ? video.duration
+          : 6;
 
-      triggerInstance = ScrollTrigger.create({
-        trigger: container,
-        start: 'top top',
-        end: '+=350%',
-        pin: true,
-        scrub: 0.6,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          setScrollProgress(progress);
-
-          // Update progress bar
-          if (progressBarRef.current) {
-            progressBarRef.current.style.width = `${progress * 100}%`;
-          }
-
-          // Compute active milestone
-          let foundIndex = 0;
-          for (let i = 0; i < MILESTONES.length; i++) {
-            const [min, max] = MILESTONES[i].range;
-            if (progress >= min && progress <= max) {
-              foundIndex = i;
-              break;
-            } else if (progress > max) {
-              foundIndex = i;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: 'top top',
+          end: '+=250%',
+          pin: true,
+          scrub: 0.5,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            // Direct seek on scrub update for silky smooth hardware-accelerated playback
+            if (video.readyState >= 1) {
+              const targetTime = self.progress * totalDuration;
+              try {
+                video.currentTime = targetTime;
+              } catch {
+                // Ignore seek abort
+              }
             }
-          }
-          setActiveMilestoneIndex(foundIndex);
-
-          // Seek video smoothly
-          if (video && !isNaN(duration)) {
-            const targetTime = progress * duration;
-            // Always set currentTime if valid
-            try {
-              video.currentTime = targetTime;
-            } catch {
-              // Ignore seek abort
-            }
-          }
+          },
         },
       });
 
-      // Force recalculation
+      // 1. Single Center Motto: fades out during the first ~25% of scroll
+      // Leaving the rest of the transformation as 100% clean free space
+      if (motto) {
+        tl.to(
+          motto,
+          {
+            opacity: 0,
+            y: -35,
+            scale: 0.96,
+            ease: 'power2.out',
+            duration: 0.25,
+          },
+          0.05
+        );
+      }
+
+      // Establish timeline scale
+      tl.to({}, { duration: 1 }, 0);
+
+      tlRef.current = tl;
       ScrollTrigger.refresh();
     };
 
     if (video.readyState >= 1) {
-      setupTrigger();
+      setupScrubAnimation();
     } else {
-      video.addEventListener('loadedmetadata', setupTrigger, { once: true });
-      video.addEventListener('canplay', setupTrigger, { once: true });
+      video.addEventListener('loadedmetadata', setupScrubAnimation, { once: true });
+      video.addEventListener('canplay', setupScrubAnimation, { once: true });
     }
 
-    // Safety fallback: if metadata takes time, initialize with 6s after 400ms
+    // Fallback timer to guarantee ScrollTrigger initialization
     const timer = setTimeout(() => {
-      if (!triggerInstance) {
-        setupTrigger();
+      if (!tlRef.current) {
+        setupScrubAnimation();
       }
     }, 400);
 
     return () => {
       clearTimeout(timer);
-      video.removeEventListener('loadedmetadata', setupTrigger);
-      video.removeEventListener('canplay', setupTrigger);
-      if (triggerInstance) triggerInstance.kill();
+      video.removeEventListener('loadedmetadata', setupScrubAnimation);
+      video.removeEventListener('canplay', setupScrubAnimation);
+      if (tlRef.current) {
+        tlRef.current.kill();
+        tlRef.current = null;
+      }
     };
-  }, [isMobile]);
-
-  const activeMilestone = MILESTONES[activeMilestoneIndex] || MILESTONES[0];
-
-  const handleScrollDown = () => {
-    const target = document.getElementById('services');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  }, [videoSrc]);
 
   return (
     <section
@@ -180,133 +138,61 @@ export default function HeroVideoScroll() {
       className="relative w-full h-screen bg-ink overflow-hidden select-none"
     >
       {/* ─────────────────────────────────────────────────────────────
-          SCRUBBABLE VIDEO ELEMENT (DUAL DESKTOP / MOBILE TRACK)
+          100% IMMERSIVE FULL-BLEED VIDEO
       ───────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
-          key={videoSrc || 'initial-video'}
-          src={videoSrc || undefined}
+          src={videoSrc}
           playsInline
           muted
+          autoPlay={false}
           preload="auto"
-          className="w-full h-full object-cover pointer-events-none brightness-[1.03] contrast-[1.02]"
+          disablePictureInPicture
+          className="w-full h-full object-cover pointer-events-none brightness-[1.02] contrast-[1.02]"
         />
 
-        {/* Soft luxury vignette & dark gradient for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/40 pointer-events-none" />
+        {/* Filmic ambient gradient for text legibility and rich contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/60 pointer-events-none" />
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          TOP BRAND HUD & TIMELINE STEPPER
-      ───────────────────────────────────────────────────────────── */}
-      <div className="absolute top-20 sm:top-24 left-0 right-0 z-20 px-6 sm:px-10 flex items-center justify-between pointer-events-none">
-        <div className="flex items-center gap-3">
-          <span className="px-3 py-1 rounded-full bg-ink/80 backdrop-blur-md border border-gold/40 text-[10px] sm:text-xs uppercase font-mono tracking-widest text-gold font-semibold shadow-md">
-            Interactive Transformation
-          </span>
-          <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-plaster-muted font-sans">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Scroll to see construction
-          </span>
-        </div>
-
-        {/* 4-Step Milestone Pills */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {MILESTONES.map((m, idx) => {
-            const isActive = activeMilestoneIndex === idx;
-            const isCompleted = activeMilestoneIndex > idx;
-            return (
-              <div
-                key={m.step}
-                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                  isActive
-                    ? 'w-8 sm:w-10 bg-gold shadow-[0_0_12px_rgba(158,120,62,0.8)]'
-                    : isCompleted
-                    ? 'w-3 sm:w-4 bg-gold/50'
-                    : 'w-2 sm:w-3 bg-ink-border/80'
-                }`}
-              />
-            );
-          })}
-        </div>
-      </div>
-
-      {/* ─────────────────────────────────────────────────────────────
-          BOTTOM CONTENT CARD: REVEALED AS USER SCRUBS
+          SINGLE CENTER MOTTO (NO CONTAINER, FREE SPACE TYPOGRAPHY)
+          Appears on start, smoothly fades away as user scrolls
       ───────────────────────────────────────────────────────────── */}
       <div
-        ref={overlayRef}
-        className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-20 px-6 sm:px-12 flex flex-col md:flex-row items-end justify-between gap-6 pointer-events-none"
+        ref={mottoRef}
+        className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
       >
-        {/* Left Side: Current Construction Milestone Details */}
-        <div className="max-w-xl w-full pointer-events-auto">
-          <div className="p-5 sm:p-7 rounded-2xl bg-ink-card/90 backdrop-blur-xl border border-gold/30 shadow-2xl space-y-3.5 transition-all duration-500 hover:border-gold/60">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-gold font-mono text-xs font-semibold uppercase tracking-widest">
-                <Sparkles size={14} />
-                <span>{activeMilestone.step}</span>
-                <span className="text-plaster-dim">·</span>
-                <span>{activeMilestone.badge}</span>
-              </div>
-              <span className="text-xs font-mono text-gold/80 px-2.5 py-0.5 rounded-full bg-gold/10 border border-gold/20">
-                {Math.round(scrollProgress * 100)}% Complete
-              </span>
-            </div>
+        <div className="space-y-4 max-w-4xl mx-auto">
+          {/* Subtle gold eyebrow badge */}
+          <div className="inline-block">
+            <span className="px-3.5 py-1.5 rounded-full bg-ink/80 backdrop-blur-md border border-gold/40 text-[10px] sm:text-xs uppercase font-mono tracking-[0.25em] text-gold font-semibold shadow-lg">
+              ShineX Architectural Interiors
+            </span>
+          </div>
 
-            <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-plaster tracking-tight font-bold">
-                {activeMilestone.title}
-              </h2>
-              <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal mt-1 leading-relaxed">
-                {activeMilestone.subtitle}
-              </p>
-            </div>
+          {/* Luxury Main Motto Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-tight font-light leading-[1.15] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
+            From Bare Concrete <br />
+            <span className="italic font-normal text-gold-light">to Bespoke Luxury.</span>
+          </h1>
 
-            {/* Spec Chips */}
-            <div className="flex flex-wrap gap-2 pt-1 border-t border-ink-border/70">
-              {activeMilestone.specs.map((spec) => (
-                <div
-                  key={spec}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-ink/70 border border-ink-border text-[11px] text-plaster font-sans"
-                >
-                  <CheckCircle2 size={12} className="text-gold shrink-0" />
-                  <span>{spec}</span>
-                </div>
-              ))}
-            </div>
+          {/* Clean, simple sub-tagline */}
+          <p className="text-xs sm:text-sm md:text-base text-zinc-200 font-sans font-light max-w-lg mx-auto tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+            Turnkey homes crafted with architectural precision across Mumbai & Navi Mumbai.
+          </p>
+        </div>
+
+        {/* Elegant Scroll Hint at Bottom of Motto */}
+        <div className="absolute bottom-8 sm:bottom-12 flex flex-col items-center gap-2 pointer-events-none opacity-80">
+          <span className="text-[10px] sm:text-xs font-mono tracking-widest text-plaster-dim uppercase">
+            Scroll to transform
+          </span>
+          <div className="w-5 h-8 rounded-full border border-gold/40 flex items-start justify-center p-1 bg-ink/40 backdrop-blur-sm">
+            <div className="w-1 h-2 rounded-full bg-gold animate-bounce" />
           </div>
         </div>
-
-        {/* Right Side: Primary CTA & Skip Button */}
-        <div className="flex flex-row md:flex-col items-center md:items-end gap-3 w-full md:w-auto justify-between md:justify-end pointer-events-auto">
-          <button
-            onClick={() => openQuiz('turnkey')}
-            className="px-6 sm:px-8 py-3.5 rounded-full bg-gold text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-gold-light transition-all shadow-xl hover:shadow-gold/20 flex items-center gap-2 group whitespace-nowrap"
-          >
-            <span>Get Free Estimate</span>
-            <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
-
-          <button
-            onClick={handleScrollDown}
-            className="px-4 py-2.5 rounded-full bg-ink/80 backdrop-blur-md border border-ink-border text-plaster-muted hover:text-gold hover:border-gold/40 text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-1.5"
-          >
-            <span>Explore Services</span>
-            <ArrowDown size={13} className="animate-bounce" />
-          </button>
-        </div>
-      </div>
-
-      {/* ─────────────────────────────────────────────────────────────
-          BOTTOM SCRUB PROGRESS BAR
-      ───────────────────────────────────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-ink-border z-30 pointer-events-none">
-        <div
-          ref={progressBarRef}
-          className="h-full bg-gold shadow-[0_0_10px_#9E783E] transition-all duration-75"
-          style={{ width: '0%' }}
-        />
       </div>
     </section>
   );
