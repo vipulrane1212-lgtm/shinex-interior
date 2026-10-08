@@ -111,14 +111,11 @@ export default function DesignStudioModal({ serviceId, onClose }: DesignStudioMo
         <div className="relative flex-1 min-h-[380px] sm:min-h-[460px] md:min-h-[520px] overflow-hidden bg-black flex items-end">
           {/* Architectural High-Res Visual */}
           <div className="absolute inset-0 z-0">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={resolveImagePath(currentDesign.image)}
               alt={currentDesign.title}
-              fill
-              priority
-              unoptimized
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover transition-transform duration-700 ease-out will-change-transform scale-100"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform scale-100"
             />
             {/* Cinematic Luxury Dark Scrim for Perfect Typography Contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 pointer-events-none" />
@@ -213,13 +210,11 @@ export default function DesignStudioModal({ serviceId, onClose }: DesignStudioMo
                       : 'border-white/20 opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={resolveImagePath(design.image)}
                     alt={design.layoutName}
-                    fill
-                    unoptimized
-                    sizes="80px"
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </button>
               );

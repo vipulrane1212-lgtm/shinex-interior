@@ -40,13 +40,12 @@ export default function BentoCard({
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black block">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={resolveImagePath(coverImage)}
           alt={card.title}
-          fill
-          unoptimized
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 will-change-transform"
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 will-change-transform"
         />
         {/* Soft Vignette Overlay */}
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-colors duration-500" />

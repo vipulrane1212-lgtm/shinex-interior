@@ -171,13 +171,12 @@ function StreamCard({
     >
       {/* Background Photograph / AI Render */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={resolveImagePath(coverImage)}
           alt={card.title}
-          fill
-          unoptimized
-          sizes="(max-width: 768px) 300px, 400px"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 will-change-transform"
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 will-change-transform"
         />
         {/* Cinematic Dark Gradient for Absolute Legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 group-hover:opacity-90 transition-opacity" />
