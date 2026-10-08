@@ -55,13 +55,10 @@ export default function BentoCard({ card, className = '', isMainHero = false }: 
           >
             {card.title}
           </Link>
-          <p className="text-xs text-zinc-300 font-sans font-light mt-1.5 drop-shadow">
-            Waterproof Marine Ply · German Hardware · 10-Year Warranty
-          </p>
         </div>
 
         {/* Direct Action Link */}
-        <div className="pt-2.5 flex items-center justify-between border-t border-white/15">
+        <div className="pt-2 flex items-center justify-between border-t border-white/15">
           <Link
             href={`/quote?service=${card.id}&track=${track}`}
             className="text-xs uppercase tracking-wider text-gold-light font-sans font-semibold hover:text-white transition-colors inline-flex items-center gap-1.5 drop-shadow"
@@ -69,9 +66,6 @@ export default function BentoCard({ card, className = '', isMainHero = false }: 
             <span>Get Free Estimate</span>
             <ArrowUpRight size={13} />
           </Link>
-          <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">
-            Instant Quote
-          </span>
         </div>
       </div>
     </div>

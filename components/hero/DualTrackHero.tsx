@@ -103,23 +103,13 @@ export default function DualTrackHero() {
         )}
 
         {/* Content Container */}
-        <div className="relative z-20 max-w-xl space-y-3.5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-gold-light text-[11px] sm:text-xs uppercase font-mono tracking-[0.2em] font-medium shadow-lg">
-            <Home size={13} className="text-gold-light" />
-            <span>Track 01 · Residential Homes</span>
-          </div>
+        <div className="relative z-20 max-w-xl space-y-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
+            Luxury Interiors &amp; <br className="hidden sm:inline" />
+            <span className="italic font-normal text-gold-light">Custom Homes.</span>
+          </h2>
 
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
-              Luxury Interiors &amp; <br className="hidden sm:inline" />
-              <span className="italic font-normal text-gold-light">Custom Homes.</span>
-            </h2>
-            <span className="text-sm sm:text-base md:text-lg text-zinc-200 font-sans font-light block mt-1.5 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-              Modular Kitchens · Luxury Bedrooms · Turnkey Interiors
-            </span>
-          </div>
-
-          <div className="pt-2 flex flex-wrap items-center gap-3">
+          <div className="pt-1">
             <button
               type="button"
               className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gold hover:bg-gold-light text-white text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(158,120,62,0.45)] transition-all"
@@ -127,9 +117,6 @@ export default function DualTrackHero() {
               <span>Explore Homes</span>
               <ArrowUpRight size={14} />
             </button>
-            <span className="text-[11px] uppercase tracking-widest text-zinc-300/80 font-mono hidden sm:inline drop-shadow">
-              10-Year Warranty · Direct Factory Build
-            </span>
           </div>
         </div>
       </div>
@@ -173,23 +160,13 @@ export default function DualTrackHero() {
         )}
 
         {/* Content Container */}
-        <div className="relative z-20 max-w-xl space-y-3.5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-gold-light text-[11px] sm:text-xs uppercase font-mono tracking-[0.2em] font-medium shadow-lg">
-            <Building2 size={13} className="text-gold-light" />
-            <span>Track 02 · Commercial &amp; Civil</span>
-          </div>
+        <div className="relative z-20 max-w-xl space-y-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
+            Offices, Showrooms &amp; <br className="hidden sm:inline" />
+            <span className="italic font-normal text-gold-light">Civil Works.</span>
+          </h2>
 
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
-              Offices, Showrooms &amp; <br className="hidden sm:inline" />
-              <span className="italic font-normal text-gold-light">Civil Works.</span>
-            </h2>
-            <span className="text-sm sm:text-base md:text-lg text-zinc-200 font-sans font-light block mt-1.5 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-              Complete Office Fit-outs &amp; Licensed Civil Contracts
-            </span>
-          </div>
-
-          <div className="pt-2 flex flex-wrap items-center gap-3">
+          <div className="pt-1">
             <button
               type="button"
               className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gold hover:bg-gold-light text-white text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(158,120,62,0.45)] transition-all"
@@ -197,9 +174,6 @@ export default function DualTrackHero() {
               <span>Explore Commercial</span>
               <ArrowUpRight size={14} />
             </button>
-            <span className="text-[11px] uppercase tracking-widest text-zinc-300/80 font-mono hidden sm:inline drop-shadow">
-              Offices · Retail · Tenders
-            </span>
           </div>
         </div>
       </div>
