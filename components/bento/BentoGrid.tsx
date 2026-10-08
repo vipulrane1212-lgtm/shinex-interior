@@ -1,23 +1,34 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_SERVICES, COMMERCIAL_SERVICES } from '@/lib/assets';
 import BentoCard from './BentoCard';
+import InfiniteAutoScroll from './InfiniteAutoScroll';
+import DesignStudioModal from './DesignStudioModal';
 import LayoutFlowChart from './LayoutFlowChart';
 import TrackToggle from '@/components/ui/TrackToggle';
-import { Sparkles, Layers, ArrowUpRight } from 'lucide-react';
+import { Layers, ArrowUpRight, Film, LayoutGrid, Sparkles } from 'lucide-react';
 
 export default function BentoGrid() {
   const { track } = useTrack();
   const services = track === 'residential' ? RESIDENTIAL_SERVICES : COMMERCIAL_SERVICES;
 
+  // View Mode: 'stream' (infinite auto-scroll) or 'grid' (classic bento)
+  const [viewMode, setViewMode] = useState<'stream' | 'grid'>('stream');
+
+  // Active Studio Modal Service ID
+  const [activeStudioService, setActiveStudioService] = useState<string | null>(null);
+
   return (
-    <section id="services" className="py-20 md:py-32 bg-ink border-b border-ink-border/60 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="services" className="py-20 md:py-32 bg-ink border-b border-ink-border/60 relative overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-14">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 text-gold">
               <Layers size={16} />
@@ -42,51 +53,91 @@ export default function BentoGrid() {
             </p>
           </div>
 
-          {/* Track Switcher directly in section */}
-          <div className="flex items-center gap-3">
+          {/* Switchers Bar: View Mode Switcher + Track Toggle */}
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Display View Mode Switcher */}
+            <div className="inline-flex items-center p-1 rounded-full bg-ink-soft border border-ink-border shadow-sm">
+              <button
+                type="button"
+                onClick={() => setViewMode('stream')}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-sans transition-all ${
+                  viewMode === 'stream'
+                    ? 'bg-gold text-white font-semibold shadow-md'
+                    : 'text-plaster-muted hover:text-plaster'
+                }`}
+              >
+                <Film size={13} />
+                <span>Infinite Stream</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('grid')}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-sans transition-all ${
+                  viewMode === 'grid'
+                    ? 'bg-gold text-white font-semibold shadow-md'
+                    : 'text-plaster-muted hover:text-plaster'
+                }`}
+              >
+                <LayoutGrid size={13} />
+                <span>Bento Grid</span>
+              </button>
+            </div>
+
             <TrackToggle />
           </div>
         </div>
 
-        {/* Dynamic Bento Box Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Card 1: Main Hero Bento (Col span 12 or 8) */}
-          <BentoCard
-            card={services[0]}
-            isMainHero={true}
-            className="md:col-span-12 lg:col-span-8 min-h-[460px]"
-          />
-
-          {/* Card 2: Vertical Portrait Bento (Col span 4) */}
-          <BentoCard
-            card={services[1]}
-            className="md:col-span-6 lg:col-span-4 min-h-[460px]"
-          />
-
-          {/* Card 3: Landscape Bento (Col span 6) */}
-          <BentoCard
-            card={services[2]}
-            className="md:col-span-6 lg:col-span-5 min-h-[380px]"
-          />
-
-          {/* Card 4: Square Bento (Col span 4) */}
-          {services[3] && (
-            <BentoCard
-              card={services[3]}
-              className="md:col-span-6 lg:col-span-4 min-h-[380px]"
+        {/* View Mode 1: Infinite Cinematic Auto-Scroll Stream */}
+        {viewMode === 'stream' ? (
+          <div className="my-4">
+            <InfiniteAutoScroll
+              residentialCards={RESIDENTIAL_SERVICES}
+              commercialCards={COMMERCIAL_SERVICES}
+              onSelectCard={(serviceId) => setActiveStudioService(serviceId)}
+              activeTrack={track}
             />
-          )}
-
-          {/* Card 5: Accent Bento (Col span 3) */}
-          {services[4] && (
+          </div>
+        ) : (
+          /* View Mode 2: Dynamic Bento Box Layout */
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <BentoCard
-              card={services[4]}
-              className="md:col-span-6 lg:col-span-3 min-h-[380px]"
+              card={services[0]}
+              isMainHero={true}
+              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
+              className="md:col-span-12 lg:col-span-8 min-h-[460px]"
             />
-          )}
-        </div>
 
-        {/* Architectural Layout Flow Diagram (Outside the cards) */}
+            <BentoCard
+              card={services[1]}
+              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
+              className="md:col-span-6 lg:col-span-4 min-h-[460px]"
+            />
+
+            <BentoCard
+              card={services[2]}
+              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
+              className="md:col-span-6 lg:col-span-5 min-h-[380px]"
+            />
+
+            {services[3] && (
+              <BentoCard
+                card={services[3]}
+                onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
+                className="md:col-span-6 lg:col-span-4 min-h-[380px]"
+              />
+            )}
+
+            {services[4] && (
+              <BentoCard
+                card={services[4]}
+                onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
+                className="md:col-span-6 lg:col-span-3 min-h-[380px]"
+              />
+            )}
+          </div>
+        )}
+
+        {/* Architectural Layout Flow Diagram */}
         <LayoutFlowChart />
 
         {/* Cost Calculator Callout Banner */}
@@ -111,6 +162,12 @@ export default function BentoGrid() {
           </Link>
         </div>
       </div>
+
+      {/* Full-Screen Architectural Design Studio Modal */}
+      <DesignStudioModal
+        serviceId={activeStudioService}
+        onClose={() => setActiveStudioService(null)}
+      />
     </section>
   );
 }

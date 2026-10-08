@@ -12,9 +12,11 @@ function QuoteContent() {
   const initialTrack = searchParams.get('track') === 'commercial' ? 'commercial' : 'residential';
   const initialService = searchParams.get('service') || 'kitchens';
   const initialSub = searchParams.get('sub') || '';
+  const initialLayout = searchParams.get('layout') || '';
 
   const [track, setTrack] = useState<'residential' | 'commercial'>(initialTrack);
   const [selectedService, setSelectedService] = useState<string>(initialService);
+  const [selectedLayout, setSelectedLayout] = useState<string>(initialLayout);
   const [scope, setScope] = useState<string>('3 BHK');
   const [timeline, setTimeline] = useState<string>('Immediate (within 30 days)');
   const [locality, setLocality] = useState<string>('Seawoods / Navi Mumbai');
@@ -29,8 +31,10 @@ function QuoteContent() {
   useEffect(() => {
     const s = searchParams.get('service');
     const t = searchParams.get('track');
+    const l = searchParams.get('layout');
     if (s) setSelectedService(s);
     if (t === 'commercial' || t === 'residential') setTrack(t);
+    if (l) setSelectedLayout(l);
   }, [searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -85,6 +89,12 @@ function QuoteContent() {
                 <span className="text-plaster-dim">Track</span>
                 <span className="text-gold uppercase font-mono">{track}</span>
               </div>
+              {selectedLayout && (
+                <div className="flex justify-between border-b border-ink-border pb-1.5">
+                  <span className="text-plaster-dim">Architectural Design</span>
+                  <span className="text-gold capitalize font-medium">{selectedLayout.replace('-', ' ')}</span>
+                </div>
+              )}
               <div className="flex justify-between border-b border-ink-border pb-1.5">
                 <span className="text-plaster-dim">Timeline</span>
                 <span className="text-plaster">{timeline}</span>
@@ -109,6 +119,28 @@ function QuoteContent() {
             onSubmit={handleSubmit}
             className="p-6 md:p-10 rounded-2xl bg-ink-card border border-ink-border space-y-8 shadow-xl"
           >
+            {/* Selected Layout Notification Banner if navigated from Design Studio */}
+            {selectedLayout && (
+              <div className="p-4 sm:p-5 rounded-2xl bg-gold/15 border border-gold/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-gold shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
+                    <Sparkles size={18} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-gold/80 block">
+                      Target Architectural Layout
+                    </span>
+                    <h3 className="text-base sm:text-lg font-serif font-medium text-plaster capitalize">
+                      {selectedLayout.replace('-', ' ')} Layout ({selectedService.replace('-', ' ')})
+                    </h3>
+                  </div>
+                </div>
+                <span className="px-3 py-1 rounded-full bg-gold text-white text-[11px] font-mono uppercase tracking-wider font-semibold self-start sm:self-auto">
+                  Pre-Selected
+                </span>
+              </div>
+            )}
+
             {/* Step 1: Track Selection */}
             <div className="space-y-3">
               <label className="text-xs uppercase tracking-wider text-gold font-sans font-semibold block">
