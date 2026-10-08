@@ -121,8 +121,9 @@ export default function BeforeAfterSlider() {
               className="object-cover"
             />
             {/* Handover Tag */}
-            <div className="absolute top-6 right-6 z-10 px-4 py-1.5 rounded-full bg-ink/85 backdrop-blur-md border border-gold/40 text-[11px] font-mono uppercase text-gold tracking-wider">
-              {activeProject.afterLabel}
+            <div className="absolute top-6 right-6 z-10 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-emerald-400/40 text-[11px] font-mono uppercase text-emerald-300 tracking-wider flex items-center gap-1.5 shadow-lg">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>{activeProject.afterLabel}</span>
             </div>
           </div>
 
@@ -141,8 +142,9 @@ export default function BeforeAfterSlider() {
               className="object-cover grayscale contrast-125"
             />
             {/* Raw Site Tag */}
-            <div className="absolute top-6 left-6 z-10 px-4 py-1.5 rounded-full bg-ink/85 backdrop-blur-md border border-ink-border text-[11px] font-mono uppercase text-plaster-muted tracking-wider">
-              {activeProject.beforeLabel}
+            <div className="absolute top-6 left-6 z-10 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-mono uppercase text-zinc-300 tracking-wider flex items-center gap-1.5 shadow-lg">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span>{activeProject.beforeLabel}</span>
             </div>
           </div>
 
@@ -152,13 +154,13 @@ export default function BeforeAfterSlider() {
             style={{ left: `${sliderPosition}%` }}
           >
             {/* Center Draggable Knob */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ink border-2 border-gold flex items-center justify-center text-gold shadow-[0_0_20px_rgba(158,120,62,0.5)] transition-transform group-hover:scale-110">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/90 border-2 border-gold flex items-center justify-center text-gold-light shadow-[0_0_25px_rgba(158,120,62,0.6)] transition-transform group-hover:scale-110">
               <ArrowLeftRight size={16} />
             </div>
           </div>
 
           {/* Interactive Drag Hint */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 px-4 py-1 rounded-full bg-ink/75 backdrop-blur-md border border-ink-border text-[10px] uppercase font-mono tracking-widest text-plaster-dim pointer-events-none">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 px-4 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] uppercase font-mono tracking-widest text-zinc-300 pointer-events-none shadow-md">
             Drag to compare transformation
           </div>
         </div>

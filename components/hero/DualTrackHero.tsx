@@ -71,7 +71,7 @@ export default function DualTrackHero() {
         ref={leftRef}
         onMouseEnter={() => handleMouseEnter('left')}
         onClick={() => handleSelectTrack('residential')}
-        className={`relative flex-1 group cursor-pointer overflow-hidden border-b lg:border-b-0 lg:border-r border-ink-border/60 transition-all duration-300 min-h-[46vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 ${
+        className={`relative flex-1 group cursor-pointer overflow-hidden border-b lg:border-b-0 lg:border-r border-ink-border/60 transition-all duration-300 min-h-[50vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 py-12 sm:py-14 ${
           track === 'residential' ? 'ring-1 ring-gold/40' : ''
         }`}
       >
@@ -90,33 +90,31 @@ export default function DualTrackHero() {
           />
         </div>
 
-        {/* Soft Warm Gradient Overlays */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-65 lg:opacity-50 group-hover:opacity-40 transition-opacity" />
-        <div className="absolute inset-0 z-1 bg-gradient-to-r from-ink/60 via-transparent to-transparent opacity-40 hidden lg:block" />
+        {/* Cinematic Dark Gradient Overlays for High-Contrast Luxury Typography */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/55 to-black/20 opacity-90 group-hover:opacity-85 transition-opacity pointer-events-none" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/40 to-transparent opacity-80 hidden lg:block pointer-events-none" />
 
         {/* Active Track Highlight Badge */}
         {track === 'residential' && (
-          <div className="absolute top-24 left-6 sm:left-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
+          <div className="absolute top-24 left-6 sm:left-8 z-20 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             Active Track
           </div>
         )}
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-xl space-y-3">
-          <div className="flex items-center gap-2 text-gold">
-            <Home size={15} />
-            <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
-              Track 01 · Residential Homes
-            </span>
+        <div className="relative z-20 max-w-xl space-y-3.5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-gold-light text-[11px] sm:text-xs uppercase font-mono tracking-[0.2em] font-medium shadow-lg">
+            <Home size={13} className="text-gold-light" />
+            <span>Track 01 · Residential Homes</span>
           </div>
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-semibold leading-[1.08] group-hover:text-gold-light transition-colors">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
               Luxury Interiors &amp; <br className="hidden sm:inline" />
-              Custom Homes.
+              <span className="italic font-normal text-gold-light">Custom Homes.</span>
             </h2>
-            <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+            <span className="text-sm sm:text-base md:text-lg text-zinc-200 font-sans font-light block mt-1.5 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
               Modular Kitchens · Luxury Bedrooms · Turnkey Interiors
             </span>
           </div>
@@ -124,12 +122,12 @@ export default function DualTrackHero() {
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               type="button"
-              className="btn-luxury inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gold hover:bg-gold-light text-white text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(158,120,62,0.45)] transition-all"
             >
               <span>Explore Homes</span>
               <ArrowUpRight size={14} />
             </button>
-            <span className="text-[11px] uppercase tracking-widest text-plaster-muted font-mono hidden sm:inline">
+            <span className="text-[11px] uppercase tracking-widest text-zinc-300/80 font-mono hidden sm:inline drop-shadow">
               10-Year Warranty · Direct Factory Build
             </span>
           </div>
@@ -143,7 +141,7 @@ export default function DualTrackHero() {
         ref={rightRef}
         onMouseEnter={() => handleMouseEnter('right')}
         onClick={() => handleSelectTrack('commercial')}
-        className={`relative flex-1 group cursor-pointer overflow-hidden transition-all duration-300 min-h-[46vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 ${
+        className={`relative flex-1 group cursor-pointer overflow-hidden transition-all duration-300 min-h-[50vh] lg:min-h-full flex items-end p-6 sm:p-8 md:p-14 py-12 sm:py-14 ${
           track === 'commercial' ? 'ring-1 ring-gold/40' : ''
         }`}
       >
@@ -162,33 +160,31 @@ export default function DualTrackHero() {
           />
         </div>
 
-        {/* Soft Warm Gradient Overlays */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-65 lg:opacity-50 group-hover:opacity-40 transition-opacity" />
-        <div className="absolute inset-0 z-1 bg-gradient-to-l from-ink/60 via-transparent to-transparent opacity-40 hidden lg:block" />
+        {/* Cinematic Dark Gradient Overlays for High-Contrast Luxury Typography */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/55 to-black/20 opacity-90 group-hover:opacity-85 transition-opacity pointer-events-none" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/40 to-transparent opacity-80 hidden lg:block pointer-events-none" />
 
         {/* Active Track Highlight Badge */}
         {track === 'commercial' && (
-          <div className="absolute top-24 right-6 sm:right-8 z-10 hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
+          <div className="absolute top-24 right-6 sm:right-8 z-20 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold text-white text-[11px] font-sans font-bold tracking-widest uppercase shadow-lg">
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             Active Track
           </div>
         )}
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-xl space-y-3">
-          <div className="flex items-center gap-2 text-gold">
-            <Building2 size={15} />
-            <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
-              Track 02 · Commercial &amp; Civil
-            </span>
+        <div className="relative z-20 max-w-xl space-y-3.5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-gold-light text-[11px] sm:text-xs uppercase font-mono tracking-[0.2em] font-medium shadow-lg">
+            <Building2 size={13} className="text-gold-light" />
+            <span>Track 02 · Commercial &amp; Civil</span>
           </div>
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-plaster tracking-tight font-semibold leading-[1.08] group-hover:text-gold-light transition-colors">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight font-light leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
               Offices, Showrooms &amp; <br className="hidden sm:inline" />
-              Civil Works.
+              <span className="italic font-normal text-gold-light">Civil Works.</span>
             </h2>
-            <span className="text-sm sm:text-base md:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+            <span className="text-sm sm:text-base md:text-lg text-zinc-200 font-sans font-light block mt-1.5 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
               Complete Office Fit-outs &amp; Licensed Civil Contracts
             </span>
           </div>
@@ -196,12 +192,12 @@ export default function DualTrackHero() {
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               type="button"
-              className="btn-luxury inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gold hover:bg-gold-light text-white text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(158,120,62,0.45)] transition-all"
             >
               <span>Explore Commercial</span>
               <ArrowUpRight size={14} />
             </button>
-            <span className="text-[11px] uppercase tracking-widest text-plaster-muted font-mono hidden sm:inline">
+            <span className="text-[11px] uppercase tracking-widest text-zinc-300/80 font-mono hidden sm:inline drop-shadow">
               Offices · Retail · Tenders
             </span>
           </div>
@@ -210,10 +206,10 @@ export default function DualTrackHero() {
 
       {/* Center Divider Cue */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden lg:flex flex-col items-center gap-2 pointer-events-none opacity-80">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-plaster-dim font-mono">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-300 font-mono drop-shadow">
           Tap to choose your project type
         </span>
-        <div className="w-8 h-8 rounded-full border border-ink-border bg-ink/70 flex items-center justify-center text-gold animate-bounce">
+        <div className="w-8 h-8 rounded-full border border-white/30 bg-black/60 backdrop-blur-md flex items-center justify-center text-gold-light animate-bounce shadow-md">
           <ChevronDown size={14} />
         </div>
       </div>

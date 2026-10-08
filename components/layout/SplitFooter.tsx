@@ -47,25 +47,26 @@ export default function SplitFooter() {
             />
           </div>
 
-          {/* Soft Warm Gradient Overlay for Clean Image Visibility */}
-          <div className="absolute inset-0 z-1 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
+          {/* Cinematic Dark Gradient Overlays for High-Contrast Luxury Typography */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/60 to-black/25 opacity-90 pointer-events-none" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/40 to-transparent hidden lg:block opacity-80 pointer-events-none" />
 
-          {/* Top Badge Overlay */}
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-mono uppercase tracking-wider">
-              <Sparkles size={13} />
+          {/* Top Badge Overlay with Frosted Glass */}
+          <div className="relative z-20">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-gold-light text-xs font-mono uppercase tracking-wider shadow-lg">
+              <Sparkles size={13} className="text-gold-light" />
               <span>Special Offer · 15% Off Your Project</span>
             </div>
           </div>
 
           {/* Center / Bottom Graphic Text */}
-          <div className="relative z-10 space-y-5 mt-12 lg:mt-0">
+          <div className="relative z-20 space-y-5 mt-12 lg:mt-0">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-plaster tracking-tight leading-[1.08]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
                 Get a Free 3D Design &amp; <br />
-                15% Off Your Project.
+                <span className="italic font-normal text-gold-light">15% Off Your Project.</span>
               </h2>
-              <span className="text-base sm:text-lg text-gold font-sans font-medium block mt-1 tracking-wide">
+              <span className="text-sm sm:text-base md:text-lg text-zinc-200 font-sans font-light block mt-1.5 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Direct factory pricing · Zero middleman charges
               </span>
             </div>
@@ -77,15 +78,15 @@ export default function SplitFooter() {
                 'Free on-site laser measurement & 3D layout plan',
                 '10-year warranty backed by Sneha Enterprises Class-1 civil license',
               ].map((perk) => (
-                <div key={perk} className="flex items-center gap-2.5 text-xs text-plaster-muted font-sans font-normal">
-                  <CheckCircle2 size={14} className="text-gold shrink-0" />
+                <div key={perk} className="flex items-center gap-2.5 text-xs text-zinc-200 font-sans font-light drop-shadow">
+                  <CheckCircle2 size={14} className="text-gold-light shrink-0" />
                   <span>{perk}</span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-2 flex items-center gap-2 text-[11px] text-gold font-mono">
-              <ShieldCheck size={14} />
+            <div className="pt-2 flex items-center gap-2 text-[11px] text-gold-light font-mono drop-shadow">
+              <ShieldCheck size={14} className="text-gold-light" />
               <span>16+ Years Direct Civil &amp; Interior Execution in Mumbai</span>
             </div>
           </div>

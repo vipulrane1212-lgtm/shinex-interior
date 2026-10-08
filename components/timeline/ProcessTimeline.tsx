@@ -161,13 +161,14 @@ export default function ProcessTimeline() {
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent opacity-20" />
+                      {/* Gradient Scrim for Card Tag Contrast */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-plaster">
-                        <span className="font-mono text-[10px] text-gold uppercase tracking-wider">
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs">
+                        <span className="font-mono text-[10px] text-gold-light uppercase tracking-wider drop-shadow font-semibold">
                           Step 0{idx + 1}
                         </span>
-                        <span className="text-[11px] font-sans font-medium text-plaster bg-ink/85 backdrop-blur-md px-3 py-1 rounded-full border border-ink-border">
+                        <span className="text-[11px] font-sans font-medium text-zinc-200 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-md">
                           Direct Supervision
                         </span>
                       </div>
