@@ -19,11 +19,18 @@ export function resolveImagePath(path: string): string {
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
   }
-  const isGhPages =
-    typeof window !== 'undefined' &&
-    window.location.pathname.startsWith('/shinex-interior');
-  const base = isGhPages ? '/shinex-interior' : '';
+  if (path.startsWith('/shinex-interior/')) {
+    return path;
+  }
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  const isGhPages =
+    process.env.NEXT_EXPORT === 'true' ||
+    (typeof window !== 'undefined' &&
+      (window.location.hostname.includes('github.io') ||
+        window.location.pathname.startsWith('/shinex-interior')));
+
+  const base = isGhPages ? '/shinex-interior' : '';
   return `${base}${cleanPath}`;
 }
 
