@@ -1,20 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_SERVICES, COMMERCIAL_SERVICES } from '@/lib/assets';
 import InfiniteAutoScroll from './InfiniteAutoScroll';
-import DesignStudioModal from './DesignStudioModal';
 import LayoutFlowChart from './LayoutFlowChart';
 import TrackToggle from '@/components/ui/TrackToggle';
 import { Layers, ArrowUpRight } from 'lucide-react';
 
 export default function BentoGrid() {
   const { track } = useTrack();
-
-  // Active Studio Modal Service ID
-  const [activeStudioService, setActiveStudioService] = useState<string | null>(null);
 
   return (
     <section id="services" className="py-20 md:py-32 bg-ink border-b border-ink-border/60 relative overflow-hidden">
@@ -54,7 +50,6 @@ export default function BentoGrid() {
           <InfiniteAutoScroll
             residentialCards={RESIDENTIAL_SERVICES}
             commercialCards={COMMERCIAL_SERVICES}
-            onSelectCard={(serviceId) => setActiveStudioService(serviceId)}
             activeTrack={track}
           />
         </div>
@@ -84,12 +79,6 @@ export default function BentoGrid() {
           </Link>
         </div>
       </div>
-
-      {/* Full-Screen Architectural Design Studio Modal */}
-      <DesignStudioModal
-        serviceId={activeStudioService}
-        onClose={() => setActiveStudioService(null)}
-      />
     </section>
   );
 }
