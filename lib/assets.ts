@@ -15,6 +15,7 @@ export interface ServiceCard {
 export interface BeforeAfterPair {
   id: string;
   title: string;
+  shortTitle?: string;
   location: string;
   category: 'residential' | 'commercial';
   beforeImage: string;
@@ -71,7 +72,7 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
     category: 'Modular System',
     aspect: 'hero',
     image:
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85',
+      '/images/designs/kitchen_l_shaped.jpg',
     subCards: [
       {
         id: 'l-shaped',
@@ -368,7 +369,7 @@ export const QUIZ_SCOPE_OPTIONS: QuizOption[] = [
     title: 'Architectural Kitchen Only',
     subtitle: 'German hardware, quartz counter, acrylic panels',
     image:
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+      '/images/designs/kitchen_l_shaped.jpg',
     tag: 'Kitchen',
   },
   {
@@ -431,12 +432,11 @@ export const BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
   {
     id: 'residential-transformation',
     title: 'Seawoods Luxury High-Rise Penthouse',
+    shortTitle: 'Seawoods Luxury',
     location: 'Seawoods Grand Central, Navi Mumbai',
     category: 'residential',
-    beforeImage:
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80',
-    afterImage:
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85',
+    beforeImage: '/images/transformations/seawoods_before.jpg',
+    afterImage: '/images/transformations/seawoods_after.jpg',
     beforeLabel: 'Raw Concrete Shell',
     afterLabel: 'Handover: Living Sanctuary',
     specs: ['Civil Wall Realignment', 'Acoustic Ceilings', 'Italian Statuario Floor', 'Smart CCT Lighting'],
@@ -444,12 +444,11 @@ export const BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
   {
     id: 'kitchen-transformation',
     title: 'Kharghar Villa Modular Kitchen',
+    shortTitle: 'Kharghar Villa',
     location: 'Kharghar Sector 8, Navi Mumbai',
     category: 'residential',
-    beforeImage:
-      'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1600&q=80',
-    afterImage:
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=85',
+    beforeImage: '/images/transformations/kharghar_before.jpg',
+    afterImage: '/images/transformations/kharghar_after.jpg',
     beforeLabel: 'Raw Plumbing & Masonry',
     afterLabel: 'Handover: German Hardware Kitchen',
     specs: ['Anti-Fingerprint Acrylic', 'Quartz Countertops', 'Blum Soft-Close', 'Integrated Hafele Appliances'],
@@ -457,12 +456,11 @@ export const BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
   {
     id: 'commercial-transformation',
     title: 'Vashi Tech Park Enterprise HQ',
+    shortTitle: 'Vashi Tech',
     location: 'Vashi Infotech Park, Navi Mumbai',
     category: 'commercial',
-    beforeImage:
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
-    afterImage:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85',
+    beforeImage: '/images/transformations/vashi_before.jpg',
+    afterImage: '/images/transformations/vashi_after.jpg',
     beforeLabel: 'Bare Industrial Shell',
     afterLabel: 'Handover: 120-Seat Enterprise HQ',
     specs: ['Fire-Rated Glass Partitions', 'Heavy Duty Vitrified Floor', 'HVAC Ducting Integration', 'Access Control Security'],
@@ -470,12 +468,11 @@ export const BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
   {
     id: 'master-transformation',
     title: 'Palm Beach Road Master Suite',
+    shortTitle: 'Palm Beach',
     location: 'Palm Beach Road, Nerul, Navi Mumbai',
     category: 'residential',
-    beforeImage:
-      'https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1600&q=80',
-    afterImage:
-      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85',
+    beforeImage: '/images/transformations/palm_beach_before.jpg',
+    afterImage: '/images/transformations/palm_beach_after.jpg',
     beforeLabel: 'Raw Civil Bedroom',
     afterLabel: 'Handover: Acoustic Master Suite',
     specs: ['Fluted Timber Paneling', 'Concealed Duct AC', 'Walk-In Glass Wardrobe', 'Engineered Oak Flooring'],
@@ -523,7 +520,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     comment:
       'The civil execution capability of Sneha Enterprises backing ShineX showed on day one. Realigned two load-bearing columns and delivered millimetric tile joints.',
     videoThumbnail:
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
+      '/images/designs/kitchen_l_shaped.jpg',
     videoDuration: '2:10',
     lowerThird: {
       client: 'Capt. Sameer Varma',

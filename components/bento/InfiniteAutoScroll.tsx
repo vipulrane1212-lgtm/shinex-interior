@@ -40,13 +40,6 @@ export default function InfiniteAutoScroll({
           ))}
         </div>
       </div>
-
-      {/* Interactive Helper Hint */}
-      <div className="text-center pt-5">
-        <p className="text-xs text-plaster-muted font-mono tracking-wider">
-          Hover to pause · Click any card to open its dedicated architectural showcase page
-        </p>
-      </div>
     </div>
   );
 }

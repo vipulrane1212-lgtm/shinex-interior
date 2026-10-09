@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
+import { resolveImagePath } from '@/lib/designCatalog';
 import {
   Compass,
   ArrowRight,
@@ -41,7 +42,7 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     counterRun: '14 – 18 Running Ft',
     storageCapacity: 'Base + Overhead Cabinets',
     workTriangle: 'Quick access between Hob, Sink & Fridge',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/designs/kitchen_l_shaped.jpg',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20,20 20,80 80,80" />
@@ -62,7 +63,7 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     counterRun: '18 – 24 Running Ft',
     storageCapacity: 'Maximum Counter & Tall Unit Storage',
     workTriangle: 'Dual-side layout with zero dead corners',
-    image: 'https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/designs/kitchen_parallel.jpg',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
         <line x1="20" y1="20" x2="20" y2="80" />
@@ -82,7 +83,7 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     counterRun: '22 – 30 Running Ft',
     storageCapacity: 'High-Density Storage + Pantry Unit',
     workTriangle: 'Dedicated zones for Prep, Cook & Wash',
-    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/designs/kitchen_u_shaped.jpg',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20,20 20,80 80,80 80,20" />
@@ -101,7 +102,7 @@ const RESIDENTIAL_FLOW_NODES: FlowNode[] = [
     counterRun: '26 – 36 Running Ft',
     storageCapacity: 'Island Drawers + Bar / Pantry Space',
     workTriangle: 'Social Cooking & Family Dining',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/designs/kitchen_island.jpg',
     schematicSvg: (
       <svg viewBox="0 0 100 100" className="w-16 h-16 stroke-gold fill-none stroke-[2.5]" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20,20 80,20 80,80" />
@@ -212,9 +213,6 @@ export default function LayoutFlowChart() {
           <h3 className="text-2xl sm:text-3xl font-serif text-plaster font-semibold mt-1">
             {track === 'residential' ? 'Choose the Perfect Kitchen Layout' : 'Smart Commercial Space Layouts'}
           </h3>
-          <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal mt-1 max-w-xl">
-            Compare configurations side-by-side. Tap any layout below to preview the blueprint, counter length, and storage capacity.
-          </p>
         </div>
 
         <Link
@@ -236,48 +234,19 @@ export default function LayoutFlowChart() {
               key={node.id}
               type="button"
               onClick={() => setActiveIndex(idx)}
-              className={`group relative text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
+              className={`group relative text-center py-4 px-4 rounded-2xl border transition-all duration-300 flex items-center justify-center ${
                 isActive
-                  ? 'bg-ink-card border-gold ring-1 ring-gold shadow-[0_10px_25px_-5px_rgba(158,120,62,0.2)]'
+                  ? 'bg-ink-card border-gold ring-1 ring-gold shadow-[0_8px_20px_-4px_rgba(158,120,62,0.25)]'
                   : 'bg-ink-card/60 border-ink-border hover:border-gold/50 hover:bg-ink-card'
               }`}
             >
-              {/* Top Node Indicator & Step */}
-              <div className="flex items-center justify-between pb-2 border-b border-ink-border/50">
-                <span
-                  className={`text-xs font-mono font-bold px-2 py-0.5 rounded-full transition-colors ${
-                    isActive ? 'bg-gold text-white' : 'bg-ink text-plaster-dim group-hover:text-gold'
-                  }`}
-                >
-                  Node {node.step}
-                </span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-gold">
-                  {node.flowType}
-                </span>
-              </div>
-
-              {/* Title & Tagline */}
-              <div className="py-2.5">
-                <h4 className="text-sm sm:text-base font-serif font-semibold text-plaster group-hover:text-gold transition-colors">
-                  {node.title}
-                </h4>
-                <p className="text-[11px] text-plaster-dim font-sans font-light mt-0.5 leading-snug">
-                  {node.tagline}
-                </p>
-              </div>
-
-              {/* Bottom Active Status Cue */}
-              <div className="pt-2 border-t border-ink-border/40 flex items-center justify-between text-[11px]">
-                <span className={`font-mono text-[10px] uppercase ${isActive ? 'text-gold font-semibold' : 'text-plaster-dim'}`}>
-                  {isActive ? 'Active Blueprint' : 'Tap to View'}
-                </span>
-                <ChevronRight
-                  size={14}
-                  className={`transition-transform ${
-                    isActive ? 'text-gold translate-x-0.5' : 'text-plaster-dim group-hover:translate-x-0.5'
-                  }`}
-                />
-              </div>
+              <h4
+                className={`text-sm sm:text-base font-serif font-medium transition-colors ${
+                  isActive ? 'text-gold' : 'text-plaster group-hover:text-gold'
+                }`}
+              >
+                {node.title}
+              </h4>
             </button>
           );
         })}
@@ -286,13 +255,12 @@ export default function LayoutFlowChart() {
       {/* ================= INTERACTIVE MOTION STAGE (IMAGE + BLUEPRINT DATA) ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-5 sm:p-7 rounded-3xl bg-ink-card border border-ink-border shadow-xl overflow-hidden">
         {/* Left Side (7 Cols): Crisp Un-Obscured Architectural Photograph */}
-        <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] rounded-2xl overflow-hidden border border-ink-border skeleton-shimmer">
-          <Image
-            src={activeNode.image}
+        <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] rounded-2xl overflow-hidden border border-ink-border bg-black">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={resolveImagePath(activeNode.image)}
             alt={activeNode.title}
-            fill
-            sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover transition-all duration-700 ease-out will-change-transform"
+            className="w-full h-full object-cover transition-all duration-700 ease-out will-change-transform"
           />
           {/* Subtle Corner Badge */}
           <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-ink-card/90 backdrop-blur-md border border-ink-border text-xs font-mono uppercase tracking-wider text-gold shadow-sm">
@@ -312,9 +280,6 @@ export default function LayoutFlowChart() {
                 <h4 className="text-xl sm:text-2xl font-serif text-plaster font-semibold mt-0.5">
                   {activeNode.title}
                 </h4>
-                <p className="text-xs text-plaster-muted font-sans font-light mt-0.5">
-                  {activeNode.tagline}
-                </p>
               </div>
 
               {/* Clean Schematic Vector Floorplan Diagram */}

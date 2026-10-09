@@ -15,7 +15,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -23,78 +23,78 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'py-3.5 bg-ink/90 backdrop-blur-xl border-b border-ink-border/80 shadow-2xl'
-          : 'py-6 bg-gradient-to-b from-ink/90 via-ink/40 to-transparent'
+          ? 'py-2.5 sm:py-3 bg-ink-card/95 backdrop-blur-xl border-b border-ink-border shadow-[0_8px_30px_rgba(27,25,23,0.08)]'
+          : 'py-3.5 sm:py-4.5 bg-ink-card/90 backdrop-blur-md border-b border-ink-border shadow-xs'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-4">
         {/* Brand Lockup */}
-        <Link href="/" className="group flex items-center gap-3">
+        <Link href="/" className="group flex items-center gap-3 shrink-0">
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="text-xl md:text-2xl font-serif tracking-[0.16em] text-plaster font-semibold uppercase group-hover:text-gold transition-colors">
+              <span className="text-xl sm:text-2xl font-serif tracking-[0.16em] text-plaster font-bold uppercase group-hover:text-gold transition-colors">
                 ShineX
               </span>
-              <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="hidden sm:inline-block text-[10px] tracking-[0.22em] uppercase text-plaster-muted font-sans font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-[11px] tracking-[0.24em] uppercase text-gold font-sans font-bold">
                 Infra Interior
               </span>
             </div>
-            <span className="text-[9px] tracking-wider text-plaster-dim uppercase font-mono mt-0.5">
+            <span className="text-[9.5px] tracking-wider text-plaster-muted uppercase font-mono font-bold mt-0.5">
               Licensed Civil &amp; Interior Contractor · Mumbai
             </span>
           </div>
         </Link>
 
-        {/* Center: Track Switcher */}
-        <div className="hidden lg:block">
-          <TrackToggle />
-        </div>
-
-        {/* Right Nav & CTA */}
-        <div className="hidden md:flex items-center gap-5">
+        {/* Center: Architectural Navigation Dock */}
+        <nav className="hidden lg:flex items-center gap-0.5 px-2 py-1 rounded-full bg-ink-card border border-ink-border shadow-xs shrink-0">
           <Link
             href="/calculator"
-            className="text-xs uppercase tracking-widest text-gold hover:text-gold-light transition-colors font-mono font-semibold flex items-center gap-1.5"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-gold hover:text-gold-dark hover:bg-gold/10 transition-all font-mono font-bold flex items-center gap-1.5 whitespace-nowrap"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
             <span>Cost Calculator</span>
           </Link>
           <a
             href="/#services"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
           >
             Services
           </a>
           <a
             href="/#transformation"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
           >
             Transformations
           </a>
           <a
             href="/#timeline"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
           >
             How We Work
           </a>
           <a
             href="/#reviews"
-            className="text-xs uppercase tracking-widest text-plaster-muted hover:text-gold transition-colors font-sans font-medium"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
           >
             Reviews
           </a>
-          <div className="h-4 w-[1px] bg-ink-border" />
+        </nav>
+
+        {/* Right: Track Mode & Luxury CTA */}
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <TrackToggle />
+          <div className="h-4 w-[1px] bg-ink-border hidden sm:block" />
           <button
             type="button"
             onClick={() => openQuiz()}
-            className="btn-luxury group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
+            className="btn-luxury group relative inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full bg-gold text-white text-[11px] font-sans font-bold uppercase tracking-wider shadow-sm hover:shadow-md transition-all whitespace-nowrap"
           >
             <span>Get Free Quote</span>
             <ArrowUpRight
-              size={14}
+              size={13}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
           </button>
@@ -104,7 +104,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-plaster hover:text-gold transition-colors"
+          className="lg:hidden p-2 text-plaster hover:text-gold transition-colors rounded-lg"
           aria-label="Toggle Navigation"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -113,44 +113,44 @@ export default function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-panel border-b border-ink-border px-6 py-6 mt-3 space-y-5 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="flex justify-center pb-3">
+        <div className="lg:hidden bg-ink-card/95 backdrop-blur-xl border-b border-ink-border px-6 py-6 mt-2.5 space-y-5 animate-in fade-in slide-in-from-top-3 duration-250 shadow-2xl">
+          <div className="flex justify-center pb-2">
             <TrackToggle />
           </div>
-          <div className="flex flex-col gap-4 text-center">
+          <div className="flex flex-col gap-2.5 text-center">
             <Link
               href="/calculator"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-gold font-mono font-bold py-2 flex items-center justify-center gap-2 bg-gold/10 rounded-xl border border-gold/30"
+              className="text-xs uppercase tracking-widest text-gold font-mono font-bold py-2.5 flex items-center justify-center gap-2 bg-gold/10 rounded-xl border border-gold/30 shadow-xs"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
               <span>Cost Calculator</span>
             </Link>
             <a
               href="/#services"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
+              className="text-xs uppercase tracking-widest text-plaster-muted hover:text-plaster hover:bg-ink-soft/40 py-2 rounded-lg transition-colors font-sans font-medium"
             >
               Our Services
             </a>
             <a
               href="/#transformation"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
+              className="text-xs uppercase tracking-widest text-plaster-muted hover:text-plaster hover:bg-ink-soft/40 py-2 rounded-lg transition-colors font-sans font-medium"
             >
               Real Transformations
             </a>
             <a
               href="/#timeline"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
+              className="text-xs uppercase tracking-widest text-plaster-muted hover:text-plaster hover:bg-ink-soft/40 py-2 rounded-lg transition-colors font-sans font-medium"
             >
               How We Work
             </a>
             <a
               href="/#reviews"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-plaster-muted hover:text-gold py-1.5 font-sans"
+              className="text-xs uppercase tracking-widest text-plaster-muted hover:text-plaster hover:bg-ink-soft/40 py-2 rounded-lg transition-colors font-sans font-medium"
             >
               Client Reviews
             </a>

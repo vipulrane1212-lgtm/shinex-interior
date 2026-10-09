@@ -250,7 +250,7 @@ export const DESIGN_CATALOG: Record<string, ServiceDesignCatalog> = {
         id: 'breakfast-nook-island',
         title: 'Breakfast Nook & Island Integration',
         layoutName: 'Island Breakfast Nook',
-        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85',
+        image: '/images/designs/kitchen_island.jpg',
         specs: ['Upholstered Banquette', 'Fluted Pedestal Table', 'Casual Family Seating'],
       },
       {

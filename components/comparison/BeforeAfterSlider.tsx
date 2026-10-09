@@ -4,7 +4,8 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BEFORE_AFTER_PAIRS, BeforeAfterPair } from '@/lib/assets';
-import { ArrowLeftRight, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { resolveImagePath } from '@/lib/designCatalog';
+import { ArrowLeftRight, CheckCircle2, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useTrack } from '@/context/TrackContext';
 
 export default function BeforeAfterSlider() {
@@ -65,9 +66,6 @@ export default function BeforeAfterSlider() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.2em] text-gold font-sans font-semibold block">
-              Real Site Transformations
-            </span>
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-plaster tracking-tight font-semibold">
                 From Raw Civil to Luxury Finish.
@@ -76,30 +74,35 @@ export default function BeforeAfterSlider() {
                 100% real site execution across Mumbai &amp; Navi Mumbai
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
-              Drag the center slider to compare the raw brickwork against our factory-finished interior handover.
-            </p>
           </div>
 
-          {/* Project Switcher Pills */}
-          <div className="flex flex-wrap gap-2">
-            {BEFORE_AFTER_PAIRS.map((proj, idx) => (
-              <button
-                key={proj.id}
-                type="button"
-                onClick={() => {
-                  setActiveProjectIndex(idx);
-                  setSliderPosition(50);
-                }}
-                className={`px-4 py-2 rounded-full text-xs font-sans font-medium tracking-wide transition-all ${
-                  activeProjectIndex === idx
-                    ? 'bg-gold text-white font-semibold shadow-lg'
-                    : 'bg-ink-card border border-ink-border text-plaster-muted hover:text-plaster'
-                }`}
-              >
-                {proj.title.split(' ')[0]} {proj.title.split(' ')[1]}
-              </button>
-            ))}
+          {/* Next / Previous Slider Navigation Controls */}
+          <div className="flex items-center gap-3">
+            <span className="px-3.5 py-1.5 rounded-full bg-ink-card border border-ink-border text-xs font-mono font-bold text-gold tracking-widest shadow-xs">
+              0{activeProjectIndex + 1} / 0{BEFORE_AFTER_PAIRS.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveProjectIndex((prev) => (prev - 1 + BEFORE_AFTER_PAIRS.length) % BEFORE_AFTER_PAIRS.length);
+                setSliderPosition(50);
+              }}
+              aria-label="Previous Transformation"
+              className="w-10 h-10 rounded-full bg-ink-card border border-ink-border hover:border-gold hover:bg-gold hover:text-white text-plaster flex items-center justify-center transition-all shadow-xs group"
+            >
+              <ChevronLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveProjectIndex((prev) => (prev + 1) % BEFORE_AFTER_PAIRS.length);
+                setSliderPosition(50);
+              }}
+              aria-label="Next Transformation"
+              className="w-10 h-10 rounded-full bg-ink-card border border-ink-border hover:border-gold hover:bg-gold hover:text-white text-plaster flex items-center justify-center transition-all shadow-xs group"
+            >
+              <ChevronRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
+            </button>
           </div>
         </div>
 
@@ -114,7 +117,7 @@ export default function BeforeAfterSlider() {
           {/* Bottom Layer: After Image (Turnkey Handover - Right Side) */}
           <div className="absolute inset-0">
             <Image
-              src={activeProject.afterImage}
+              src={resolveImagePath(activeProject.afterImage)}
               alt={activeProject.afterLabel}
               fill
               sizes="100vw"
@@ -135,11 +138,11 @@ export default function BeforeAfterSlider() {
             }}
           >
             <Image
-              src={activeProject.beforeImage}
+              src={resolveImagePath(activeProject.beforeImage)}
               alt={activeProject.beforeLabel}
               fill
               sizes="100vw"
-              className="object-cover grayscale contrast-125"
+              className="object-cover"
             />
             {/* Raw Site Tag */}
             <div className="absolute top-6 left-6 z-10 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-mono uppercase text-zinc-300 tracking-wider flex items-center gap-1.5 shadow-lg">
@@ -166,21 +169,33 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Project Meta & Technical Specifications */}
-        <div className="mt-8 p-6 md:p-8 rounded-xl bg-ink-card border border-ink-border/80 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <span className="text-[10px] uppercase tracking-widest text-gold font-mono block">
-              {activeProject.location}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-serif text-plaster font-normal">
-              {activeProject.title}
+        <div className="mt-8 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-ink-card via-ink-card/95 to-gold/5 border border-gold/30 hover:border-gold/60 shadow-[0_12px_36px_rgba(0,0,0,0.35)] relative overflow-hidden backdrop-blur-xl flex flex-col md:flex-row md:items-center justify-between gap-6 group transition-all duration-500">
+          {/* Animated golden ambient light beams */}
+          <div className="absolute -right-16 -top-16 w-56 h-56 bg-gold/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+          <div className="absolute -left-12 -bottom-12 w-44 h-44 bg-gold/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent pointer-events-none" />
+
+          <div className="space-y-3 relative z-10 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-[10px] uppercase font-mono font-bold tracking-widest text-gold">
+              <Sparkles size={12} className="text-gold" />
+              <span>Custom Architectural Transformation</span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-serif text-plaster font-semibold">
+              Have a Raw Civil Site or Turnkey Project in Mind?
             </h3>
-            <div className="flex flex-wrap gap-2 pt-2">
+
+            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
+              Direct factory pricing, licensed Class-1 execution &amp; fixed BOQ contract with 10-year warranty.
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-1">
               {activeProject.specs.map((spec) => (
                 <span
                   key={spec}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink border border-ink-border/80 text-[11px] text-plaster-muted font-sans"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-card border border-ink-border/80 text-[11px] font-sans font-semibold text-plaster shadow-2xs hover:border-gold/50 transition-colors"
                 >
-                  <CheckCircle2 size={12} className="text-gold" />
+                  <CheckCircle2 size={13} className="text-gold" />
                   <span>{spec}</span>
                 </span>
               ))}
@@ -190,10 +205,10 @@ export default function BeforeAfterSlider() {
           {/* Quote Button for This Specific Transformation */}
           <Link
             href={`/quote?transformation=${activeProject.id}&track=${track}`}
-            className="btn-luxury shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white text-xs font-sans font-semibold uppercase tracking-wider shadow-md"
+            className="btn-luxury shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold hover:bg-gold-dark text-white text-xs font-sans font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all relative z-10"
           >
-            <span>Quote Similar Project</span>
-            <ArrowUpRight size={14} />
+            <span>Request Similar Quote</span>
+            <ArrowUpRight size={15} />
           </Link>
         </div>
       </div>
