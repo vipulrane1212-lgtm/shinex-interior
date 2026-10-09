@@ -104,9 +104,15 @@ export default function ProcessTimeline() {
                         isEven ? 'lg:justify-end' : 'lg:justify-start'
                       }`}
                     >
-                      <span className="px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-xs text-gold font-mono uppercase tracking-widest font-bold shadow-2xs">
-                        {node.badge}
-                      </span>
+                      <div className="uiverse-pill">
+                        <div className="uiverse-blob1" />
+                        <div className="uiverse-blob2" />
+                        <div className="uiverse-inner">
+                          <span className="text-xs text-white font-mono uppercase tracking-widest font-bold drop-shadow">
+                            {node.badge}
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
                     <h3 className="text-2xl sm:text-3xl font-serif text-plaster font-semibold tracking-tight">

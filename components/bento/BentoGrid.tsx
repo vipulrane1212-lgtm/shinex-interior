@@ -58,25 +58,35 @@ export default function BentoGrid() {
         <LayoutFlowChart />
 
         {/* Cost Calculator Callout Banner */}
-        <div className="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-ink-card via-ink-card to-gold/10 border border-gold/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-1 text-center sm:text-left">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-gold font-mono font-semibold">
-              Transparent Mumbai Costing
-            </span>
-            <h3 className="text-xl sm:text-2xl font-serif text-plaster">
-              Need a granular room-by-room quote?
-            </h3>
-            <p className="text-xs text-plaster-muted font-sans font-light max-w-lg">
-              Use our multi-step interactive cost estimator to pick modular joinery, kitchen shapes, civil wet packages, and calculate live indicative rates.
-            </p>
+        <div className="mt-12 uiverse-container">
+          <div className="uiverse-blob1" />
+          <div className="uiverse-blob2" />
+          <div className="uiverse-inner-box flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center sm:text-left relative z-10">
+              <div className="uiverse-pill mb-1">
+                <div className="uiverse-blob1" />
+                <div className="uiverse-blob2" />
+                <div className="uiverse-inner">
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-mono font-bold text-white drop-shadow">
+                    Transparent Mumbai Costing
+                  </span>
+                </div>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-serif text-white font-medium">
+                Need a granular room-by-room quote?
+              </h3>
+              <p className="text-xs text-zinc-300 font-sans font-light max-w-lg">
+                Use our multi-step interactive cost estimator to pick modular joinery, kitchen shapes, civil wet packages, and calculate live indicative rates.
+              </p>
+            </div>
+            <Link
+              href="/calculator"
+              className="btn-luxury shrink-0 px-7 py-3.5 rounded-full bg-gold hover:bg-gold-dark text-white font-sans font-semibold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2 relative z-10"
+            >
+              <span>Launch Cost Calculator</span>
+              <ArrowUpRight size={15} />
+            </Link>
           </div>
-          <Link
-            href="/calculator"
-            className="btn-luxury shrink-0 px-7 py-3.5 rounded-full bg-gold text-white font-sans font-semibold text-xs uppercase tracking-wider shadow-md flex items-center gap-2"
-          >
-            <span>Launch Cost Calculator</span>
-            <ArrowUpRight size={15} />
-          </Link>
         </div>
       </div>
     </section>

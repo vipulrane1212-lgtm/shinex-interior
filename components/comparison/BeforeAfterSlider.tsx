@@ -169,47 +169,52 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Project Meta & Technical Specifications */}
-        <div className="mt-8 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-ink-card via-ink-card/95 to-gold/5 border border-gold/30 hover:border-gold/60 shadow-[0_12px_36px_rgba(0,0,0,0.35)] relative overflow-hidden backdrop-blur-xl flex flex-col md:flex-row md:items-center justify-between gap-6 group transition-all duration-500">
-          {/* Animated golden ambient light beams */}
-          <div className="absolute -right-16 -top-16 w-56 h-56 bg-gold/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
-          <div className="absolute -left-12 -bottom-12 w-44 h-44 bg-gold/5 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent pointer-events-none" />
+        <div className="mt-8 uiverse-container">
+          <div className="uiverse-blob1" />
+          <div className="uiverse-blob2" />
+          <div className="uiverse-inner-box flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+            <div className="space-y-3 relative z-10 max-w-2xl">
+              <div className="uiverse-pill">
+                <div className="uiverse-blob1" />
+                <div className="uiverse-blob2" />
+                <div className="uiverse-inner">
+                  <Sparkles size={12} className="text-cyan-300 shrink-0" />
+                  <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-white drop-shadow">
+                    Custom Architectural Transformation
+                  </span>
+                </div>
+              </div>
 
-          <div className="space-y-3 relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-[10px] uppercase font-mono font-bold tracking-widest text-gold">
-              <Sparkles size={12} className="text-gold" />
-              <span>Custom Architectural Transformation</span>
+              <h3 className="text-xl sm:text-2xl font-serif text-white font-semibold">
+                Have a Raw Civil Site or Turnkey Project in Mind?
+              </h3>
+
+              <p className="text-xs sm:text-sm text-zinc-300 font-sans font-normal leading-relaxed">
+                Direct factory pricing, licensed Class-1 execution &amp; fixed BOQ contract with 10-year warranty.
+              </p>
+
+              <div className="flex flex-wrap gap-2 pt-1">
+                {activeProject.specs.map((spec) => (
+                  <span
+                    key={spec}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-white/20 text-[11px] font-sans font-semibold text-zinc-200 shadow-2xs hover:border-cyan-400/50 transition-colors"
+                  >
+                    <CheckCircle2 size={13} className="text-cyan-400" />
+                    <span>{spec}</span>
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-serif text-plaster font-semibold">
-              Have a Raw Civil Site or Turnkey Project in Mind?
-            </h3>
-
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
-              Direct factory pricing, licensed Class-1 execution &amp; fixed BOQ contract with 10-year warranty.
-            </p>
-
-            <div className="flex flex-wrap gap-2 pt-1">
-              {activeProject.specs.map((spec) => (
-                <span
-                  key={spec}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-card border border-ink-border/80 text-[11px] font-sans font-semibold text-plaster shadow-2xs hover:border-gold/50 transition-colors"
-                >
-                  <CheckCircle2 size={13} className="text-gold" />
-                  <span>{spec}</span>
-                </span>
-              ))}
-            </div>
+            {/* Quote Button for This Specific Transformation */}
+            <Link
+              href={`/quote?transformation=${activeProject.id}&track=${track}`}
+              className="btn-luxury shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold hover:bg-gold-dark text-white text-xs font-sans font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all relative z-10"
+            >
+              <span>Request Similar Quote</span>
+              <ArrowUpRight size={15} />
+            </Link>
           </div>
-
-          {/* Quote Button for This Specific Transformation */}
-          <Link
-            href={`/quote?transformation=${activeProject.id}&track=${track}`}
-            className="btn-luxury shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold hover:bg-gold-dark text-white text-xs font-sans font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all relative z-10"
-          >
-            <span>Request Similar Quote</span>
-            <ArrowUpRight size={15} />
-          </Link>
         </div>
       </div>
     </section>
