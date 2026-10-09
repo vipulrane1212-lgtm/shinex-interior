@@ -116,12 +116,8 @@ export default async function ServiceShowcasePage({ params }: ServicePageProps) 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 group-hover:opacity-90 transition-opacity" />
                 </div>
 
-                {/* Top Row Badge: Layout Name Only */}
-                <div className="relative z-10 p-5 sm:p-6 flex items-start justify-between">
-                  <span className="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-widest text-gold-light font-mono font-medium shadow-md">
-                    {design.layoutName}
-                  </span>
-                </div>
+                {/* Empty top spacing */}
+                <div className="relative z-10" />
 
                 {/* Bottom Content: Clean Headline ONLY + Get Quote Action */}
                 <div className="relative z-10 p-5 sm:p-6 space-y-4 bg-gradient-to-t from-black/95 via-black/70 to-transparent">
