@@ -68,8 +68,8 @@ export const COMMERCIAL_HERO_IMAGE =
 export const RESIDENTIAL_SERVICES: ServiceCard[] = [
   {
     id: 'kitchens',
-    title: 'Architectural Kitchens',
-    category: 'Modular System',
+    title: 'Custom / Modular Kitchens',
+    category: 'Kitchen Layouts & Details',
     aspect: 'hero',
     image:
       '/images/designs/kitchen_l_shaped.jpg',
@@ -77,28 +77,28 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
       {
         id: 'l-shaped',
         title: 'L-Shaped Kitchen',
-        tag: 'Ergonomic Angle',
+        tag: 'Ergonomic Triangle',
         image:
           'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'u-shaped',
         title: 'U-Shaped Kitchen',
-        tag: '3-Wall Discipline',
+        tag: '3-Wall Counter',
         image:
           'https://images.unsplash.com/photo-1565183997392-2f6f122e5912?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'island',
-        title: 'Island Kitchen',
-        tag: 'Waterfall Marble',
+        title: 'Kitchen with a Centre Table / Island',
+        tag: 'Centre Island',
         image:
           'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'parallel',
-        title: 'Parallel Galley',
-        tag: 'Dual Chef Run',
+        title: 'Parallel Kitchen',
+        tag: 'Dual Counter',
         image:
           'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80',
       },
@@ -106,37 +106,37 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'bedrooms',
-    title: 'Master Bedroom Suites',
-    category: 'Private Sanctuary',
+    title: 'Main Bedrooms',
+    category: 'Bedroom Furniture',
     aspect: 'portrait',
     image:
       'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=85',
     subCards: [
       {
         id: 'modern-master',
-        title: 'Modern Master Suite',
-        tag: 'Floating Bed',
+        title: 'Modern Bed (without visible legs)',
+        tag: 'Modern Bed',
         image:
           'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'minimal-japandi',
-        title: 'Minimalist Headboard',
-        tag: 'Acoustic Flutes',
+        title: 'Simple Wooden & Fabric Bed Backrest',
+        tag: 'Bed Backrest',
         image:
           'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'luxury-wardrobe',
-        title: 'Walk-In Wardrobes',
-        tag: 'Tinted Glass',
+        title: 'Glass-Door Walk-In Closet',
+        tag: 'Glass Closet',
         image:
           'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'kids-guest',
-        title: 'Children & Guest Suite',
-        tag: 'Modular Storage',
+        title: 'Standard Wardrobe with Top Storage (Loft)',
+        tag: 'Wardrobe with Loft',
         image:
           'https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80',
       },
@@ -144,30 +144,30 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'living',
-    title: 'Living & Social Lounges',
-    category: 'Double-Height Spatial',
+    title: 'Living Rooms / Drawing Rooms',
+    category: 'Living Room Designs',
     aspect: 'landscape',
     image:
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
     subCards: [
       {
         id: 'media-wall',
-        title: 'Veneer Media Wall',
-        tag: 'Concealed Wire',
+        title: 'Premium Wooden & Marble TV Unit',
+        tag: 'TV Unit',
         image:
           'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'social-lounge',
-        title: 'Open Dining Lounge',
-        tag: 'Italian Marble',
+        title: 'High-Ceiling Marble Living Room',
+        tag: 'High Ceiling',
         image:
           'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'balcony-deck',
-        title: 'Deck & Bar Integration',
-        tag: 'Weatherproof',
+        title: 'Outdoor Balcony Flooring & Cabinets',
+        tag: 'Balcony Deck',
         image:
           'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
       },
@@ -175,23 +175,23 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'bathrooms',
-    title: 'Bespoke Spa Bathrooms',
-    category: 'Monolithic Stone',
+    title: 'Luxury Bathrooms',
+    category: 'Bathroom Fittings',
     aspect: 'square',
     image:
       'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1000&q=85',
     subCards: [
       {
         id: 'rain-shower',
-        title: 'Walk-In Rain Shower',
-        tag: 'Frameless Glass',
+        title: 'Glass Shower Partition Area',
+        tag: 'Shower Area',
         image:
           'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'stone-tub',
-        title: 'Freestanding Bathtub',
-        tag: 'Cast Marble',
+        title: 'Standalone Bathtub',
+        tag: 'Bathtub',
         image:
           'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80',
       },
@@ -199,8 +199,8 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'dining',
-    title: 'Dining & Wine Displays',
-    category: 'Entertaining Hub',
+    title: 'Dining Areas & Bar Units',
+    category: 'Dining & Special Woodwork',
     aspect: 'square',
     image:
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=85',
@@ -214,30 +214,30 @@ export const RESIDENTIAL_SERVICES: ServiceCard[] = [
 export const COMMERCIAL_SERVICES: ServiceCard[] = [
   {
     id: 'corporate-offices',
-    title: 'Corporate HQ Fit-Outs',
-    category: 'Enterprise Workplace',
+    title: 'Complete Office Interiors',
+    category: 'Office Spaces',
     aspect: 'hero',
     image:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85',
     subCards: [
       {
         id: 'boardrooms',
-        title: 'Executive Boardrooms',
-        tag: 'Acoustic Glass',
+        title: 'Soundproof Meeting Rooms with TV/Projector',
+        tag: 'Meeting Rooms',
         image:
           'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'open-plan',
-        title: 'Agile Workspaces',
-        tag: 'Ergonomic Pods',
+        title: 'Flexible Office Desks & Quiet Cabins',
+        tag: 'Office Desks',
         image:
           'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'breakout',
-        title: 'Executive Lounges',
-        tag: 'Atmospheric Zoning',
+        title: 'Office Canteen & Pantry Area',
+        tag: 'Canteen & Pantry',
         image:
           'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
       },
@@ -245,30 +245,30 @@ export const COMMERCIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'civil-works',
-    title: 'Precision Civil Works',
-    category: 'Direct Site Execution',
+    title: 'Basic Construction & Masonry',
+    category: 'Specific Construction Works',
     aspect: 'portrait',
     image:
       'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85',
     subCards: [
       {
         id: 'flooring-tiles',
-        title: 'Heavy Vitrified & Italian Marble',
-        tag: 'Laser Leveling',
+        title: 'Perfectly Leveled Tile & Marble Fitting',
+        tag: 'Tile & Marble',
         image:
           'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'doors-hardware',
-        title: 'Fire-Rated Doors & Partitions',
-        tag: 'Certified MEP',
+        title: 'Fireproof Walls & AC/Plumbing Setup',
+        tag: 'Fireproof Setup',
         image:
           'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'structural-concrete',
-        title: 'Structural Masonry & Beams',
-        tag: 'Sneha Civil Base',
+        title: 'RCC Foundation & Slab Work (Pillars & Slabs)',
+        tag: 'Pillars & Slabs',
         image:
           'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80',
       },
@@ -276,23 +276,23 @@ export const COMMERCIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'tender-contracts',
-    title: 'L&T & Govt Tender Executions',
-    category: 'Institutional Compliance',
+    title: 'Large-Scale & Govt Contract Work',
+    category: 'Large-Scale Construction',
     aspect: 'landscape',
     image:
       'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85',
     subCards: [
       {
         id: 'raw-rebar',
-        title: 'Heavy Rebar & Slabs',
-        tag: 'Govt Tender',
+        title: 'RCC Foundation & Slab Work (Pillars & Slabs)',
+        tag: 'Heavy Slabs',
         image:
           'https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'industrial-plant',
-        title: 'Industrial MEP Infrastructure',
-        tag: 'Turnkey Civil',
+        title: 'Factory Sheds & Steel Roof Structures',
+        tag: 'Steel Structures',
         image:
           'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
       },
@@ -300,16 +300,16 @@ export const COMMERCIAL_SERVICES: ServiceCard[] = [
   },
   {
     id: 'commercial-lobbies',
-    title: 'Enterprise Lobbies & Atriums',
-    category: 'Architectural Reception',
+    title: 'Main Office Receptions & Waiting Areas',
+    category: 'Reception & Common Areas',
     aspect: 'square',
     image:
       'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'building-contracts',
-    title: 'Building Contracts & Facades',
-    category: 'Full-Scope Structural',
+    title: 'Building Construction & Outer Elevations',
+    category: 'Main Construction Works',
     aspect: 'square',
     image:
       'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85',

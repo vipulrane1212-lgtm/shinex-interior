@@ -117,7 +117,7 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-workstations',
     step: '01',
-    title: 'Team Workstations',
+    title: 'Office Desks & Cubicles',
     tagline: 'High-Density Ergonomic Desks',
     flowType: 'Open Office Pods',
     idealFor: 'Corporate Teams & IT Back-Offices',
@@ -138,7 +138,7 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-cabins',
     step: '02',
-    title: 'Director Cabins',
+    title: 'Boss / Director Cabins',
     tagline: 'Soundproof Glass Cabin Privacy',
     flowType: 'Executive Office',
     idealFor: 'CXOs, Partners & Private Meetings',
@@ -157,7 +157,7 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-boardroom',
     step: '03',
-    title: 'Conference Boardroom',
+    title: 'Soundproof Meeting Rooms',
     tagline: '16-Seat Video Conference Suite',
     flowType: 'Meeting Hub',
     idealFor: 'Board Meetings & Client Presentations',
@@ -175,7 +175,7 @@ const COMMERCIAL_FLOW_NODES: FlowNode[] = [
   {
     id: 'comm-reception',
     step: '04',
-    title: 'Main Reception & Lobby',
+    title: 'Main Reception & Waiting Areas',
     tagline: 'High-Impact Brand Arrival Desk',
     flowType: 'Visitor Greeting Area',
     idealFor: 'Corporate HQs, Clinics & Showrooms',

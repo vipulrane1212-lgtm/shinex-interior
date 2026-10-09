@@ -48,11 +48,11 @@ export default function Step3ServiceTree() {
   };
 
   const kitchenShapes = [
-    { id: 'kitchen_l_shape', name: 'L-Shaped Modular' },
-    { id: 'kitchen_u_shape', name: 'U-Shaped Ergonomic' },
-    { id: 'kitchen_parallel', name: 'Parallel Galley' },
-    { id: 'kitchen_island', name: 'Island Monolith' },
-    { id: 'kitchen_straight', name: 'Straight Studio Run' },
+    { id: 'kitchen_l_shape', name: 'L-Shaped Kitchen' },
+    { id: 'kitchen_u_shape', name: 'U-Shaped Kitchen' },
+    { id: 'kitchen_parallel', name: 'Parallel Kitchen' },
+    { id: 'kitchen_island', name: 'Kitchen with a Centre Table / Island' },
+    { id: 'kitchen_straight', name: 'Straight Kitchen' },
   ];
 
   return (
