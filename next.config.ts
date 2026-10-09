@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   output: isStaticExport ? 'export' : undefined,
   basePath: isStaticExport ? '/shinex-interior' : undefined,
   assetPrefix: isStaticExport ? '/shinex-interior' : undefined,
+  trailingSlash: isStaticExport ? true : undefined,
   images: {
     unoptimized: isStaticExport,
     remotePatterns: [
