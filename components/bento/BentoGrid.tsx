@@ -4,19 +4,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useTrack } from '@/context/TrackContext';
 import { RESIDENTIAL_SERVICES, COMMERCIAL_SERVICES } from '@/lib/assets';
-import BentoCard from './BentoCard';
 import InfiniteAutoScroll from './InfiniteAutoScroll';
 import DesignStudioModal from './DesignStudioModal';
 import LayoutFlowChart from './LayoutFlowChart';
 import TrackToggle from '@/components/ui/TrackToggle';
-import { Layers, ArrowUpRight, Film, LayoutGrid, Sparkles } from 'lucide-react';
+import { Layers, ArrowUpRight } from 'lucide-react';
 
 export default function BentoGrid() {
   const { track } = useTrack();
-  const services = track === 'residential' ? RESIDENTIAL_SERVICES : COMMERCIAL_SERVICES;
-
-  // View Mode: 'stream' (infinite auto-scroll) or 'grid' (classic bento)
-  const [viewMode, setViewMode] = useState<'stream' | 'grid'>('stream');
 
   // Active Studio Modal Service ID
   const [activeStudioService, setActiveStudioService] = useState<string | null>(null);
@@ -46,96 +41,23 @@ export default function BentoGrid() {
                   : 'Offices · Retail Showrooms · Direct Civil Contracts'}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed max-w-xl">
-              {track === 'residential'
-                ? 'Factory-pressed modular furniture, false ceiling, and civil work — designed and built under one roof with a 10-year warranty.'
-                : 'Direct civil execution, flooring, electrical, and turnkey office fit-outs with licensed Sneha Enterprises supervisors.'}
-            </p>
           </div>
 
-          {/* Switchers Bar: View Mode Switcher + Track Toggle */}
-          <div className="flex flex-wrap items-center gap-3">
-            {/* Display View Mode Switcher */}
-            <div className="inline-flex items-center p-1 rounded-full bg-ink-soft border border-ink-border shadow-sm">
-              <button
-                type="button"
-                onClick={() => setViewMode('stream')}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-sans transition-all ${
-                  viewMode === 'stream'
-                    ? 'bg-gold text-white font-semibold shadow-md'
-                    : 'text-plaster-muted hover:text-plaster'
-                }`}
-              >
-                <Film size={13} />
-                <span>Infinite Stream</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('grid')}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-sans transition-all ${
-                  viewMode === 'grid'
-                    ? 'bg-gold text-white font-semibold shadow-md'
-                    : 'text-plaster-muted hover:text-plaster'
-                }`}
-              >
-                <LayoutGrid size={13} />
-                <span>Bento Grid</span>
-              </button>
-            </div>
-
+          {/* Track Switcher (Residential / Commercial & Civil only) */}
+          <div className="flex items-center gap-3">
             <TrackToggle />
           </div>
         </div>
 
-        {/* View Mode 1: Infinite Cinematic Auto-Scroll Stream */}
-        {viewMode === 'stream' ? (
-          <div className="my-4">
-            <InfiniteAutoScroll
-              residentialCards={RESIDENTIAL_SERVICES}
-              commercialCards={COMMERCIAL_SERVICES}
-              onSelectCard={(serviceId) => setActiveStudioService(serviceId)}
-              activeTrack={track}
-            />
-          </div>
-        ) : (
-          /* View Mode 2: Dynamic Bento Box Layout */
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <BentoCard
-              card={services[0]}
-              isMainHero={true}
-              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
-              className="md:col-span-12 lg:col-span-8 min-h-[460px]"
-            />
-
-            <BentoCard
-              card={services[1]}
-              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
-              className="md:col-span-6 lg:col-span-4 min-h-[460px]"
-            />
-
-            <BentoCard
-              card={services[2]}
-              onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
-              className="md:col-span-6 lg:col-span-5 min-h-[380px]"
-            />
-
-            {services[3] && (
-              <BentoCard
-                card={services[3]}
-                onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
-                className="md:col-span-6 lg:col-span-4 min-h-[380px]"
-              />
-            )}
-
-            {services[4] && (
-              <BentoCard
-                card={services[4]}
-                onOpenStudio={(serviceId) => setActiveStudioService(serviceId)}
-                className="md:col-span-6 lg:col-span-3 min-h-[380px]"
-              />
-            )}
-          </div>
-        )}
+        {/* Infinite Cinematic Auto-Scroll Stream (Strictly Filtered by Track) */}
+        <div className="my-4">
+          <InfiniteAutoScroll
+            residentialCards={RESIDENTIAL_SERVICES}
+            commercialCards={COMMERCIAL_SERVICES}
+            onSelectCard={(serviceId) => setActiveStudioService(serviceId)}
+            activeTrack={track}
+          />
+        </div>
 
         {/* Architectural Layout Flow Diagram */}
         <LayoutFlowChart />

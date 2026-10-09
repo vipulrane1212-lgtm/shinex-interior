@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { ArrowUpRight, Sparkles, Pause, Play, Eye } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight, Sparkles, Eye } from 'lucide-react';
 import { ServiceCard } from '@/lib/assets';
 import { resolveImagePath, DESIGN_CATALOG } from '@/lib/designCatalog';
 
@@ -19,121 +18,32 @@ export default function InfiniteAutoScroll({
   onSelectCard,
   activeTrack,
 }: InfiniteAutoScrollProps) {
-  const [isPaused, setIsPaused] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'residential' | 'commercial'>(
-    activeTrack === 'residential' ? 'residential' : 'commercial'
-  );
+  // Strictly filter by activeTrack: Residential shows ONLY residential cards; Commercial shows ONLY commercial cards
+  const displayCards = activeTrack === 'residential' ? residentialCards : commercialCards;
 
   // Duplicate cards for seamless infinite loop (3x ensures no gaps on ultra-wide screens)
-  const loopResidential = [...residentialCards, ...residentialCards, ...residentialCards];
-  const loopCommercial = [...commercialCards, ...commercialCards, ...commercialCards];
+  const loopCards = [...displayCards, ...displayCards, ...displayCards];
 
   return (
-    <div className="relative w-full space-y-8 select-none overflow-hidden">
-      {/* Control & Mode Switcher Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-4 px-2 sm:px-6">
-        <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-600 dark:text-zinc-400 font-semibold">
-            Infinite Cinematic Stream · 10 Prime Categories · 50 Architectural Layouts
-          </span>
-        </div>
-
-        {/* Filter Pills + Pause Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="inline-flex items-center p-1 rounded-full bg-ink-soft/80 border border-ink-border">
-            <button
-              type="button"
-              onClick={() => setSelectedFilter('residential')}
-              className={`px-3.5 py-1 rounded-full text-xs font-sans transition-all ${
-                selectedFilter === 'residential'
-                  ? 'bg-gold text-white font-semibold shadow-md'
-                  : 'text-plaster-muted hover:text-plaster'
-              }`}
-            >
-              Residential (5)
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedFilter('commercial')}
-              className={`px-3.5 py-1 rounded-full text-xs font-sans transition-all ${
-                selectedFilter === 'commercial'
-                  ? 'bg-gold text-white font-semibold shadow-md'
-                  : 'text-plaster-muted hover:text-plaster'
-              }`}
-            >
-              Commercial (5)
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedFilter('all')}
-              className={`px-3.5 py-1 rounded-full text-xs font-sans transition-all ${
-                selectedFilter === 'all'
-                  ? 'bg-gold text-white font-semibold shadow-md'
-                  : 'text-plaster-muted hover:text-plaster'
-              }`}
-            >
-              Dual Stream (10)
-            </button>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setIsPaused((prev) => !prev)}
-            aria-label={isPaused ? 'Play auto-scroll' : 'Pause auto-scroll'}
-            className="w-8 h-8 rounded-full bg-ink-soft border border-ink-border hover:border-gold flex items-center justify-center text-plaster hover:text-gold transition-colors"
-          >
-            {isPaused ? <Play size={13} /> : <Pause size={13} />}
-          </button>
+    <div className="relative w-full select-none overflow-hidden py-3">
+      {/* Infinite Auto-Scroll Stream (Edge gradients removed as requested for crisp full-width presentation) */}
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="animate-marquee gap-6 flex hover:[animation-play-state:paused]"
+          style={{ animationDuration: '36s' }}
+        >
+          {loopCards.map((card, idx) => (
+            <StreamCard
+              key={`${activeTrack}-${card.id}-${idx}`}
+              card={card}
+              onClick={() => onSelectCard(card.id)}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Row 1: Residential Stream (Scrolling Left) */}
-      {(selectedFilter === 'all' || selectedFilter === 'residential') && (
-        <div className="relative w-full overflow-hidden py-2">
-          {/* Subtle Edge Vignettes */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 z-20 bg-gradient-to-r from-ink to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 z-20 bg-gradient-to-l from-ink to-transparent pointer-events-none" />
-
-          <div
-            className={`animate-marquee gap-6 flex ${isPaused ? '[animation-play-state:paused]' : ''}`}
-            style={{ animationDuration: '38s' }}
-          >
-            {loopResidential.map((card, idx) => (
-              <StreamCard
-                key={`res-${card.id}-${idx}`}
-                card={card}
-                onClick={() => onSelectCard(card.id)}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Row 2: Commercial Stream (Scrolling Right) */}
-      {(selectedFilter === 'all' || selectedFilter === 'commercial') && (
-        <div className="relative w-full overflow-hidden py-2">
-          {/* Subtle Edge Vignettes */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 z-20 bg-gradient-to-r from-ink to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 z-20 bg-gradient-to-l from-ink to-transparent pointer-events-none" />
-
-          <div
-            className={`animate-marquee-reverse gap-6 flex ${isPaused ? '[animation-play-state:paused]' : ''}`}
-            style={{ animationDuration: '40s' }}
-          >
-            {loopCommercial.map((card, idx) => (
-              <StreamCard
-                key={`com-${card.id}-${idx}`}
-                card={card}
-                onClick={() => onSelectCard(card.id)}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Interactive Helper Hint */}
-      <div className="text-center pt-2">
+      <div className="text-center pt-5">
         <p className="text-xs text-plaster-muted font-mono tracking-wider">
           Hover to pause · Click any card to explore all 5 design variants in the Architectural Studio
         </p>
