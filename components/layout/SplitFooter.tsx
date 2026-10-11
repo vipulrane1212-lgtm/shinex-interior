@@ -262,6 +262,11 @@ export default function SplitFooter() {
             </span>
             <ul className="space-y-2 text-xs font-sans text-plaster-muted">
               <li>
+                <Link href="/design-ideas" className="hover:text-gold transition-colors text-gold/90 font-medium">
+                  Design Ideas (28 Categories)
+                </Link>
+              </li>
+              <li>
                 <a href="/#services" className="hover:text-plaster transition-colors">
                   Services
                 </a>

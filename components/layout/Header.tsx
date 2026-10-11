@@ -57,6 +57,12 @@ export default function Header() {
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
             <span>Cost Calculator</span>
           </Link>
+          <Link
+            href="/design-ideas"
+            className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
+          >
+            Design Ideas
+          </Link>
           <a
             href="/#services"
             className="px-2.5 py-1 rounded-full text-[11px] uppercase tracking-[0.08em] text-plaster hover:text-gold hover:bg-ink-soft/80 transition-all font-sans font-bold whitespace-nowrap"
@@ -125,6 +131,13 @@ export default function Header() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
               <span>Cost Calculator</span>
+            </Link>
+            <Link
+              href="/design-ideas"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-xs uppercase tracking-widest text-plaster-muted hover:text-plaster hover:bg-ink-soft/40 py-2 rounded-lg transition-colors font-sans font-medium"
+            >
+              Design Ideas
             </Link>
             <a
               href="/#services"
