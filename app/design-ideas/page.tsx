@@ -40,7 +40,7 @@ export default function DesignIdeasPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedStyle, setSelectedStyle] = useState<string>('All Styles');
   const [selectedLayout, setSelectedLayout] = useState<string>('All Layouts');
-  const [displayCount, setDisplayCount] = useState<number>(16);
+  const [displayCount, setDisplayCount] = useState<number>(24);
   const [activeModalDesign, setActiveModalDesign] = useState<DesignIdeaItem | null>(null);
 
   // Load category designs when category changes
@@ -52,7 +52,7 @@ export default function DesignIdeasPage() {
       if (isMounted) {
         setDesigns(data);
         setLoading(false);
-        setDisplayCount(16);
+        setDisplayCount(24);
       }
     });
 
@@ -247,7 +247,10 @@ export default function DesignIdeasPage() {
 
             <div className="text-xs font-mono text-plaster-muted shrink-0">
               Showing <span className="text-gold font-bold">{visibleDesigns.length}</span> of{' '}
-              <span className="text-white font-bold">{filteredDesigns.length}</span> matching designs
+              <span className="text-white font-bold">{filteredDesigns.length}</span> concepts
+              {currentCategoryObj?.totalCount ? (
+                <span className="text-zinc-500"> ({currentCategoryObj.totalCount.toLocaleString()} total in catalog)</span>
+              ) : null}
             </div>
           </div>
         )}
@@ -297,18 +300,26 @@ export default function DesignIdeasPage() {
           </div>
         )}
 
-        {/* ================= LOAD MORE BUTTON ================= */}
+        {/* ================= LOAD MORE & EXPAND CONTROLS ================= */}
         {!loading && visibleDesigns.length < filteredDesigns.length && (
-          <div className="pt-8 text-center">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               type="button"
-              onClick={() => setDisplayCount((prev) => prev + 16)}
-              className="px-8 py-3.5 rounded-full bg-ink-card hover:bg-gold text-zinc-200 hover:text-white border border-ink-border hover:border-gold text-xs font-mono uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
+              onClick={() => setDisplayCount((prev) => prev + 24)}
+              className="px-8 py-3.5 rounded-full bg-gold hover:bg-gold-dark text-white text-xs font-mono uppercase tracking-widest font-bold transition-all shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
             >
-              <Zap size={14} className="text-gold group-hover:text-white" />
+              <Zap size={14} className="text-white" />
               <span>
-                Load More Designs ({filteredDesigns.length - visibleDesigns.length} remaining)
+                Load More (+24 Designs) · {filteredDesigns.length - visibleDesigns.length} Remaining
               </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setDisplayCount(filteredDesigns.length)}
+              className="px-6 py-3.5 rounded-full bg-ink-card hover:bg-ink-soft text-zinc-300 hover:text-white border border-ink-border text-xs font-mono uppercase tracking-wider font-semibold transition-all shadow-md cursor-pointer"
+            >
+              <span>Show All {filteredDesigns.length} Concepts</span>
             </button>
           </div>
         )}

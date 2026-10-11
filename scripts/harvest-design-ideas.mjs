@@ -158,10 +158,37 @@ async function harvest() {
 
     try {
       const designRes = await fetchJson(
-        `${BASE_API}/api/v1/collections/looks,smart-photo-lite?legacy_filters=country.eq:IN;roomType.in:${cat.slug}&page=0&size=16`
+        `${BASE_API}/api/v1/collections/looks,smart-photo-lite?legacy_filters=country.eq:IN;roomType.in:${cat.slug}&page=0&size=100`
       );
 
-      const items = designRes.content || [];
+      let items = designRes.content || [];
+
+      // For top high-demand categories, fetch an extra page of 50 designs
+      const topCategories = [
+        'kitchen-designs',
+        'bedrooms',
+        'living-rooms',
+        'wardrobe-designs',
+        'tv-unit-designs',
+        'bathroom',
+        'pooja-room',
+        'false-ceiling-designs',
+        'dining-room',
+      ];
+
+      if (topCategories.includes(cat.slug)) {
+        try {
+          const page2Res = await fetchJson(
+            `${BASE_API}/api/v1/collections/looks,smart-photo-lite?legacy_filters=country.eq:IN;roomType.in:${cat.slug}&page=1&size=50`
+          );
+          if (page2Res.content && page2Res.content.length > 0) {
+            items = items.concat(page2Res.content);
+          }
+        } catch {
+          // Ignore secondary page error
+        }
+      }
+
       cat.totalCount = designRes.total_elements || items.length;
       categoryStats.push({ slug: cat.slug, title: cat.title, totalInCatalog: cat.totalCount, harvested: items.length });
 
@@ -231,10 +258,11 @@ async function harvest() {
     'utf8'
   );
 
-  // 4. Save consolidated designs JSON
+  // 4. Save consolidated designs JSON (curated top 300 for All Ideas tab)
+  const allCurated = allDesigns.slice(0, 300);
   fs.writeFileSync(
     path.join(DATA_DIR, 'all.json'),
-    JSON.stringify(allDesigns, null, 2),
+    JSON.stringify(allCurated, null, 2),
     'utf8'
   );
 

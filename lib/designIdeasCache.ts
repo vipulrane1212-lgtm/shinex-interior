@@ -5,9 +5,6 @@ import { DesignIdeaItem, INITIAL_SHOWCASE_DESIGNS } from './designIdeasCatalog';
 // In-memory cache for instantaneous zero-latency tab switching
 const memoryCache = new Map<string, DesignIdeaItem[]>();
 
-// Pre-fill memory cache with initial showcase
-memoryCache.set('all', INITIAL_SHOWCASE_DESIGNS);
-
 function getBasePath(): string {
   if (typeof window === 'undefined') return '';
   const isGitHubPages =
@@ -22,10 +19,10 @@ export async function fetchCategoryDesigns(categorySlug: string): Promise<Design
     return memoryCache.get(categorySlug)!;
   }
 
-  // 2. Check browser localStorage
+  // 2. Check browser localStorage (v2 cache key for 100-150 item catalogs)
   if (typeof window !== 'undefined') {
     try {
-      const storageKey = `shinex_designs_${categorySlug}_v1`;
+      const storageKey = `shinex_designs_${categorySlug}_v2`;
       const cached = window.localStorage.getItem(storageKey);
       if (cached) {
         const parsed = JSON.parse(cached) as DesignIdeaItem[];
@@ -55,7 +52,7 @@ export async function fetchCategoryDesigns(categorySlug: string): Promise<Design
     // Cache in localStorage
     if (typeof window !== 'undefined') {
       try {
-        const storageKey = `shinex_designs_${categorySlug}_v1`;
+        const storageKey = `shinex_designs_${categorySlug}_v2`;
         window.localStorage.setItem(storageKey, JSON.stringify(data));
       } catch {
         // Storage quota exceeded or disabled
@@ -65,8 +62,9 @@ export async function fetchCategoryDesigns(categorySlug: string): Promise<Design
     return data;
   } catch (err) {
     console.warn(`[DesignIdeasCache] Fallback for ${categorySlug}:`, err);
-    // Return filtered initial showcase as resilient fallback
+    // Resilient fallback from bundled showcase
     if (categorySlug === 'all') return INITIAL_SHOWCASE_DESIGNS;
-    return INITIAL_SHOWCASE_DESIGNS.filter((d) => d.category_slug === categorySlug);
+    const fallback = INITIAL_SHOWCASE_DESIGNS.filter((d) => d.category_slug === categorySlug);
+    return fallback.length > 0 ? fallback : INITIAL_SHOWCASE_DESIGNS;
   }
 }

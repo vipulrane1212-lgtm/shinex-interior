@@ -1056,484 +1056,722 @@ export const INITIAL_SHOWCASE_DESIGNS: DesignIdeaItem[] = [
     ]
   },
   {
-    "id": "modern-master-bedroom-design-with-terracotta-velvet-bed-and-marble-wall-accent-d-inmbr-jas2026-410",
-    "title": "Modern Master Bedroom Design with Terracotta Velvet Bed and Marble Wall Accent",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-9-1785931873-ZgYVD.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-9-1785931873-ZgYVD.png",
-    "alt_text": "Master Bedroom Design with Terracotta Tufted Headboard and Slatted Wood Wall",
-    "room_size": "14x14 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "14x14 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- Modern dual white floating nightstands integrated directly onto the wide headboard",
-        "- Open spatial floorplan for easy movement"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-9-1785931873-ZgYVD.png",
-        "alt": "Master Bedroom Design with Terracotta Tufted Headboard and Slatted Wood Wall",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "contemporary-master-bedroom-design-with-grey-wingback-bed-and-chevron-wall-d-inmbr-jas2026-409",
-    "title": "Contemporary Master Bedroom Design with Grey Wingback Bed and Chevron Wall",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-8-1785931875-LdEJQ.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-8-1785931875-LdEJQ.png",
-    "alt_text": "Master Bedroom Design with Tufted Charcoal Bed and Chevron Wood Wall",
-    "room_size": "14x14 feet",
-    "style": "Contemporary",
-    "specifications": {
-      "room_dimensions": "14x14 feet",
-      "style": "Contemporary",
-      "storage_features": [
-        "- Low dark wood bedside drawer units",
-        "- High-gloss black wardrobe doors providing seamless integrated storage"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-8-1785931875-LdEJQ.png",
-        "alt": "Master Bedroom Design with Tufted Charcoal Bed and Chevron Wood Wall",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "modern-master-bedroom-design-with-channel-tufted-bed-and-oriental-art-wall-d-inmbr-jas2026-408",
-    "title": "Modern Master Bedroom Design with Channel-Tufted Bed and Oriental Art Wall",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-7-1785931877-vkpRW.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-7-1785931877-vkpRW.png",
-    "alt_text": "Master Bedroom Design with Vertical Tufted Bed and Pine Art Panel",
-    "room_size": "13x12 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "13x12 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- Dark timber bedside tables with open lower shelf compartments",
-        "- Adjacent wide chest of drawers for clothing storage"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-7-1785931877-vkpRW.png",
-        "alt": "Master Bedroom Design with Vertical Tufted Bed and Pine Art Panel",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "industrial-master-bedroom-design-with-tufted-headboard-and-stone-accent-wall-d-inmbr-jas2026-407",
-    "title": "Industrial Master Bedroom Design with Tufted Headboard and Stone Accent Wall",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1785931878-gqUEJ.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1785931878-gqUEJ.png",
-    "alt_text": "Master Bedroom Design with Blush Headboard and Industrial Stone Feature Wall",
-    "room_size": "14x12 feet",
-    "style": "Industrial",
-    "specifications": {
-      "room_dimensions": "14x12 feet",
-      "style": "Industrial",
-      "storage_features": [
-        "-Wall-mounted floating nightstands with pull-out drawers",
-        "-Full-height glass-door display wardrobe with interior LED strip lighting"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1785931878-gqUEJ.png",
-        "alt": "Master Bedroom Design with Blush Headboard and Industrial Stone Feature Wall",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "modern-master-bedroom-design-with-upholstered-king-bed-and-window-lounge-seating-d-inmbr-jas2026-406",
-    "title": "Modern Master Bedroom Design with Upholstered King Bed and Window Lounge Seating",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-5-1785931880-AT6hi.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-5-1785931880-AT6hi.png",
-    "alt_text": "Master Bedroom Design with Upholstered King Bed and Window Armchairs",
-    "room_size": "12x14 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "12x14 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- Dual-drawer wooden nightstands on either side of the bed",
-        "- Integrated full-height dark wood wardrobe with glass doors"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-5-1785931880-AT6hi.png",
-        "alt": "Master Bedroom Design with Upholstered King Bed and Window Armchairs",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "contemporary-master-bedroom-design-with-wood-feature-wall-and-chandelier-d-inmbr-jas2026-405",
-    "title": "Contemporary Master Bedroom Design with Wood Feature Wall and Chandelier",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1785932067-BkUM7.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1785932067-BkUM7.png",
-    "alt_text": "Master Bedroom Design with Fluted Wood Accent Wall and Glass Tier Chandelier",
-    "room_size": "14x12 feet",
-    "style": "Contemporary",
-    "specifications": {
-      "room_dimensions": "14x12 feet",
-      "style": "Contemporary",
-      "storage_features": [
-        "- Two-tier wooden nightstands",
-        "- Wall-mounted floating TV console with closed drawers",
-        "- Dedicated walk-in wardrobe section"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1785932067-BkUM7.png",
-        "alt": "Master Bedroom Design with Fluted Wood Accent Wall and Glass Tier Chandelier",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "modern-master-bedroom-design-with-twin-ottomans-and-backlit-wall-panels-d-inmbr-jas2026-404",
-    "title": "Modern Master Bedroom Design with Twin Ottomans and Backlit Wall Panels",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1785931978-AQQAB.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1785931978-AQQAB.png",
-    "alt_text": "Master Bedroom Design with Platform Bed and Twin Round Footstool Ottomans",
-    "room_size": "16x14 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "16x14 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- Floating nightstand consoles on both sides of the bed",
-        "- Elevated design to keep bedside accessories organized while freeing up floor space"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1785931978-AQQAB.png",
-        "alt": "Master Bedroom Design with Platform Bed and Twin Round Footstool Ottomans",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "contemporary-master-bedroom-design-with-geometric-feature-wall-and-cove-lights-d-inmbr-jas2026-403",
-    "title": "Contemporary Master Bedroom Design with Geometric Feature Wall and Cove Lights",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1785931980-e3ZoS.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1785931980-e3ZoS.png",
-    "alt_text": "Master Bedroom Design with Geometric Upholstered Wall and Integrated Lighting",
-    "room_size": "16x14 feet",
-    "style": "Contemporary",
-    "specifications": {
-      "room_dimensions": "16x14 feet",
-      "style": "Contemporary",
-      "storage_features": [
-        "- Full-height dark wood wardrobe",
-        "- Floating drawer bedside tables",
-        "- Extended window seating bench with deep storage drawers underneath"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1785931980-e3ZoS.png",
-        "alt": "Master Bedroom Design with Geometric Upholstered Wall and Integrated Lighting",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "modern-master-bedroom-design-with-sculpted-headboard-and-plush-end-bench-d-inmbr-jas2026-402",
-    "title": "Modern Master Bedroom Design with Sculpted Headboard and Plush End-Bench",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-1-1785931981-sGusO.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-1-1785931981-sGusO.png",
-    "alt_text": "Master Bedroom Design with Green Bed and Bouclé Bed-End Bench",
-    "room_size": "12x14 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "12x14 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- Dual walnut bedside nightstands with pull-out drawers",
-        "- Tall side storage chest to keep personal accessories organized"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-1-1785931981-sGusO.png",
-        "alt": "Master Bedroom Design with Green Bed and Bouclé Bed-End Bench",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "contemporary-master-bedroom-design-with-navy-bed-and-frosted-glass-wardrobe-d-inmbr-jas2026-182",
-    "title": "Contemporary Master Bedroom Design with Navy Bed and Frosted Glass Wardrobe",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1784627792-aeR60.jpg",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1784627792-aeR60.jpg",
-    "alt_text": "Master Bedroom Design with Navy Headboard Bed and Integrated Study Desk",
-    "room_size": "12x14 feet",
-    "style": "Contemporary",
-    "specifications": {
-      "room_dimensions": "12x14 feet",
-      "style": "Contemporary",
-      "storage_features": [
-        "- Full-height wardrobe with frosted glass sliding doors",
-        "- Dark blue upper loft cupboards",
-        "- Wall-mounted overhead desk cabinet"
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-6-1784627792-aeR60.jpg",
-        "alt": "Master Bedroom Design with Navy Headboard Bed and Integrated Study Desk",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "modern-master-bedroom-design-with-backlit-concrete-wall-and-fluted-panels-d-inmbr-jas2026-653",
-    "title": "Modern Master Bedroom Design with Backlit Concrete Wall and Fluted Panels",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-13-1789294513-AIkhB.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-13-1789294513-AIkhB.png",
-    "alt_text": "Master Bedroom Design with Backlit Concrete Wall and Dark Fluted Wood Panels",
-    "room_size": "15x18 feet",
-    "style": "Modern",
-    "specifications": {
-      "room_dimensions": "15x18 feet",
-      "style": "Modern",
-      "storage_features": [
-        "- This master bedroom includes a full-height dark wardrobe unit, fluted wood bedside tables, and an open TV console for organized storage.",
-        "- The sleek, handle-less finishes and built-in dressing table storage blend functionality with a moody, modern-industrial bedroom aesthetic."
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-13-1789294513-AIkhB.png",
-        "alt": "Master Bedroom Design with Backlit Concrete Wall and Dark Fluted Wood Panels",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "classic-master-bedroom-design-with-rattan-bed-and-sage-wall-wainscoting-d-inmbr-jas2026-652",
-    "title": "Classic Master Bedroom Design with Rattan Bed and Sage Wall Wainscoting",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-12-1787651816-hVpSt.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-12-1787651816-hVpSt.png",
-    "alt_text": "Master Bedroom Design with Cane King Bed and Green Wainscoting Wall",
-    "room_size": "13x15 feet",
-    "style": "Classic",
-    "specifications": {
-      "room_dimensions": "13x15 feet",
-      "style": "Classic",
-      "storage_features": [
-        "- This master bedroom offers functional storage with a rattan-front bedside table, a wooden dressing console with drawers, and an open-shelf nightstand.",
-        "- The natural cane textures blend storage with style, keeping essentials organized while enhancing the room's warm, earthy, and contemporary aesthetic."
-      ],
-      "special_features": []
-    },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
-    "all_images": [
-      {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-12-1787651816-hVpSt.png",
-        "alt": "Master Bedroom Design with Cane King Bed and Green Wainscoting Wall",
-        "cover": true
-      }
-    ]
-  },
-  {
-    "id": "transitional-master-bedroom-design-with-velvet-tufted-bed-and-chandelier-d-inmbr-jas2026-651",
-    "title": "Transitional Master Bedroom Design with Velvet Tufted Bed and Chandelier",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-11-1787651818-NB7pQ.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-11-1787651818-NB7pQ.png",
-    "alt_text": "Master Bedroom Design with Wine-Tufted Bed and Maroon False Ceiling",
-    "room_size": "16x14 feet",
+    "id": "transitional-ivory-island-kitchen-design-with-marble-waterfall-island-d-inki-ond2026-37",
+    "title": "Transitional Ivory Island Kitchen Design with Marble Waterfall Island",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-26-1787651028-UJKAG.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-26-1787651028-UJKAG.png",
+    "alt_text": "Island Kitchen Design with Marble Waterfall Island",
+    "room_size": "16x12 feet",
     "style": "Transitional",
     "specifications": {
-      "room_dimensions": "16x14 feet",
+      "layout": "Island Kitchen Design",
+      "room_dimensions": "16x12 feet",
       "style": "Transitional",
+      "colours": "Ivory",
+      "shutter_finish": "Membrane in matte finish",
+      "countertop_material": "Quartz",
+      "ideal_for": "Medium-sized families",
       "storage_features": [
-        "- This master bedroom features a sleek dark-wood chest of drawers offering ample storage for clothing and accessories, paired with bedside pedestal tables for essentials.",
-        "- The minimal-clutter layout keeps storage functional yet stylish, complementing the room's luxurious aesthetic while maximizing convenience for everyday use."
+        "- Floor-to-ceiling ivory membrane cabinets with sleek black handles.",
+        "- Open wall shelves for displaying glassware and decorative ceramics.",
+        "- Wide base drawers and integrated pantry units."
       ],
-      "special_features": []
+      "special_features": [
+        "- Marble waterfall island unit with black velvet upholstered bar stools.",
+        "- Black and gold pendant light fixtures suspended over the island.",
+        "- High-contrast black and white checkerboard tiled floor with green border inlay."
+      ]
     },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "Island Kitchen Design",
+      "Kitchen Backsplash",
+      "Kitchen countertop",
+      "Modular Kitchen Chennai",
+      "Modular Kitchen Kanpur"
+    ],
     "all_images": [
       {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-11-1787651818-NB7pQ.png",
-        "alt": "Master Bedroom Design with Wine-Tufted Bed and Maroon False Ceiling",
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-26-1787651028-UJKAG.png",
+        "alt": "Island Kitchen Design with Marble Waterfall Island",
         "cover": true
       }
     ]
   },
   {
-    "id": "contemporary-master-bedroom-design-with-floral-wall-feature-and-slat-panel-d-inmbr-jas2026-145",
-    "title": "Contemporary Master Bedroom Design with Floral Wall Feature and Slat Panel",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1784539488-STbK9.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1784539488-STbK9.png",
-    "alt_text": "Master Bedroom Design with Botanical Wallpaper and Wood Fluted Paneling",
+    "id": "modern-ivory-u-shaped-kitchen-design-with-hexagonal-floor-tiles-d-inki-ond2026-36",
+    "title": "Modern Ivory U-Shaped Kitchen Design with Hexagonal Floor Tiles",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-25-1787651030-MYuIt.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-25-1787651030-MYuIt.png",
+    "alt_text": "U-Shaped Kitchen Design with Hexagonal Floor Tiles",
+    "room_size": "13x10 feet",
+    "style": "Modern",
+    "specifications": {
+      "layout": "U-Shaped Kitchen Design",
+      "room_dimensions": "13x10 feet",
+      "style": "Modern",
+      "colours": "Ivory",
+      "shutter_finish": "Acrylic in high gloss finish",
+      "countertop_material": "Quartz",
+      "ideal_for": "Large families",
+      "storage_features": [
+        "- High-gloss ivory acrylic base and overhead wall cabinets.",
+        "- Glass-fronted upper display cabinets with warm internal accent lighting.",
+        "- Full-height tall unit with integrated double ovens."
+      ],
+      "special_features": [
+        "- Sage green square tile backsplash with dark gooseneck faucet.",
+        "- Under-cabinet LED strip lights highlighting the quartz countertops.",
+        "- Geometric white and green hexagonal tiled floor with a black border."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "U Shaped Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Jaipur",
+      "Modular Kitchen Pune",
+      "Modular Kitchen Dehradun"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-25-1787651030-MYuIt.png",
+        "alt": "U-Shaped Kitchen Design with Hexagonal Floor Tiles",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "contemporary-terracotta-peninsula-kitchen-design-with-waterfall-counter-d-inki-ond2026-35",
+    "title": "Contemporary Terracotta Peninsula Kitchen Design with Waterfall Counter",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-24-1787651031-ZYjMe.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-24-1787651031-ZYjMe.png",
+    "alt_text": "Peninsula Kitchen Design with Waterfall Counter",
+    "room_size": "13x10 feet",
+    "style": "Contemporary",
+    "specifications": {
+      "layout": "L-Shaped with Peninsula Kitchen Design",
+      "room_dimensions": "13x10 feet",
+      "style": "Contemporary",
+      "colours": "Terracotta and ivory",
+      "shutter_finish": "PU in matte finish",
+      "countertop_material": "Corian",
+      "ideal_for": "Medium-sized familes",
+      "storage_features": [
+        "- Matte terracotta base drawers and wide storage pull-outs.",
+        "- Upper wall cabinets and loft storage in smooth matte ivory PU finish.",
+        "- Tall full-height cabinet housing an integrated oven and microwave."
+      ],
+      "special_features": [
+        "- White Corian peninsula counter with a waterfall edge and wooden bar stools.",
+        "- Angled white wall-mounted range hood.",
+        "- Under-cabinet task lighting casting a soft glow on the ivory backsplash."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "L Shape Kitchen Design",
+      "Modular Kitchen Pune",
+      "Modular Kitchen Delhi",
+      "Modular Kitchen Mumbai",
+      "Modular Kitchen Goa"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-24-1787651031-ZYjMe.png",
+        "alt": "Peninsula Kitchen Design with Waterfall Counter",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "minimal-green-u-shaped-kitchen-design-with-white-subway-backsplash-d-inki-ond2026-34",
+    "title": "Minimal Green U-Shaped Kitchen Design with White Subway Backsplash",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-23-1787651032-zG1pl.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-23-1787651032-zG1pl.png",
+    "alt_text": "U-Shaped Kitchen Design with Linear Ceiling Light",
+    "room_size": "13x10 feet",
+    "style": "Minimal",
+    "specifications": {
+      "layout": "U-Shaped Kitchen Design",
+      "room_dimensions": "13x10 feet",
+      "style": "Minimal",
+      "colours": "Sage green and white",
+      "shutter_finish": "PU in matte finish",
+      "countertop_material": "Quartz",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- Lower base cabinets in matte sage green PU finish.",
+        "- Upper wall cabinets in clean matte white PU finish.",
+        "- Handleless profile doors for a seamless, minimalist aesthetic."
+      ],
+      "special_features": [
+        "- White brick subway tile backsplash with under-cabinet LED strip lights.",
+        "- Modern recessed ceiling cove with integrated linear LED strip lighting.",
+        "- Grey quartz countertops extending across three sides for ample prep room."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "U Shaped Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Noida",
+      "Modular Kitchen Bengaluru",
+      "Modular Kitchen Thane"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-23-1787651032-zG1pl.png",
+        "alt": "U-Shaped Kitchen Design with Linear Ceiling Light",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "classic-ivory-island-kitchen-design-with-open-shelves-and-rattan-stools-d-inki-ond2026-33",
+    "title": "Classic Ivory Island Kitchen Design with Open Shelves and Rattan Stools",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-22-1787651034-w96rv.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-22-1787651034-w96rv.png",
+    "alt_text": "Island Kitchen Design with Rattan Bar Stools",
+    "room_size": "14x12 feet",
+    "style": "Classic",
+    "specifications": {
+      "layout": "Island Kitchen Design",
+      "room_dimensions": "14x12 feet",
+      "style": "Classic",
+      "colours": "Ivory",
+      "shutter_finish": "Membrane in matte finish",
+      "countertop_material": "Quartz",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- Shaker-style ivory wall and base cabinets with brass hardware.",
+        "- Open floating wooden shelves for decorative spice jars and brass accents.",
+        "- Deep pull-out base drawers and under-sink storage."
+      ],
+      "special_features": [
+        "- Central kitchen island with a white quartz top and high rattan bar stools.",
+        "- White subway tile backsplash in a running bond pattern.",
+        "- Vibrant turquoise and white patterned floor tile rug insert."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "Island Kitchen Design",
+      "Modular Kitchen Mumbai",
+      "Modular Kitchen Vadodara",
+      "Modular Kitchen Chandigarh",
+      "Modular Kitchen Indore"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-22-1787651034-w96rv.png",
+        "alt": "Island Kitchen Design with Rattan Bar Stools",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "contemporary-terracotta-l-shaped-kitchen-design-with-breakfast-counter-d-inki-ond2026-32",
+    "title": "Contemporary Terracotta L-Shaped Kitchen Design with Breakfast Counter",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-21-1787651035-R1aGn.png",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-21-1787651035-R1aGn.png",
+    "alt_text": "L-Shaped Kitchen Design with  Patterned Backsplash",
+    "room_size": "13x10 feet",
+    "style": "Contemporary",
+    "specifications": {
+      "layout": "L-Shaped Kitchen Design",
+      "room_dimensions": "13x10 feet",
+      "style": "Contemporary",
+      "colours": "Terracotta and cream",
+      "shutter_finish": "PU in matte finish",
+      "ideal_for": "Large families",
+      "storage_features": [
+        "- Full-height terracotta pantry unit with integrated built-in microwave and oven tower.",
+        "- Upper wall-mounted cabinets in matte terracotta PU finish.",
+        "- Base storage cabinets in light cream finish with smooth pull-out drawers."
+      ],
+      "special_features": [
+        "- Patterned yellow and white ceramic tile backsplash. - Extended white quartz breakfast counter with woven rattan bar stools.",
+        "- Under-cabinet warm LED strip lighting over the worktop."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "L Shape Kitchen Design",
+      "Modular Kitchen Bengaluru",
+      "Modular Kitchen Kolkata",
+      "Modular Kitchen Bhopal",
+      "Modular Kitchen Faridabad"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/ki-1785991945-zVBcB/ki-21-1787651035-R1aGn.png",
+        "alt": "L-Shaped Kitchen Design with  Patterned Backsplash",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "transitional-l-shaped-off-white-kitchen-design-d-inki-jas2026-597",
+    "title": "Transitional L-Shaped Off-White Kitchen Design",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/19-1787300848-jqU3w.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/19-1787300848-jqU3w.jpg",
+    "alt_text": "L-Shaped Off-White Kitchen with Dark Walnut Fluted Accent Panel and Dining Set",
+    "room_size": "12x14 feet",
+    "style": "Transitional",
+    "specifications": {
+      "layout": "L Shape Kitchen Design",
+      "room_dimensions": "12x14 feet",
+      "style": "Transitional",
+      "colours": "Off white",
+      "shutter_finish": "Membrane in Matte Finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- Cream-colored base cabinets with subtle recessed shaker details feature warm brass drawer handles for storing utensils, linens, and pantry staples.",
+        "- A wall-mounted wooden display unit with white cross-mullion glass doors holds everyday dishware, while an end cabinet clad in rich walnut veneer provides enclosed storage right beside the dining area."
+      ],
+      "special_features": [
+        "- A full-height dark walnut fluted slat accent panel anchors the wall behind the glass cabinet, complementing classic white beveled subway tile walls.",
+        "- A solid wooden dining table with upholstered spindle-back chairs sits adjacent to the black granite counter, beneath a double-hung picture window, an angled cooker hood, and crisp white ceilings."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "L Shape Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Vadodara",
+      "Modular Kitchen Guwahati",
+      "Modular Kitchen Dehradun"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/19-1787300848-jqU3w.jpg",
+        "alt": "L-Shaped Off-White Kitchen with Dark Walnut Fluted Accent Panel and Dining Set",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "contemporary-beige-u-shaped-kitchen-design-d-inki-jas2026-596",
+    "title": "Contemporary Beige U-Shaped Kitchen Design",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/18-1787300847-zwyVi.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/18-1787300847-zwyVi.jpg",
+    "alt_text": "U-Shaped Kitchen Design with Beige Cabinets and Integrated Breakfast Peninsula",
+    "room_size": "12x16 feet",
+    "style": "Contemporary",
+    "specifications": {
+      "layout": "U Shaped Kitchen Design",
+      "room_dimensions": "12x16 feet",
+      "style": "Contemporary",
+      "colours": "Irish cream",
+      "shutter_finish": "Laminate in suede finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- Double-tier overhead cabinetry finished in brushed champagne-gold maximizes vertical space above the counter.",
+        "- Flat-panel lower units offer deep, handleless drawers for pots and pans alongside standard cupboard doors with small circular black knobs.",
+        "- The extended peninsula counter provides additional base storage while concealing utility lines behind smooth, seamless exterior paneling."
+      ],
+      "special_features": [
+        "- An inviting wide architectural archway frames the entrance, opening the kitchen into the sunlit dining area.",
+        "- Natural light streams in from a side casement window, illuminating pale oak plank flooring, a matte black waterfall breakfast bar with counter stools, an angled black glass chimney, and warm beige wall surfaces."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "U Shaped Kitchen Design",
+      "Modular Kitchen Kolkata",
+      "Modular Kitchen Ahmedabad",
+      "Modular Kitchen Pune",
+      "Modular Kitchen Chennai"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/18-1787300847-zwyVi.jpg",
+        "alt": "U-Shaped Kitchen Design with Beige Cabinets and Integrated Breakfast Peninsula",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "contemporary-white-u-shaped-kitchen-design-d-inki-jas2026-595",
+    "title": "Contemporary White U-Shaped Kitchen Design",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/17-1787300846-Yr3gI.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/17-1787300846-Yr3gI.jpg",
+    "alt_text": "U-Shaped Kitchen Design with White Base Cabinets and Built-In Oven Unit",
+    "room_size": "12x12 feet",
+    "style": "Contemporary",
+    "specifications": {
+      "layout": "U Shaped Kitchen Design",
+      "room_dimensions": "12x12 feet",
+      "style": "Contemporary",
+      "colours": "Frosty white",
+      "shutter_finish": "Laminate in suede finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- Full-height, double-stacked cream cabinets extend to the ceiling, utilizing every inch of vertical volume.",
+        "- A dedicated tall appliance wall houses an integrated oven, microwave, and deep pull-out pantry cupboards.",
+        "- Handleless base cabinetry surrounds three sides with deep saucepan drawers and corner carousels, while matching overhead doors maintain an ultra-clean appearance."
+      ],
+      "special_features": [
+        "- An efficient U-shaped layout establishes a seamless golden work triangle between the black French-door refrigerator, centered gas hob, and undermount corner sink.",
+        "- Smooth cream surfaces pair with dark charcoal countertops, warm timber ceiling fan blades, recessed ceiling spotlights, and a tall frosted window fitted with integrated horizontal privacy blinds."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "U Shaped Kitchen Design",
+      "Modular Kitchen Mumbai",
+      "Modular Kitchen Noida",
+      "Modular Kitchen Pune",
+      "Modular Kitchen Coimbatore"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/17-1787300846-Yr3gI.jpg",
+        "alt": "U-Shaped Kitchen Design with White Base Cabinets and Built-In Oven Unit",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "contemporary-parallel-green-kitchen-design-with-breakfast-bar-d-inki-jas2026-594",
+    "title": "Contemporary Parallel Green Kitchen Design with Breakfast Bar",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/16-1787300845-biIOY.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/16-1787300845-biIOY.jpg",
+    "alt_text": "Parallel Kitchen Design with Olive Green Cabinets and Central Breakfast Bar",
     "room_size": "12x14 feet",
     "style": "Contemporary",
     "specifications": {
+      "layout": "Parallel Kitchen Design",
       "room_dimensions": "12x14 feet",
       "style": "Contemporary",
+      "colours": "Dark citrus",
+      "shutter_finish": "Laminate in high gloss finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
       "storage_features": [
-        "- Sleek bedside storage units on both sides of the bed.",
-        "- Minimal built-in look with hidden handles."
+        "- Parallel galley counters maximize capacity with sleek, olive green base drawers and double-tier upper cabinets with tinted glass display doors.",
+        "- In the background, a seamless white tall unit houses an integrated double wall oven and microwave tower, complemented by smart under-counter storage built discreetly beneath the central waterfall island."
       ],
-      "special_features": []
+      "special_features": [
+        "- Sophisticated classical details blend with contemporary elements, highlighted by a coffered tray ceiling with recessed perimeter cove lighting.",
+        "- Glossy gold-veined white marble spans the floors, island, and backsplashes, contrasting against reflective olive lacquered finishes, a diamond-beveled mirrored accent wall, and chic upholstered barstools with sleek golden metal frames."
+      ]
     },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "Parallel Kitchen Design",
+      "Kitchen Cabinet Design",
+      "Modular Kitchen Hyderabad",
+      "Modular Kitchen Pune",
+      "Modular Kitchen Bengaluru"
+    ],
     "all_images": [
       {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-4-1784539488-STbK9.png",
-        "alt": "Master Bedroom Design with Botanical Wallpaper and Wood Fluted Paneling",
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/16-1787300845-biIOY.jpg",
+        "alt": "Parallel Kitchen Design with Olive Green Cabinets and Central Breakfast Bar",
         "cover": true
       }
     ]
   },
   {
-    "id": "contemporary-master-bedroom-design-with-arched-bed-and-leather-recliner-d-inmbr-jas2026-142",
-    "title": "Contemporary Master Bedroom Design with Arched Bed and Leather Recliner",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1784538169-anUNI.jpg",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1784538169-anUNI.jpg",
-    "alt_text": "Master Bedroom Design with Upholstered Bed and Recliner Armchair",
-    "room_size": "14x16 feet",
-    "style": "Contemporary",
+    "id": "transitional-beige-u-shaped-kitchen-design-d-inki-jas2026-593",
+    "title": "Transitional Beige U-Shaped Kitchen Design",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/15-1787300844-hubX4.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/15-1787300844-hubX4.jpg",
+    "alt_text": "U-Shaped Kitchen Design with Beige Cabinets and Frosted Glass Wall Units",
+    "room_size": "10x12 feet",
+    "style": "Transitional",
     "specifications": {
-      "room_dimensions": "14x16 feet",
-      "style": "Contemporary",
+      "layout": "U Shaped Kitchen Design",
+      "room_dimensions": "10x12 feet",
+      "style": "Transitional",
+      "colours": "Irish cream",
+      "shutter_finish": "Laminate in high gloss finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
       "storage_features": [
-        "- Two-tier wooden bedside tables with open lower shelves",
-        "- Top pull-out drawers to keep devices and bedtime reads organized"
+        "- Full-height vertical cabinetry on the left provides floor-to-ceiling pantry capacity beside the refrigerator.",
+        "- Double-tiered overhead cabinets feature frosted glass display units and an open multi-tier wooden spice rack. Below, wide soft-close tandem drawers with recessed aluminum profile handles and spacious corner cupboards keep cookware, cutlery, and kitchen tools neatly organized."
       ],
-      "special_features": []
+      "special_features": [
+        "- Intricately patterned Moroccan-inspired ceramic tiles create a decorative backsplash under warm concealed LED under-cabinet lighting.",
+        "- High-gloss caramel-beige cabinet surfaces bounce light across the room, complementing black quartz countertops, a dual-bowl undermount sink with a matte black gooseneck faucet, and a large multi-pane window that frames scenic outdoor foliage."
+      ]
     },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
-    "tags": [],
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "U Shaped Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Gurgaon",
+      "Modular Kitchen Noida",
+      "Contemporary Island Kitchen"
+    ],
     "all_images": [
       {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-3-1784538169-anUNI.jpg",
-        "alt": "Master Bedroom Design with Upholstered Bed and Recliner Armchair",
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/15-1787300844-hubX4.jpg",
+        "alt": "U-Shaped Kitchen Design with Beige Cabinets and Frosted Glass Wall Units",
         "cover": true
       }
     ]
   },
   {
-    "id": "contemporary-master-bedroom-design-with-wooden-poster-bed-and-wall-moldings-d-inmbr-jas2026-140",
-    "title": "Contemporary Master Bedroom Design with Wooden Poster Bed and Wall Moldings",
-    "category_slug": "bedrooms",
-    "category_name": "Master Bedroom",
-    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1784536221-VlMO3.png",
-    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1784536221-VlMO3.png",
-    "alt_text": "Master Bedroom Design with Wooden Bed and Paneled Wall Molding",
-    "room_size": "14x16 feet",
-    "style": "Contemporary",
+    "id": "modern-emerald-l-shaped-kitchen-design-d-inki-jas2026-592",
+    "title": "Modern Emerald L-Shaped Kitchen Design",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/14-1787300843-xZQhu.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/14-1787300843-xZQhu.jpg",
+    "alt_text": "L-Shaped Kitchen Design with Emerald Green Cabinets and Stainless Steel Sink",
+    "room_size": "10x10 feet",
+    "style": "Modern",
     "specifications": {
-      "room_dimensions": "14x16 feet",
-      "style": "Contemporary",
+      "layout": "L Shape Kitchen Design",
+      "room_dimensions": "10x10 feet",
+      "style": "Modern",
+      "colours": "Emerald",
+      "shutter_finish": "Laminate in high gloss finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
       "storage_features": [
-        "- Full-height wardrobe units with upper loft storage for complete clothing organization",
-        "- Dual bedside nightstands with deep drawers"
+        "- High-gloss emerald green cabinetry maximizes floor space through an extensive L-shaped modular configuration.",
+        "- A dedicated wall-mounted cubby integrates the microwave to keep work surfaces clear, while the lower run combines wide flat-panel cookware drawers and spacious base cupboards.",
+        "- The handleless construction preserves an uncluttered profile while holding heavy cookware and dinner sets."
       ],
-      "special_features": []
+      "special_features": [
+        "- A bold black-and-white geometric optical tile backsplash creates an eye-catching accent wall across two planes.",
+        "- Glossy forest green surfaces contrast against polished black granite countertops and pristine white walls.",
+        "- Natural daylight flows through a side window with horizontal blinds, illuminating the built-in cooktop, angled black wall chimney, and large stainless steel preparation sink."
+      ]
     },
-    "budget_estimate": "₹1.80L – ₹3.20L",
-    "unit_type": "Master Bedroom Suite",
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "L Shape Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Patna",
+      "Modular Kitchen Kolkata",
+      "Modular Kitchen Goa"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/14-1787300843-xZQhu.jpg",
+        "alt": "L-Shaped Kitchen Design with Emerald Green Cabinets and Stainless Steel Sink",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "modern-blue-parallel-kitchen-design-with-storage-d-inki-jas2026-591",
+    "title": "Modern Blue Parallel Kitchen Design with Storage",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/13-1787300842-f96G6.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/13-1787300842-f96G6.jpg",
+    "alt_text": "Parallel Kitchen Design with Blue Suede Units and Glass Display Cabinets",
+    "room_size": "10x14 feet",
+    "style": "Modern",
+    "specifications": {
+      "layout": "Parallel Kitchen Design",
+      "room_dimensions": "10x14 feet",
+      "style": "Modern",
+      "colours": "Denim suedette",
+      "shutter_finish": "Laminate in suede finish",
+      "countertop_material": "Quartz",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- This modular layout maximizes functional organization with double-tier matte denim blue overhead cabinets flush-fitted to the ceiling.",
+        "- Two black-framed glass-front display cabinets feature warm ambient internal illumination for showcasing spice jars and glassware.",
+        "- Below, wide soft-closing center drawers provide dedicated compartments for cookware, flanked by spacious base cupboards with slim horizontal edge-pull handles."
+      ],
+      "special_features": [
+        "- A high-performance black glass chimney hood is integrated flush between the overhead cabinets directly above a built-in multi-burner gas hob.",
+        "- A continuous, concealed warm LED light strip illuminates the clean off-white quartz backsplash and expansive white countertop.",
+        "- The composition features a clean-lined modern look, highlighted by subtle ceiling spotlights and durable stainless steel kickboards."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
     "tags": [],
     "all_images": [
       {
-        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jas-1784534272-HKwmV/mbr-1784534283-EvB4j/mbr-2-1784536221-VlMO3.png",
-        "alt": "Master Bedroom Design with Wooden Bed and Paneled Wall Molding",
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/13-1787300842-f96G6.jpg",
+        "alt": "Parallel Kitchen Design with Blue Suede Units and Glass Display Cabinets",
+        "cover": true
+      },
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/131-1787300841-z6mG5.jpg",
+        "alt": "Parallel Kitchen Design with Blue Suede Units and Glass Display Cabinets",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "id": "modern-green-l-shaped-kitchen-design-with-backsplash-d-inki-jas2026-590",
+    "title": "Modern Green L-Shaped Kitchen Design with Backsplash",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/12-1787300840-ixhGb.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/12-1787300840-ixhGb.jpg",
+    "alt_text": "L-Shaped Kitchen Design with Green Glossy Cabinets and Patterned Backsplash",
+    "room_size": "12x10 feet",
+    "style": "Modern",
+    "specifications": {
+      "layout": "L Shape Kitchen Design",
+      "room_dimensions": "12x10 feet",
+      "style": "Modern",
+      "colours": "Caribe",
+      "shutter_finish": "Laminate in high gloss finish",
+      "countertop_material": "Granite",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- High-gloss emerald green cabinetry maximizes floor space through an extensive L-shaped modular configuration.",
+        "- A dedicated wall-mounted niche securely integrates a microwave oven to keep work surfaces clear, while the lower run combines wide flat-panel cookware drawers and spacious base cupboards.",
+        "- The handleless construction preserves an uncluttered profile while holding cookware, dinner sets, and pantry essentials."
+      ],
+      "special_features": [
+        "- A bold black-and-white geometric optical tile backsplash creates an eye-catching retro accent wall that wraps across two planes.",
+        "- Glossy forest green surfaces contrast sharply against polished dark granite countertops and clean white walls.",
+        "- Natural daylight flows through a side window with horizontal blinds, illuminating the built-in cooktop, sleek black wall chimney, and large stainless steel preparation sink."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "L Shape Kitchen Design",
+      "Kitchen Backsplash",
+      "Modular Kitchen Kolkata",
+      "Modular Kitchen Chandigarh",
+      "Modular Kitchen Kanpur"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/12-1787300840-ixhGb.jpg",
+        "alt": "L-Shaped Kitchen Design with Green Glossy Cabinets and Patterned Backsplash",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "modern-beige-open-kitchen-design-with-glass-cabinets-d-inki-jas2026-589",
+    "title": "Modern Beige Open Kitchen Design with Glass Cabinets",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/11-1787300839-fzkDX.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/11-1787300839-fzkDX.jpg",
+    "alt_text": "Open Kitchen Design with Beige Glossy Units and Dark Glass Cabinets",
+    "room_size": "10x12 feet",
+    "style": "Modern",
+    "specifications": {
+      "layout": "Open Kitchen Design",
+      "room_dimensions": "10x12 feet",
+      "style": "Modern",
+      "colours": "Irish cream",
+      "shutter_finish": "Laminate in high gloss finish",
+      "countertop_material": "Marble",
+      "ideal_for": "Small families",
+      "storage_features": [
+        "- A tall full-height pantry unit anchors the left side of this streamlined modular kitchen, offering deep concealed storage for dry goods and small appliances.",
+        "- High-gloss champagne upper cabinets include two tinted black-glass showcase units, while the lower run combines handleless soft-close cupboards and wide tandem drawers equipped with minimalist dark aluminum channel-pull profiles."
+      ],
+      "special_features": [
+        "- The sophisticated monochrome palette features smooth beige-lacquered cabinetry set against a dramatic white marble backsplash with delicate gray veining.",
+        "- A seamless white quartz countertop houses a five-burner gas hob and a hidden integrated chimney hood. Soft LED strip lighting runs continuously beneath the overhead units, highlighting clean lines and creating a warm, clutter-free culinary atmosphere."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "Open Kitchen Design",
+      "Modular Kitchen Bengaluru",
+      "Granite kitchen countertop",
+      "Modular Kitchen Guwahati",
+      "Modular Kitchen Goa"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/11-1787300839-fzkDX.jpg",
+        "alt": "Open Kitchen Design with Beige Glossy Units and Dark Glass Cabinets",
+        "cover": true
+      }
+    ]
+  },
+  {
+    "id": "classic-white-open-kitchen-design-with-glass-units-d-inki-jas2026-588",
+    "title": "Classic White Open Kitchen Design with Glass Units",
+    "category_slug": "kitchen-designs",
+    "category_name": "Kitchen",
+    "cover_image": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/10-1787300838-K7aQo.jpg",
+    "raw_image": "https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/10-1787300838-K7aQo.jpg",
+    "alt_text": "Open Kitchen Design with White Framed Cabinets and Glass Display Units",
+    "room_size": "14x16 feet",
+    "style": "Classic",
+    "specifications": {
+      "layout": "Open Kitchen Design",
+      "room_dimensions": "14x16 feet",
+      "style": "Classic",
+      "colours": "Off white",
+      "shutter_finish": "Membrane in Matte Finish",
+      "countertop_material": "Marble",
+      "ideal_for": "Medium-sized families",
+      "storage_features": [
+        "- A full-height side pantry tower with warm interior lighting and cross-mullion glass doors anchors the storage, providing an elegant display for fine dinnerware.",
+        "- The main run features double-tier upper shaker cabinets with horizontal lift-up compartments, lower pull-out utensil drawers, and double base cabinets, all accented with sleek, horizontal brushed-metal handles for organized, easy-access kitchen storage."
+      ],
+      "special_features": [
+        "- Timeless neoclassical aesthetics define this layout, highlighted by clean white shaker-profile cabinetry and a soft beige marble backsplash that matches the polished stone floor.",
+        "- The straight-line work zone integrates an undermount sink, built-in cooktop, and a modern black wall chimney nestled neatly beneath custom cabinetry. Warm under-cabinet task lighting illuminates the expansive food preparation surface."
+      ]
+    },
+    "budget_estimate": "₹1.65L – ₹2.75L",
+    "unit_type": "Modular Kitchen",
+    "tags": [
+      "Open Kitchen Design",
+      "Kitchen Cabinet Design",
+      "Modular Kitchen Ahmedabad",
+      "Modular Kitchen Bhopal",
+      "Modular Kitchen Dehradun"
+    ],
+    "all_images": [
+      {
+        "url": "https://images.livspace-cdn.com/w:1000/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2026-1785330024-pzKMk/ki-1787300807-uBrTk/10-1787300838-K7aQo.jpg",
+        "alt": "Open Kitchen Design with White Framed Cabinets and Glass Display Units",
         "cover": true
       }
     ]
