@@ -126,6 +126,7 @@ export interface WorkflowMilestone {
 
 export interface BeforeAfterItem {
   id: string;
+  segment?: 'residential' | 'commercial';
   category: string;
   title: string;
   subtitle: string;
