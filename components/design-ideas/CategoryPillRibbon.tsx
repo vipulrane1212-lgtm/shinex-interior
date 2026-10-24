@@ -37,14 +37,14 @@ export default function CategoryPillRibbon({
           className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all shrink-0 flex items-center gap-2 border cursor-pointer ${
             selectedCategory === 'all'
               ? 'bg-gold text-white font-bold border-gold shadow-md'
-              : 'bg-ink-card/80 text-zinc-300 hover:text-white border-ink-border hover:border-gold/50'
+              : 'bg-white text-plaster font-semibold border-ink-border hover:border-gold/60 hover:text-gold'
           }`}
         >
           <Sparkles size={12} className={selectedCategory === 'all' ? 'text-white' : 'text-gold'} />
           <span>All Ideas</span>
           <span
             className={`px-1.5 py-0.5 rounded-full text-[9px] font-bold ${
-              selectedCategory === 'all' ? 'bg-black/40 text-white' : 'bg-black/60 text-zinc-400'
+              selectedCategory === 'all' ? 'bg-black/20 text-white' : 'bg-ink-soft text-plaster-muted'
             }`}
           >
             {totalDesignsCount}
@@ -63,14 +63,14 @@ export default function CategoryPillRibbon({
               className={`px-3.5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all shrink-0 flex items-center gap-2 border cursor-pointer ${
                 isActive
                   ? 'bg-gold text-white font-bold border-gold shadow-md'
-                  : 'bg-ink-card/80 text-zinc-300 hover:text-white border-ink-border hover:border-gold/50'
+                  : 'bg-white text-plaster font-semibold border-ink-border hover:border-gold/60 hover:text-gold'
               }`}
             >
               <span className="truncate">{cat.title}</span>
               {cat.totalCount > 0 && (
                 <span
                   className={`px-1.5 py-0.5 rounded-full text-[9px] font-bold ${
-                    isActive ? 'bg-black/40 text-white' : 'bg-black/60 text-zinc-400'
+                    isActive ? 'bg-black/20 text-white' : 'bg-ink-soft text-plaster-muted'
                   }`}
                 >
                   {cat.totalCount.toLocaleString()}
