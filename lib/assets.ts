@@ -480,6 +480,38 @@ export const BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
 ];
 
 // ─────────────────────────────────────────────────────────────
+// COMMERCIAL BEFORE / AFTER SLIDERS (4 Images = 2 Matched Pairs)
+// Shown only under the Commercial tab of the Transformations section.
+// Residential tab keeps BEFORE_AFTER_PAIRS exactly as-is.
+// ─────────────────────────────────────────────────────────────
+export const COMMERCIAL_BEFORE_AFTER_PAIRS: BeforeAfterPair[] = [
+  {
+    id: 'commercial-office-transformation',
+    title: 'Mumbai Corporate Office',
+    shortTitle: 'Corporate Office',
+    location: 'Mumbai',
+    category: 'commercial',
+    beforeImage: '/images/transformations/commercial_office_before.jpg',
+    afterImage: '/images/transformations/commercial_office_after.jpg',
+    beforeLabel: 'Raw Concrete Office Shell',
+    afterLabel: 'Handover: Corporate Office',
+    specs: ['Warm Walnut & Marble Finish', 'Open-Plan Workstations', 'Cove & Task Lighting', 'Client-Ready Lounge'],
+  },
+  {
+    id: 'commercial-retail-transformation',
+    title: 'Mumbai Retail Showroom',
+    shortTitle: 'Retail Showroom',
+    location: 'Mumbai',
+    category: 'commercial',
+    beforeImage: '/images/transformations/commercial_retail_before.jpg',
+    afterImage: '/images/transformations/commercial_retail_after.jpg',
+    beforeLabel: 'Empty Retail Shop Shell',
+    afterLabel: 'Handover: Retail Showroom',
+    specs: ['Fluted Oak Display Shelving', 'White Marble Counters', 'Warm Track Lighting', 'Premium Boutique Finish'],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────
 // SPLIT FOOTER SHOWCASE IMAGE (1)
 // ─────────────────────────────────────────────────────────────
 export const FOOTER_HERO_IMAGE =
