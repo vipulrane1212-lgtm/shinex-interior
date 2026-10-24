@@ -1,14 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { GOOGLE_REVIEWS, GoogleReview } from '@/lib/assets';
-import VideoTestimonialModal from './VideoTestimonialModal';
-import { Play, Star, ShieldCheck, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { GOOGLE_REVIEWS } from '@/lib/assets';
+import { Star, ExternalLink } from 'lucide-react';
+
+// Official multicolour Google "G" mark (used for the Google Reviews badge only)
+function GoogleG({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z" />
+      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.12-6.73-4.96L1.29 17.1A12 12 0 0 0 12 24z" />
+      <path fill="#FBBC05" d="M5.27 14.29A7.2 7.2 0 0 1 4.89 12c0-.8.14-1.57.38-2.29L1.29 6.9A12 12 0 0 0 0 12c0 1.93.46 3.76 1.29 5.4l3.98-3.11z" />
+      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42A11.97 11.97 0 0 0 12 0 12 12 0 0 0 1.29 6.9l3.98 3.11C6.22 6.87 8.87 4.75 12 4.75z" />
+    </svg>
+  );
+}
 
 export default function TrustHub() {
-  const [selectedReview, setSelectedReview] = useState<GoogleReview | null>(null);
-
   // Duplicate list to create seamless infinite marquee loop
   const marqueeItems = [...GOOGLE_REVIEWS, ...GOOGLE_REVIEWS];
 
@@ -20,8 +28,8 @@ export default function TrustHub() {
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 text-gold">
               {/* Google G logo */}
-              <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center font-bold text-[10px] shadow-sm">
-                <span className="text-blue-500 font-sans">G</span>
+              <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm p-0.5">
+                <GoogleG className="w-4 h-4" />
               </div>
               <span className="text-xs uppercase tracking-[0.2em] font-sans font-semibold">
                 Google Verified Reviews
@@ -36,24 +44,24 @@ export default function TrustHub() {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-plaster-muted font-sans font-normal leading-relaxed">
-              Read verified 5-star Google reviews and watch real video walkthroughs from completed projects across Seawoods, Kharghar, Vashi, and Mumbai.
+              Real Google reviews for Sneha Enterprises, the team behind ShineX — 4.9 stars from 117 reviews. 15 are shown below; see them all on Google.
             </p>
           </div>
 
           {/* Google Rating Badge */}
           <div className="p-4 rounded-xl bg-ink border border-ink-border flex items-center gap-4 shrink-0 shadow-lg">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center font-bold text-lg shadow">
-              <span className="text-blue-500 font-sans">G</span>
+            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow p-1.5">
+              <GoogleG className="w-7 h-7" />
             </div>
             <div>
               <div className="flex items-center gap-1 text-amber-400 text-xs">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} fill="currentColor" stroke="none" />
                 ))}
-                <span className="text-plaster font-bold text-xs ml-1">5.0</span>
+                <span className="text-plaster font-bold text-xs ml-1">4.9</span>
               </div>
               <span className="text-[10px] text-plaster-muted font-mono block mt-0.5">
-                Verified Business Reviews · Navi Mumbai
+                117 Google Reviews · Sneha Enterprises
               </span>
             </div>
           </div>
@@ -66,14 +74,13 @@ export default function TrustHub() {
           {marqueeItems.map((rev, idx) => (
             <div
               key={`${rev.id}-${idx}`}
-              onClick={() => setSelectedReview(rev)}
-              className="w-[360px] sm:w-[420px] shrink-0 p-6 rounded-2xl bg-ink border border-ink-border hover:border-gold/60 transition-all duration-300 flex flex-col justify-between gap-6 cursor-pointer group shadow-xl hover:shadow-[0_10px_30px_rgba(158,120,62,0.15)]"
+              className="w-[360px] sm:w-[420px] shrink-0 p-6 rounded-2xl bg-ink border border-ink-border hover:border-gold/60 transition-all duration-300 flex flex-col justify-between gap-6 group shadow-xl hover:shadow-[0_10px_30px_rgba(158,120,62,0.15)]"
             >
               {/* Card Header: Google logo, stars, time */}
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-sm shadow-sm shrink-0">
-                    <span className="text-blue-500 font-sans">G</span>
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 p-1">
+                    <GoogleG className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-plaster group-hover:text-gold transition-colors leading-tight font-sans">
@@ -102,33 +109,13 @@ export default function TrustHub() {
                 &ldquo;{rev.comment}&rdquo;
               </p>
 
-              {/* Video Thumbnail CTA trigger */}
+              {/* Verified on Google */}
               <div className="pt-2 border-t border-ink-border/80 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-8 rounded-md overflow-hidden bg-ink-card shrink-0 skeleton-shimmer">
-                    <Image
-                      src={rev.videoThumbnail}
-                      alt={rev.name}
-                      fill
-                      sizes="48px"
-                      className="object-cover opacity-100 group-hover:scale-110 transition-transform will-change-transform"
-                    />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                      <Play size={10} className="fill-gold text-gold" />
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[11px] font-sans font-medium text-plaster group-hover:text-gold transition-colors">
-                      Watch Video Story
-                    </span>
-                    <span className="text-[9px] text-plaster-dim font-mono">
-                      {rev.projectType}
-                    </span>
-                  </div>
-                </div>
-
-                <span className="text-[10px] text-gold font-mono uppercase tracking-wider group-hover:underline flex items-center gap-1">
-                  Play 4K <Play size={10} className="fill-gold" />
+                <span className="text-[11px] font-sans font-medium text-plaster group-hover:text-gold transition-colors">
+                  Verified Google Review
+                </span>
+                <span className="text-[10px] text-gold font-mono uppercase tracking-wider">
+                  Sneha Enterprises
                 </span>
               </div>
             </div>
@@ -136,13 +123,17 @@ export default function TrustHub() {
         </div>
       </div>
 
-      {/* Video Modal */}
-      {selectedReview && (
-        <VideoTestimonialModal
-          review={selectedReview}
-          onClose={() => setSelectedReview(null)}
-        />
-      )}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-8 flex justify-center">
+        <a
+          href="https://share.google/dojQcTroA26CS6fw1"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-ink font-sans font-semibold text-sm hover:opacity-90 transition-opacity"
+        >
+          See all 117 reviews on Google
+          <ExternalLink size={16} />
+        </a>
+      </div>
     </section>
   );
 }
