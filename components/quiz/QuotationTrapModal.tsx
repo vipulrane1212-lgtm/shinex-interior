@@ -129,9 +129,10 @@ export default function QuotationTrapModal() {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 overflow-y-auto bg-black/85 backdrop-blur-xl animate-in fade-in duration-300"
+      data-lenis-prevent
+      className="fixed inset-0 z-50 flex justify-center p-3 sm:p-6 md:p-10 overflow-y-auto bg-black/85 backdrop-blur-xl animate-in fade-in duration-300"
     >
-      <div className="relative w-full max-w-4xl bg-ink-card border border-ink-border rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+      <div className="relative m-auto w-full max-w-4xl bg-ink-card border border-ink-border rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92dvh]">
         {/* Top Progress Bar */}
         <div className="w-full bg-ink border-b border-ink-border/80 px-5 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -175,8 +176,8 @@ export default function QuotationTrapModal() {
           </div>
         </div>
 
-        {/* Modal Scrollable Body */}
-        <div className="p-5 sm:p-6 md:p-10 overflow-y-auto flex-1">
+        {/* Modal Scrollable Body — native touch scroll, not Lenis-smoothed */}
+        <div data-lenis-prevent className="p-5 sm:p-6 md:p-10 overflow-y-auto overscroll-contain touch-pan-y flex-1">
           {/* ─────────────────────────────────────────────────────────────
               STEP 1: PROPERTY TYPE
           ───────────────────────────────────────────────────────────── */}
@@ -203,7 +204,7 @@ export default function QuotationTrapModal() {
                       setSelectedProperty(opt.id);
                       setStep(2);
                     }}
-                    className={`group relative aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 skeleton-shimmer ${
+                    className={`group relative aspect-[16/10] sm:aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 touch-manipulation active:scale-[0.98] ${
                       selectedProperty === opt.id
                         ? 'border-gold ring-2 ring-gold/40 shadow-[0_0_25px_rgba(158,120,62,0.25)]'
                         : 'border-ink-border hover:border-gold/60'
@@ -216,19 +217,19 @@ export default function QuotationTrapModal() {
                       sizes="25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 transition-opacity" />
 
                     <div className="relative z-10">
-                      <span className="px-2.5 py-0.5 rounded-full bg-ink/80 border border-ink-border text-[9px] uppercase font-mono text-gold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/25 text-[9px] uppercase font-mono font-bold text-gold">
                         {opt.tag}
                       </span>
                     </div>
 
                     <div className="relative z-10 space-y-1">
-                      <h4 className="text-sm font-semibold text-plaster group-hover:text-gold-light transition-colors leading-tight font-sans">
+                      <h4 className="text-base font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight font-sans">
                         {opt.title}
                       </h4>
-                      <p className="text-[10px] text-plaster-muted font-sans font-light leading-tight">
+                      <p className="text-[11px] text-white/90 font-sans font-normal drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] leading-tight">
                         {opt.subtitle}
                       </p>
                     </div>
@@ -264,7 +265,7 @@ export default function QuotationTrapModal() {
                       setSelectedScope(opt.id);
                       setStep(3);
                     }}
-                    className={`group relative aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 skeleton-shimmer ${
+                    className={`group relative aspect-[16/10] sm:aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 touch-manipulation active:scale-[0.98] ${
                       selectedScope === opt.id
                         ? 'border-gold ring-2 ring-gold/40 shadow-[0_0_25px_rgba(158,120,62,0.25)]'
                         : 'border-ink-border hover:border-gold/60'
@@ -277,19 +278,19 @@ export default function QuotationTrapModal() {
                       sizes="25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 transition-opacity" />
 
                     <div className="relative z-10">
-                      <span className="px-2.5 py-0.5 rounded-full bg-ink/80 border border-ink-border text-[9px] uppercase font-mono text-gold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/25 text-[9px] uppercase font-mono font-bold text-gold">
                         {opt.tag}
                       </span>
                     </div>
 
                     <div className="relative z-10 space-y-1">
-                      <h4 className="text-sm font-semibold text-plaster group-hover:text-gold-light transition-colors leading-tight font-sans">
+                      <h4 className="text-base font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight font-sans">
                         {opt.title}
                       </h4>
-                      <p className="text-[10px] text-plaster-muted font-sans font-light leading-tight">
+                      <p className="text-[11px] text-white/90 font-sans font-normal drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] leading-tight">
                         {opt.subtitle}
                       </p>
                     </div>
@@ -325,7 +326,7 @@ export default function QuotationTrapModal() {
                       setSelectedStyle(opt.id);
                       setStep(4);
                     }}
-                    className={`group relative aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 skeleton-shimmer ${
+                    className={`group relative aspect-[16/10] sm:aspect-[4/5] rounded-xl overflow-hidden border text-left p-4 flex flex-col justify-between transition-all duration-300 touch-manipulation active:scale-[0.98] ${
                       selectedStyle === opt.id
                         ? 'border-gold ring-2 ring-gold/40 shadow-[0_0_25px_rgba(158,120,62,0.25)]'
                         : 'border-ink-border hover:border-gold/60'
@@ -338,19 +339,19 @@ export default function QuotationTrapModal() {
                       sizes="25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 transition-opacity" />
 
                     <div className="relative z-10">
-                      <span className="px-2.5 py-0.5 rounded-full bg-ink/80 border border-ink-border text-[9px] uppercase font-mono text-gold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/25 text-[9px] uppercase font-mono font-bold text-gold">
                         {opt.tag}
                       </span>
                     </div>
 
                     <div className="relative z-10 space-y-1">
-                      <h4 className="text-sm font-semibold text-plaster group-hover:text-gold-light transition-colors leading-tight font-sans">
+                      <h4 className="text-base font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight font-sans">
                         {opt.title}
                       </h4>
-                      <p className="text-[10px] text-plaster-muted font-sans font-light leading-tight">
+                      <p className="text-[11px] text-white/90 font-sans font-normal drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] leading-tight">
                         {opt.subtitle}
                       </p>
                     </div>
@@ -405,7 +406,7 @@ export default function QuotationTrapModal() {
                       setSelectedTimeline(item.id);
                       setStep(5);
                     }}
-                    className={`p-6 rounded-2xl border text-center flex flex-col justify-between items-center gap-4 transition-all duration-300 ${
+                    className={`p-6 rounded-2xl border text-center flex flex-col justify-between items-center gap-4 transition-all duration-300 touch-manipulation active:scale-[0.98] ${
                       selectedTimeline === item.id
                         ? 'bg-ink border-gold ring-2 ring-gold/40 shadow-xl'
                         : 'bg-ink-soft border-ink-border hover:border-gold/50'
