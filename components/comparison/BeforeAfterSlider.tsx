@@ -3,19 +3,30 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BEFORE_AFTER_PAIRS, BeforeAfterPair } from '@/lib/assets';
+import { BEFORE_AFTER_PAIRS, COMMERCIAL_BEFORE_AFTER_PAIRS, BeforeAfterPair } from '@/lib/assets';
 import { resolveImagePath } from '@/lib/designCatalog';
 import { ArrowLeftRight, CheckCircle2, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useTrack } from '@/context/TrackContext';
 
 export default function BeforeAfterSlider() {
   const { track } = useTrack();
+  const [transformationTab, setTransformationTab] = useState<'residential' | 'commercial'>('residential');
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50); // percentage 0 to 100
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const activeProject: BeforeAfterPair = BEFORE_AFTER_PAIRS[activeProjectIndex] || BEFORE_AFTER_PAIRS[0];
+  // Residential keeps the original 4 transformations exactly as-is.
+  // Commercial shows the 2 new commercial transformations only.
+  const visibleProjects: BeforeAfterPair[] =
+    transformationTab === 'commercial' ? COMMERCIAL_BEFORE_AFTER_PAIRS : BEFORE_AFTER_PAIRS;
+  const activeProject: BeforeAfterPair = visibleProjects[activeProjectIndex] || visibleProjects[0];
+
+  const handleTabChange = (tab: 'residential' | 'commercial') => {
+    setTransformationTab(tab);
+    setActiveProjectIndex(0);
+    setSliderPosition(50);
+  };
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -63,6 +74,26 @@ export default function BeforeAfterSlider() {
   return (
     <section id="transformation" className="py-24 md:py-32 bg-ink border-b border-ink-border/60 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Residential / Commercial tabs — above the Transformations */}
+        <div className="flex items-center gap-3 mb-8" role="tablist" aria-label="Transformation type">
+          {(['residential', 'commercial'] as const).map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              role="tab"
+              aria-selected={transformationTab === tab}
+              onClick={() => handleTabChange(tab)}
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold capitalize transition-all border shadow-xs active:scale-95 ${
+                transformationTab === tab
+                  ? 'bg-gold text-white border-gold'
+                  : 'bg-ink-card text-plaster border-ink-border hover:border-gold'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
@@ -79,12 +110,12 @@ export default function BeforeAfterSlider() {
           {/* Next / Previous Slider Navigation Controls */}
           <div className="flex items-center gap-3">
             <span className="px-3.5 py-1.5 rounded-full bg-ink-card border border-ink-border text-xs font-mono font-bold text-gold tracking-widest shadow-xs">
-              0{activeProjectIndex + 1} / 0{BEFORE_AFTER_PAIRS.length}
+              0{activeProjectIndex + 1} / 0{visibleProjects.length}
             </span>
             <button
               type="button"
               onClick={() => {
-                setActiveProjectIndex((prev) => (prev - 1 + BEFORE_AFTER_PAIRS.length) % BEFORE_AFTER_PAIRS.length);
+                setActiveProjectIndex((prev) => (prev - 1 + visibleProjects.length) % visibleProjects.length);
                 setSliderPosition(50);
               }}
               aria-label="Previous Transformation"
@@ -95,7 +126,7 @@ export default function BeforeAfterSlider() {
             <button
               type="button"
               onClick={() => {
-                setActiveProjectIndex((prev) => (prev + 1) % BEFORE_AFTER_PAIRS.length);
+                setActiveProjectIndex((prev) => (prev + 1) % visibleProjects.length);
                 setSliderPosition(50);
               }}
               aria-label="Next Transformation"
