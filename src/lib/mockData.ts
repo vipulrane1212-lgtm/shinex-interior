@@ -609,6 +609,7 @@ export const BRAND_PROFILE = {
 export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
   {
     id: 'ba-living',
+    segment: 'residential',
     category: 'Living Lounge & Dining',
     title: 'Grand Travertine Penthouse Lounge',
     subtitle: 'From Raw Concrete to Luxury Italian Marble Penthouse in 38 Days',
@@ -628,6 +629,7 @@ export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
   },
   {
     id: 'ba-kitchen',
+    segment: 'residential',
     category: 'Chef Modular Kitchen',
     title: 'Monolithic Travertine & Calacatta Island',
     subtitle: 'From Dangling Pipes to Modern Island Kitchen in 26 Days',
@@ -647,6 +649,7 @@ export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
   },
   {
     id: 'ba-master-suite',
+    segment: 'residential',
     category: 'Master Bedroom Suite',
     title: 'Acoustic Japandi Minimalist Sanctuary',
     subtitle: 'From Bare Brickwork to Japandi Master Suite in 31 Days',
@@ -666,6 +669,7 @@ export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
   },
   {
     id: 'ba-wardrobe',
+    segment: 'residential',
     category: 'Walk-In Dressing Suite',
     title: 'Haute Couture Fluted Glass Dressing Atelier',
     subtitle: 'From Dark Alcove to Glass Walk-In Wardrobe in 22 Days',
@@ -685,6 +689,7 @@ export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
   },
   {
     id: 'ba-studio',
+    segment: 'commercial',
     category: 'Executive Studio & Office',
     title: 'Smoked Walnut Executive Study & Library',
     subtitle: 'From Bare Concrete to Executive Office Studio in 24 Days',
@@ -701,6 +706,46 @@ export const BEFORE_AFTER_GALLERY: BeforeAfterItem[] = [
       warranty: '10-Year Structural Guarantee',
     },
     highlightQuote: '“Delivered 4 days ahead of schedule. Flawless German woodwork.” — Sanjay K.',
+  },
+  {
+    id: 'ba-commercial-office',
+    segment: 'commercial',
+    category: 'Corporate Office',
+    title: 'Warm Walnut & Marble Corporate Office',
+    subtitle: 'From Raw Concrete Shell to Premium Mumbai Office in 42 Days',
+    beforeImage: getAssetUrl('/images/commercial_before_office.jpg'),
+    afterImage: getAssetUrl('/images/commercial_after_office.jpg'),
+    beforeLabel: 'Raw Concrete Office Shell',
+    afterLabel: '42-Day Commercial Handover',
+    sqft: '1,150 sq.ft Open-Plan Office',
+    handoverDays: 42,
+    specs: {
+      coreMaterial: 'Natural Oak + White Marble + Brass Trim',
+      hardware: 'Concealed Cable Management & Soft-Close',
+      lighting: 'Warm Cove & Task Lighting (3000K)',
+      warranty: '10-Year Sneha Enterprises Guarantee',
+    },
+    highlightQuote: '“Our bare office shell became a client-ready headquarters, on schedule.” — ShineX Commercial Client',
+  },
+  {
+    id: 'ba-commercial-retail',
+    segment: 'commercial',
+    category: 'Retail Showroom',
+    title: 'Boutique Retail Showroom & Display Atelier',
+    subtitle: 'From Empty Shop Shell to Luxury Retail Showroom in 35 Days',
+    beforeImage: getAssetUrl('/images/commercial_before_retail.jpg'),
+    afterImage: getAssetUrl('/images/commercial_after_retail.jpg'),
+    beforeLabel: 'Empty Retail Shop Shell',
+    afterLabel: '35-Day Commercial Handover',
+    sqft: '820 sq.ft Retail Showroom',
+    handoverDays: 35,
+    specs: {
+      coreMaterial: 'Fluted Oak + White Marble + Brass Display Trim',
+      hardware: 'Illuminated Display Shelving & Glass Counters',
+      lighting: 'Warm Track & Cove Lighting (3000K)',
+      warranty: '10-Year Sneha Enterprises Guarantee',
+    },
+    highlightQuote: '“The showroom now sells the brand before our team says a word.” — ShineX Commercial Client',
   },
 ];
 
