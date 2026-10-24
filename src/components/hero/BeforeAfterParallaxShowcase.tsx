@@ -18,12 +18,24 @@ import { RemotionQuoteButton } from '../common/RemotionQuoteButton';
 import { getAssetUrl } from '@/lib/assetHelper';
 
 export const BeforeAfterParallaxShowcase: React.FC = () => {
+  const [activeSegment, setActiveSegment] = useState<'residential' | 'commercial'>('residential');
   const [activeIndex, setActiveIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50); // 0 to 100 percentage
   const [isDragging, setIsDragging] = useState(false);
   const sliderContainerRef = useRef<HTMLDivElement>(null);
 
-  const activeItem = BEFORE_AFTER_GALLERY[activeIndex];
+  // Residential keeps the original 4 transformations; Commercial shows the
+  // existing executive studio plus the 2 new commercial transformations.
+  const filteredItems = BEFORE_AFTER_GALLERY.filter(
+    (item) => (item.segment ?? 'residential') === activeSegment
+  );
+  const activeItem = filteredItems[activeIndex] ?? filteredItems[0];
+
+  const handleSegmentChange = (segment: 'residential' | 'commercial') => {
+    setActiveSegment(segment);
+    setActiveIndex(0);
+    setSliderPosition(50);
+  };
 
   // Mouse / Touch handle movement
   const handleMove = useCallback((clientX: number) => {
@@ -69,25 +81,47 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
     };
   }, [isDragging, handleMouseMove, handleMouseUp, handleTouchMove]);
 
-  // Navigate between rooms
+  // Navigate between rooms in the active segment
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? BEFORE_AFTER_GALLERY.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
     setSliderPosition(50);
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === BEFORE_AFTER_GALLERY.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
     setSliderPosition(50);
   };
 
   return (
     <div className="w-full space-y-6">
+      {/* Residential / Commercial toggle — above the Transformations */}
+      <div className="flex items-center gap-2" role="tablist" aria-label="Transformation type">
+        {(['residential', 'commercial'] as const).map((segment) => (
+          <button
+            key={segment}
+            role="tab"
+            aria-selected={activeSegment === segment}
+            onClick={() => handleSegmentChange(segment)}
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold capitalize transition-all duration-300 border shadow-sm active:scale-95 ${
+              activeSegment === segment
+                ? 'bg-[#181615] text-[#FBF9F5] border-[#181615]'
+                : 'bg-white/90 text-[#5E5952] border-[#DDD5C7] hover:border-[#C8A97E] hover:text-[#181615]'
+            }`}
+          >
+            {segment}
+          </button>
+        ))}
+      </div>
+
       {/* 1. Header & Room Selector Pills */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#EDE7DC] pb-4">
         <div>
           <span className="text-[11px] font-mono tracking-widest text-[#8C8479] uppercase flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-[#C8A97E] animate-pulse" />
-            <span>Interactive Transformation Theater • 5 Spaces</span>
+            <span>
+              Interactive Transformation Theater • {filteredItems.length}{' '}
+              {activeSegment === 'residential' ? 'Residential' : 'Commercial'} Spaces
+            </span>
           </span>
           <h3 className="font-editorial-h3 text-xl sm:text-2xl text-[#181615] font-semibold mt-0.5">
             Before &amp; After Architectural Revelations
@@ -97,7 +131,7 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
         {/* Slide Counter & Next/Prev Controls */}
         <div className="flex items-center gap-3">
           <span className="text-xs font-mono font-medium text-[#8C8479] tracking-widest">
-            0{activeIndex + 1} <span className="opacity-40">/</span> 0{BEFORE_AFTER_GALLERY.length}
+            0{activeIndex + 1} <span className="opacity-40">/</span> 0{filteredItems.length}
           </span>
           <div className="flex items-center gap-1.5">
             <button
@@ -120,7 +154,7 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
 
       {/* 2. Room Navigation Pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-        {BEFORE_AFTER_GALLERY.map((item, idx) => (
+        {filteredItems.map((item, idx) => (
           <button
             key={item.id}
             onClick={() => {
@@ -141,7 +175,7 @@ export const BeforeAfterParallaxShowcase: React.FC = () => {
       {/* 3. Main Split Slider Showcase with Parallax Transition */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={activeItem.id}
+          key={`${activeSegment}-${activeItem.id}`}
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -15 }}
